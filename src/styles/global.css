@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "BebasNeue";
+  src: url("/fonts/BebasNeue-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Regular";
+  src: url("/fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter SemiBold";
+  src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: #0086ca;
+  --secondary: #fbb03b;
+  --third: #00b3d6;
+  --danger: #c21616;
+  --link: #3d33f1;
+
+  --black: #000;
+  --gray: #ccc;
+  --white: #fff;
+
+  --dark-100: #111;
+  --dark-300: #333;
+  --dark-500: #555;
+  --dark-700: #777;
+  --dark-900: #999;
+
+  --text-gray: #b2bcc9;
+
+  --ff-heading: "BebasNeue", system-ui, sans-serif;
+  --ff-base: "Inter Regular", system-ui, sans-serif;
+  --ff-base-bold: "Inter SemiBold", system-ui, sans-serif;
+
+  --radius: 8px;
+  --radius-m: 16px;
+  --radius-l: 34px;
+  --radius-full: 50%;
+
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 18px;
+  --fs-base: 22px;
+  --fs-l: 24px;
+  --fs-xl: 32px;
+  --fs-2xl: 44px;
+  --fs-3xl: 60px;
+
+  --header-height: 57px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
+}
+
+::first-letter {
+  text-transform: capitalize;
+}
+
+/* Hereda estilos de texto */
+html {
+  line-height: 1.5; /* Altura de línea consistente */
+  font-family: var(--ff-base); /* Fuente predeterminada */
+  -webkit-text-size-adjust: 100%; /* Previene zoom en dispositivos móviles */
+  -webkit-font-smoothing: antialiased; /* Suaviza las fuentes */
+}
+
+/* Estilos base para body */
+body {
+  font-size: var(--fs-base); /* Tamaño base de texto */
+  color: var(--black);
+  padding-top: var(--header-height);
+}
+
+main {
+  min-height: 100dvh;
+}
+
+/* Imágenes y videos */
+img,
+picture,
+video {
+  max-width: 100%;
+  display: block; /* Hace que sean block-level elements */
+  height: auto; /* Escala proporcionalmente */
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+/* H1-H6 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-base-bold);
+  line-height: 1.16;
+}
+
+p {
+  color: var(--text-gray);
+}
+
+strong {
+  font-family: var(--ff-base-bold);
+  color: var(--white);
+}
+
+button {
+  font-family: var(--ff-base);
+  font-size: inherit;
+  cursor: pointer;
+  color: var(--black);
+}
+
+li {
+  list-style: none;
+}
