@@ -58,6 +58,7 @@
   --fs-xl: 32px;
   --fs-2xl: 44px;
   --fs-3xl: 60px;
+  --fs-4xl: 82px;
 
   --header-height: 55px;
 }
@@ -119,7 +120,7 @@ h6 {
 }
 
 p {
-  color: var(--text-gray);
+  color: var(--black);
 }
 
 strong {
