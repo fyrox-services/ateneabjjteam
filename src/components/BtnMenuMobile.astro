@@ -1,0 +1,58 @@
+<button id="btn-menu-mobile">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<script src="@/helpers/handleMenuMobile.ts"></script>
+
+<style>
+  button {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+  }
+
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--black);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+    border-radius: var(--radius);
+  }
+
+  span:nth-child(2) {
+    width: 50%;
+  }
+
+  button.active span {
+    background-color: var(--white);
+  }
+
+  button.active span:nth-child(1) {
+    transform: rotate(-31deg);
+  }
+
+  button.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  button.active span:nth-child(3) {
+    transform: rotate(31deg);
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    button {
+      display: none;
+    }
+  }
+</style>
