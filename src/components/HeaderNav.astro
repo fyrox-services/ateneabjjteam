@@ -1,7 +1,35 @@
+---
+import Arrow from "@/components/icons/Arrow.astro";
+---
+
 <nav id="header-nav" class="mask">
-  <a href="">blog</a>
-  <a href="">contacto</a>
-  <a href="">servicios</a>
+  <ul class="menu">
+    <li class="li-with-sub-menu">
+      <span>
+        clases
+
+        <div class="box-arrow">
+          <Arrow size={20} />
+        </div>
+      </span>
+
+      <ul class="sub-menu">
+        <li>
+          <a href="">kimono</a>
+        </li>
+        <li>
+          <a href="">sin kimono</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="">FAQs</a>
+    </li>
+    <li>
+      <a href="">contacto</a>
+    </li>
+  </ul>
 </nav>
 
 <style>
@@ -19,7 +47,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transform: translateX(100%);
+      /* transform: translateX(100%); */
       transition: transform 0.3s ease;
       background-image: url("/img/deco/bg-menu-mobile.jpg");
       background-position: center center;
@@ -52,10 +80,44 @@
       /* background-color: green; */
     }
 
+    .menu {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    li {
+      cursor: pointer;
+    }
+
+    .li-with-sub-menu > span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: capitalize;
+    }
+
+    .box-arrow {
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .li-with-sub-menu > span:hover .box-arrow {
+      transform: rotate(-90deg);
+    }
+
+    .sub-menu {
+      position: absolute;
+      background-color: red;
+    }
+
+    /* elimina la imágen de fondo del menú en mobile */
     img {
       display: none;
     }
 
+    /* elimina la máscara del menú en mobile */
     .mask::after {
       display: none;
     }
