@@ -1,42 +1,17 @@
 ---
 import Plus from "@/components/icons/Plus.astro";
 import { Image } from "astro:assets";
-import gi from "@/assets/deco/gi.jpg";
-import nogi from "@/assets/deco/nogi.jpg";
-import kids from "@/assets/deco/kids.jpg";
 import Calendar from "@/components/icons/Calendar.astro";
 import BtnMainCta from "./BtnMainCta.astro";
-
-const mainClasses = [
-  {
-    heading: "kimono - gi",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
-    img: gi,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
-  },
-  {
-    heading: "grappling - nogi",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
-    img: nogi,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
-  },
-  {
-    heading: "niños",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
-    img: kids,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
-  },
-];
+import { mainClasses } from "@/data/classes";
 ---
 
+<!-- TODO: Recuperar el data para cambiar el estado de los horarios -->
 <ul>
   {
     mainClasses.map(({ heading, text, img, description }) => {
       return (
-        <li class="card">
+        <li class="card" data-modality={heading}>
           <div class="card-inner">
             <div class="card-front">
               <picture class="mask">
@@ -167,7 +142,7 @@ const mainClasses = [
     border: none;
     text-transform: uppercase;
     color: var(--white);
-    font-size: var(--fs-sm);
+    font-size: var(--fs-md);
     transition: color 0.3s ease;
   }
 

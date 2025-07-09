@@ -2,7 +2,7 @@ import css from "@/styles/components/MainForm.module.css";
 
 export function MainForm() {
   return (
-    <form className={css.Form}>
+    <form className={`fade-in move-up ${css.Form}`}>
       <h2>rellena los campos</h2>
 
       <div>

@@ -2,11 +2,24 @@
   animation: fade-in 0.3s ease;
 }
 
+.move-up {
+  animation: move-up 0.3s ease;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes move-up {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

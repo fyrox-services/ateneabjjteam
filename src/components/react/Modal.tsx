@@ -3,6 +3,7 @@ import { isModalActive, modalContent } from "@/stores";
 import css from "@/styles/components/Modal.module.css";
 import { useStore } from "@nanostores/react";
 import { MainForm } from "./MainForm";
+import { Hours } from "./Hours";
 
 export function Modal() {
   function closeModal() {
@@ -13,6 +14,11 @@ export function Modal() {
   const $isModalActive = useStore(isModalActive);
   const $modalContent = useStore(modalContent);
 
+  function renderModalContent() {
+    if ($modalContent === "form") return <MainForm />;
+    if ($modalContent === "hours") return <Hours />;
+  }
+
   return (
     $isModalActive && (
       <div className={`${css.Modal} fade-in`}>
@@ -22,20 +28,10 @@ export function Modal() {
             className={css.Close}
             onClick={closeModal}
           >
-            <Close size={40} />
+            <Close size={30} />
           </button>
 
-          <div className="">
-            {$modalContent === "form" ? (
-              <>
-                <MainForm />
-              </>
-            ) : (
-              <>
-                <p>horarios</p>
-              </>
-            )}
-          </div>
+          <div className="">{renderModalContent()}</div>
         </div>
       </div>
     )

@@ -9,6 +9,21 @@
   overflow: hidden;
 }
 
+/* estilos de un botón estandar */
+.btn {
+  background-color: var(--primary);
+  border: none;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: var(--radius);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--third);
+}
+
 .mask::after,
 .mask-1::after {
   content: "";
