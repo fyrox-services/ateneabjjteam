@@ -1,4 +1,6 @@
-<button class="btn-main-cta"> reservar clase gratuita </button>
+<button class={`btn-main-cta ${Astro.props.class}`}>
+  <slot> reservar clase gratuita </slot>
+</button>
 
 <style>
   button {
@@ -12,5 +14,11 @@
 
   button:hover {
     background-color: var(--third);
+  }
+
+  button.card-service {
+    font-size: var(--fs-md);
+    width: fit-content;
+    padding: 0.5rem 1rem;
   }
 </style>

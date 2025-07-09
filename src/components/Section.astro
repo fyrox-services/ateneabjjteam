@@ -1,0 +1,14 @@
+<section class={Astro.props.class}>
+  <slot />
+</section>
+
+<style>
+  section {
+    min-height: 100vh;
+    padding-block: 3rem;
+  }
+
+  section.first {
+    margin-top: 3rem;
+  }
+</style>

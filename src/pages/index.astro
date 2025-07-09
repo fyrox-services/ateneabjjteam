@@ -1,8 +1,35 @@
 ---
 import Above from "@/components/Above.astro";
+import CardsServices from "@/components/CardsServices.astro";
+import HeadingH2 from "@/components/HeadingH2.astro";
+import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
   <Above />
+  <Section class="first">
+    <div class="wrapper">
+      <HeadingH2>clases principales</HeadingH2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+        libero doloremque, voluptate dolorem nemo delectus architecto
+        accusantium omnis nobis placeat quia inventore voluptas alias animi!
+        Consequatur rem at labore.
+      </p>
+
+      <CardsServices />
+    </div>
+  </Section>
+  <Section>
+    <div class="wrapper">
+      <HeadingH2>nuestras clases</HeadingH2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+        libero doloremque, voluptate dolorem nemo delectus architecto
+        accusantium omnis nobis placeat quia inventore voluptas alias animi!
+        Consequatur rem at labore.
+      </p>
+    </div>
+  </Section>
 </Layout>
