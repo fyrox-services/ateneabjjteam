@@ -2,6 +2,7 @@
 import Above from "@/components/Above.astro";
 import CardsServices from "@/components/CardsServices.astro";
 import HeadingH2 from "@/components/HeadingH2.astro";
+import { Modal } from "@/components/react/Modal";
 import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
@@ -32,4 +33,5 @@ import Layout from "@/layouts/Layout.astro";
       </p>
     </div>
   </Section>
+  <Modal client:idle />
 </Layout>

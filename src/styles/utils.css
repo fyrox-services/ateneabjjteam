@@ -4,6 +4,11 @@
   margin-inline: auto;
 }
 
+/* Impedir el scroll cuando salga la modal */
+.not-scrollable {
+  overflow: hidden;
+}
+
 .mask::after,
 .mask-1::after {
   content: "";

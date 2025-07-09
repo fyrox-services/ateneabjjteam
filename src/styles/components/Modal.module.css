@@ -1,0 +1,40 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  width: 100%;
+  z-index: 120;
+}
+
+.WrapModal {
+  position: relative;
+  /* margin-top: var(--header-height); */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Close {
+  position: absolute;
+  color: var(--white);
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal p {
+  color: var(--white);
+}
+
+@media (min-width: 1024px) {
+  .Close {
+    right: 3%;
+  }
+}
