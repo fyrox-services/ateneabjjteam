@@ -1,9 +1,12 @@
 ---
 import Above from "@/components/Above.astro";
 import CardsServices from "@/components/CardsServices.astro";
+import CardsSteps from "@/components/CardsSteps.astro";
 import HeadingH2 from "@/components/HeadingH2.astro";
+import { MainForm } from "@/components/react/MainForm";
 import { Modal } from "@/components/react/Modal";
 import Section from "@/components/Section.astro";
+import { mainClasses, programs } from "@/data/classes";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -19,12 +22,59 @@ import Layout from "@/layouts/Layout.astro";
         Consequatur rem at labore.
       </p>
 
-      <CardsServices />
+      <CardsServices cards={mainClasses} />
     </div>
   </Section>
   <Section>
     <div class="wrapper">
-      <HeadingH2>nuestras clases</HeadingH2>
+      <HeadingH2>programas</HeadingH2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+        libero doloremque, voluptate dolorem nemo delectus architecto
+        accusantium omnis nobis placeat quia inventore voluptas alias animi!
+        Consequatur rem at labore.
+      </p>
+      <CardsServices cards={programs} style="programs" />
+    </div>
+  </Section>
+  <Section>
+    <div class="wrapper">
+      <HeadingH2>cómo funciona</HeadingH2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+        libero doloremque, voluptate dolorem nemo delectus architecto
+        accusantium omnis nobis placeat quia inventore voluptas alias animi!
+        Consequatur rem at labore.
+      </p>
+      <CardsSteps />
+      <MainForm />
+    </div>
+  </Section>
+  <Section>
+    <div class="wrapper">
+      <HeadingH2>ventajas</HeadingH2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+        libero doloremque, voluptate dolorem nemo delectus architecto
+        accusantium omnis nobis placeat quia inventore voluptas alias animi!
+        Consequatur rem at labore.
+      </p>
+    </div>
+  </Section>
+  <Section>
+    <div class="wrapper">
+      <HeadingH2>sobre la escuela</HeadingH2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+        libero doloremque, voluptate dolorem nemo delectus architecto
+        accusantium omnis nobis placeat quia inventore voluptas alias animi!
+        Consequatur rem at labore.
+      </p>
+    </div>
+  </Section>
+  <Section>
+    <div class="wrapper">
+      <HeadingH2>preguntas frecuentes</HeadingH2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
         libero doloremque, voluptate dolorem nemo delectus architecto
@@ -35,3 +85,14 @@ import Layout from "@/layouts/Layout.astro";
   </Section>
   <Modal client:idle />
 </Layout>
+
+<style>
+  @media (min-width: 1024px) {
+    p {
+      text-align: center;
+      max-width: 70ch;
+      margin-inline: auto;
+      margin-top: 2rem;
+    }
+  }
+</style>

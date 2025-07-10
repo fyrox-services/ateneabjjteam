@@ -2,14 +2,28 @@
 import Plus from "@/components/icons/Plus.astro";
 import { Image } from "astro:assets";
 import Calendar from "@/components/icons/Calendar.astro";
-import BtnMainCta from "./BtnMainCta.astro";
-import { mainClasses } from "@/data/classes";
+import BtnMainCta from "@/components/BtnMainCta.astro";
+import type { Classes } from "@/types";
+import BtnWhatsApp from "@/components/BtnWhatsApp.astro";
+import Gift from "./icons/Gift.astro";
+
+interface Props {
+  cards: Classes[];
+  style?: "programs" | "classes";
+}
+
+const { cards, style = "classes" } = Astro.props;
 ---
 
-<!-- TODO: Recuperar el data para cambiar el estado de los horarios -->
-<ul>
+<ul
+  class:list={[
+    {
+      [style]: style,
+    },
+  ]}
+>
   {
-    mainClasses.map(({ heading, text, img, description }) => {
+    cards.map(({ heading, text, img, description }) => {
       return (
         <li class="card" data-modality={heading}>
           <div class="card-inner">
@@ -20,9 +34,14 @@ import { mainClasses } from "@/data/classes";
               <header>
                 <h3>{heading}</h3>
                 <p>{text}</p>
-                <BtnMainCta class="card-service">
-                  ir a una clase de prueba
-                </BtnMainCta>
+                {style === "classes" ? (
+                  <BtnMainCta class="card-service">
+                    <span>clase de prueba</span>
+                    <Gift size={20} />
+                  </BtnMainCta>
+                ) : (
+                  <BtnWhatsApp />
+                )}
               </header>
 
               <button class="btn-hours">
@@ -194,6 +213,13 @@ import { mainClasses } from "@/data/classes";
     flex-direction: column;
     gap: 1rem;
     cursor: pointer;
+  }
+
+  /* MODIFIERS */
+
+  ul.programs .btn-hours,
+  ul.programs .btn-more-info {
+    display: none;
   }
 
   /* DESKTOP */

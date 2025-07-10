@@ -1,0 +1,69 @@
+---
+const steps = [
+  {
+    title: "ven a probar",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro ratione quibusdam, magnam, at ipsum dignissimos, ducimus laudantium sapiente aspernatur similique.",
+  },
+  {
+    title: "elige modalidad",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro ratione quibusdam, magnam, at ipsum dignissimos, ducimus laudantium sapiente aspernatur similique.",
+  },
+  {
+    title: "empieza a entrenar",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro ratione quibusdam, magnam, at ipsum dignissimos, ducimus laudantium sapiente aspernatur similique.",
+  },
+];
+---
+
+<ul>
+  {
+    steps.map(({ description, title }, i) => {
+      return (
+        <li>
+          <span class="number">{i + 1}</span>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    margin: 5rem 0 0;
+    gap: 1rem;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    /* border: 1px solid gray; */
+    padding: 1rem;
+    box-shadow: 0 0 1rem var(--light);
+    border-radius: var(--radius);
+  }
+
+  h3 {
+    padding-left: 3rem;
+  }
+
+  .number {
+    position: absolute;
+    font-family: var(--ff-heading);
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

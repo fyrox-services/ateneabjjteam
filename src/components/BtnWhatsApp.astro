@@ -1,32 +1,36 @@
+---
+import WhatsApp from "@/components/icons/WhatsApp.astro";
+---
+
 <button class={`btn-main-cta ${Astro.props.class}`}>
-  <slot> reservar clase gratuita </slot>
+  <slot>
+    <span> información por WA </span>
+    <WhatsApp size={25} />
+  </slot>
 </button>
 
 <script src="@/helpers/handleModal"></script>
 
 <style>
   button {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: #25d366;
+    color: var(--black);
     border: none;
-    padding: 0.5rem 3rem;
     border-radius: var(--radius);
-
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: var(--third);
-  }
-
-  button.card-service {
     font-size: var(--fs-md);
     width: fit-content;
     padding: 0.5rem 1.5rem;
-    border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: var(--ws-dark);
+    color: var(--white);
   }
 </style>
