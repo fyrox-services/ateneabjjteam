@@ -13,6 +13,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
   padding-top: calc(var(--header-height) / 2);
 }
 
@@ -31,10 +32,6 @@
   padding: 0.3rem;
   width: 2.5rem;
   height: 2.5rem;
-}
-
-.Modal p {
-  color: var(--white);
 }
 
 @media (min-width: 1024px) {

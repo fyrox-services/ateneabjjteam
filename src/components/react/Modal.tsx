@@ -31,7 +31,7 @@ export function Modal() {
             <Close size={30} />
           </button>
 
-          <div className="">{renderModalContent()}</div>
+          {renderModalContent()}
         </div>
       </div>
     )

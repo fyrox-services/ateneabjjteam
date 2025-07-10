@@ -27,7 +27,7 @@
   --secondary: #fbb03b;
   --third: #00b3d6;
   --danger: #c21616;
-  --link: #3d33f1;
+  --link: #006eff;
   --ws: #25d366;
   --ws-dark: #0a6f2f;
 
@@ -42,16 +42,19 @@
   --dark-700: #777;
   --dark-900: #999;
 
-  --text-gray: #b2bcc9;
+  /* --text-gray: #b2bcc9; */
 
   --ff-heading: "BebasNeue", system-ui, sans-serif;
   --ff-base: "Inter Regular", system-ui, sans-serif;
   --ff-base-bold: "Inter SemiBold", system-ui, sans-serif;
 
+  --radius-s: 4px;
   --radius: 8px;
   --radius-m: 16px;
   --radius-l: 34px;
   --radius-full: 50%;
+
+  --shadow: 0 0 1rem rgb(221, 221, 221);
 
   --fs-xs: 12px;
   --fs-sm: 14px;

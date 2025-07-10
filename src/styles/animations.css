@@ -1,9 +1,5 @@
-.fade-in {
-  animation: fade-in 0.3s ease;
-}
-
-.move-up {
-  animation: move-up 0.3s ease;
+.fade-in-move-up {
+  animation: fade-in 0.3s ease, move-up 0.3s ease;
 }
 
 @keyframes fade-in {

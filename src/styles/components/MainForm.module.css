@@ -1,3 +1,126 @@
 .Form {
   background-color: var(--white);
+  padding: 22vh 1rem 1rem;
+  border-radius: var(--radius);
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+}
+
+.Form::-webkit-scrollbar {
+  display: none;
+}
+
+.Form header {
+  background-color: var(--secondary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Form h2,
+.Form p {
+  text-align: center;
+}
+
+.Form h2 {
+  font-size: var(--fs-base);
+}
+
+.Form p {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+}
+
+.Field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Field label {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  color: var(--dark-500);
+}
+
+.Field input,
+.Field select,
+.Field textarea {
+  padding: 0.5rem;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--gray);
+  font-size: var(--fs-md);
+  font-family: var(--ff-base);
+}
+
+.Field textarea {
+  resize: none;
+}
+
+.Field.Legal {
+  grid-column: 1/-1;
+}
+
+.Field.Legal label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: lowercase;
+}
+
+.Field.Legal label a {
+  color: var(--link);
+}
+
+.Submit {
+  grid-column: 1/-1;
+  font-size: var(--fs-md);
+}
+
+/* MODFIERS */
+
+.Form.Home {
+  box-shadow: var(--shadow);
+  margin-inline: auto;
+  margin-top: 5rem;
+  max-height: none;
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+  .Form {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    max-width: 700px;
+    max-height: 90vh;
+    padding: 22vh 2rem 2rem;
+  }
+
+  .Field:nth-of-type(1),
+  .Field:nth-of-type(2),
+  .Field:nth-of-type(3) {
+    grid-column: span 2;
+  }
+
+  .Field.Modality,
+  .Field.Hours {
+    grid-column: span 3;
+  }
+
+  .Field.Msg {
+    grid-column: 1/-1;
+  }
 }
