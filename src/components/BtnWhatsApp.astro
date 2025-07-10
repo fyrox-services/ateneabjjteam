@@ -2,14 +2,12 @@
 import WhatsApp from "@/components/icons/WhatsApp.astro";
 ---
 
-<button class={`btn-main-cta ${Astro.props.class}`}>
+<button>
   <slot>
     <span> información por WA </span>
     <WhatsApp size={25} />
   </slot>
 </button>
-
-<script src="@/helpers/handleModal"></script>
 
 <style>
   button {

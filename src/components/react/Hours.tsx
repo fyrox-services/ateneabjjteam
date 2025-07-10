@@ -27,7 +27,7 @@ export function Hours() {
   }
 
   return (
-    <div className="fade-in-move-up">
+    <div className={`fade-in-move-up ${css.Box}`}>
       <h3 className={css.Heading}>{modality.value}</h3>
       {renderHours()}
       <button className={`btn ${css.Cta}`} onClick={changeToForm}>

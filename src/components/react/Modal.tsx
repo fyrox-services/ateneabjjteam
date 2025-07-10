@@ -9,6 +9,7 @@ export function Modal() {
   function closeModal() {
     isModalActive.set(false);
     document.body.classList.remove("not-scrollable");
+    modalContent.set("form");
   }
 
   const $isModalActive = useStore(isModalActive);

@@ -1,4 +1,4 @@
-import type { Hours } from "@/types";
+import type { AllHours, Hours } from "@/types";
 
 export const giHours: Hours[] = [
   {
@@ -15,7 +15,7 @@ export const giHours: Hours[] = [
   },
 ];
 
-export const nogiHours:  Hours[] = [
+export const nogiHours: Hours[] = [
   {
     day: "de lunes a viernes",
     hour: "10:30 - 11:30",
@@ -30,7 +30,7 @@ export const nogiHours:  Hours[] = [
   },
 ];
 
-export const kidsHours:  Hours[] = [
+export const kidsHours: Hours[] = [
   {
     day: "lunes, de 4 a 7 años",
     hour: "17:15 - 18:00",
@@ -56,3 +56,48 @@ export const kidsHours:  Hours[] = [
     hour: "18:00 - 19:15",
   },
 ];
+
+export const allHours :AllHours = {
+  gi: [
+    {
+      label: "de lunes a viernes",
+      hours: ["11:30 - 12:30"],
+    },
+    {
+      label: "lunes, miércoles y viernes",
+      hours: ["14:00 - 15:15"],
+    },
+    {
+      label: "de lunes a jueves",
+      hours: ["20:30 - 22:00"],
+    },
+  ],
+  nogi: [
+    {
+      label: "de lunes a viernes",
+      hours: ["10:30 - 11:30"],
+    },
+    {
+      label: "martes, jueves y viernes",
+      hours: ["14:00 - 15:15"],
+    },
+    {
+      label: "de lunes a jueves",
+      hours: ["19:15 - 20:30"],
+    },
+  ],
+  kids: [
+    {
+      label: "de 4 a 7 años",
+      hours: ["lunes, 17:15 - 18:00", "miércoles, 17:15 - 18:00"],
+    },
+    {
+      label: "de 8 a 10 años",
+      hours: ["martes, 17:15 - 18:00", "jueves, 17:15 - 18:00"],
+    },
+    {
+      label: "de 11 a 15 años",
+      hours: ["martes, 18:00 - 19:15", "jueves, 18:00 - 19:15"],
+    },
+  ],
+};

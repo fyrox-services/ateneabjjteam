@@ -1,12 +1,51 @@
 import css from "@/styles/components/MainForm.module.css";
+import { useStore } from "@nanostores/react";
+import { modality } from "@/stores";
+import { useForm } from "react-hook-form";
+import { useHandleForm } from "@/hooks/useHandleForm";
+import type { AllFormFields, Modality } from "@/types";
+import { FEEDBACK_MESSAGES } from "@/data/feedbackMessages";
+import { OptGroup } from "./OptGroup";
 
 interface Props {
   style?: string;
 }
 
+const slectModality: Modality[] = ["kimono - gi", "grappling - nogi", "niños"];
+
 export function MainForm({ style = "" }: Props) {
+  const $modality = useStore(modality);
+
+  const { defaultValues, loading, onSubmit, submitStateContent } =
+    useHandleForm<AllFormFields>(
+      {
+        name: "",
+        email: "",
+        phone: "",
+        modality: $modality,
+        hours: "",
+      },
+      "/forms/meeting-2-form"
+    );
+
+  const {
+    register,
+    setValue,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({ defaultValues });
+
+  function renderOptionsHours() {
+    if ($modality === "kimono - gi") return <OptGroup options={"gi"} />;
+    if ($modality === "grappling - nogi") return <OptGroup options={"nogi"} />;
+    if ($modality === "niños") return <OptGroup options={"kids"} />;
+  }
+
   return (
-    <form className={`fade-in-move-up  ${css.Form} ${css[style]}`}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={`fade-in-move-up  ${css.Form} ${css[style]}`}
+    >
       <header>
         <h2>rellena los campos</h2>
         <p>nos pondremos en contacto contigo para acordar el día</p>
@@ -16,13 +55,19 @@ export function MainForm({ style = "" }: Props) {
 
       <div className={css.Field}>
         <label htmlFor="name">nombre</label>
-        <input id="name" type="text" />
+        <input
+          id="name"
+          type="text"
+          {...register("name", {
+            required: FEEDBACK_MESSAGES.ERROR.NAME,
+          })}
+        />
       </div>
 
       {/*  email */}
 
       <div className={css.Field}>
-        <label htmlFor="name">email</label>
+        <label htmlFor="email">email</label>
         <input id="email" type="email" />
       </div>
 
@@ -36,16 +81,29 @@ export function MainForm({ style = "" }: Props) {
       {/*  modalidad */}
 
       <div className={`${css.Field} ${css.Modality}`}>
-        <label className={css.Label} htmlFor="modalidad">
+        <label className={css.Label} htmlFor="modality">
           modalidad
         </label>
-        <select className={css.Select} id="modalidad">
-          <option defaultValue={""} disabled value="">
+        <select
+          id="modality"
+          {...register("modality", {
+            required: FEEDBACK_MESSAGES.ERROR.MODALITY,
+            onChange: (e) => {
+              modality.set(e.target.value);
+              setValue("hours", "");
+            },
+          })}
+        >
+          <option value="" disabled>
             -- Selccione --
           </option>
-          <option value="">kimono - gi</option>
-          <option value="">grappling - nogi</option>
-          <option value="">niños</option>
+          {slectModality.map((modality, i) => {
+            return (
+              <option key={i} value={modality}>
+                {modality}
+              </option>
+            );
+          })}
         </select>
       </div>
 
@@ -55,13 +113,17 @@ export function MainForm({ style = "" }: Props) {
         <label className={css.Label} htmlFor="hours">
           horario
         </label>
-        <select className={css.Select} id="hours">
-          <option defaultValue={""} disabled value="">
+        <select
+          id="hours"
+          {...register("hours", {
+            required: FEEDBACK_MESSAGES.ERROR.MODALITY,
+          })}
+        >
+          <option defaultValue="" disabled value="">
             -- Selccione --
           </option>
-          <option value="">10:30 - 11:30</option>
-          <option value="">11:30 - 12:30</option>
-          <option value="">14:00 - 15:15</option>
+
+          {renderOptionsHours()}
         </select>
       </div>
 
