@@ -1,0 +1,99 @@
+---
+import selfConfidence from "@/assets/deco/autoconfianza.png";
+import mentalControl from "@/assets/deco/fortaleza_mental.png";
+import personalDefense from "@/assets/deco/defensa_personal.png";
+import balance from "@/assets/deco/equilibrio.png";
+import { Image } from "astro:assets";
+
+const advs = [
+  {
+    icon: selfConfidence,
+    title: "autoconfianza",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro ratione quibusdam, magnam, at ipsum dignissimos, ducimus laudantium sapiente aspernatur similique.",
+  },
+  {
+    icon: mentalControl,
+    title: "fortaleza mental",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro ratione quibusdam, magnam, at ipsum dignissimos, ducimus laudantium sapiente aspernatur similique.",
+  },
+  {
+    icon: personalDefense,
+    title: "defensa personal",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro ratione quibusdam, magnam, at ipsum dignissimos, ducimus laudantium sapiente aspernatur similique.",
+  },
+  {
+    icon: balance,
+    title: "psicomotricidad",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro ratione quibusdam, magnam, at ipsum dignissimos, ducimus laudantium sapiente aspernatur similique.",
+  },
+];
+---
+
+<ul>
+  {
+    advs.map(({ description, title, icon }, i) => {
+      return (
+        <li>
+          <header>
+            <Image src={icon} alt={title} />
+            <h3>{title}</h3>
+          </header>
+          <p>{description}</p>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    margin: 5rem 0 0;
+    gap: 1rem;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-family: var(--ff-heading);
+    font-size: var(--fs-xl);
+  }
+
+  img {
+    max-width: 10rem;
+  }
+
+  p {
+    font-size: var(--fs-md);
+    /* max-width: 40ch; */
+    /* margin-inline: auto; */
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

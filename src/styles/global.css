@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: "BebasNeue";
   src: url("/fonts/BebasNeue-Regular.woff2") format("woff2");

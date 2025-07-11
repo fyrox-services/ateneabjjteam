@@ -1,10 +1,11 @@
 ---
 import Above from "@/components/Above.astro";
+import CardsAdv from "@/components/CardsAdv.astro";
 import CardsServices from "@/components/CardsServices.astro";
-import CardsSteps from "@/components/CardsSteps.astro";
 import HeadingH2 from "@/components/HeadingH2.astro";
 import { MainForm } from "@/components/react/MainForm";
 import { Modal } from "@/components/react/Modal";
+import { Pattern } from "@/components/react/Pattern";
 import Section from "@/components/Section.astro";
 import { mainClasses, programs } from "@/data/classes";
 import Layout from "@/layouts/Layout.astro";
@@ -12,6 +13,7 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout>
   <Above />
+  <!-- clases principales -->
   <Section class="first">
     <div class="wrapper">
       <HeadingH2>clases principales</HeadingH2>
@@ -25,6 +27,8 @@ import Layout from "@/layouts/Layout.astro";
       <CardsServices cards={mainClasses} />
     </div>
   </Section>
+  <!-- programas -->
+
   <Section>
     <div class="wrapper">
       <HeadingH2>programas</HeadingH2>
@@ -37,30 +41,28 @@ import Layout from "@/layouts/Layout.astro";
       <CardsServices cards={programs} style="programs" />
     </div>
   </Section>
+
+  <!-- ventajas -->
+
   <Section>
-    <div class="wrapper">
-      <HeadingH2>cómo funciona</HeadingH2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
-        libero doloremque, voluptate dolorem nemo delectus architecto
-        accusantium omnis nobis placeat quia inventore voluptas alias animi!
-        Consequatur rem at labore.
-      </p>
-      <CardsSteps />
-      <MainForm client:visible style="Home" />
-    </div>
+    <Pattern>
+      <div class="pattern wrapper">
+        <HeadingH2>ventajas</HeadingH2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga aut
+          error fugit sapiente repellat! Repellat quaerat doloribus tempore, ad
+          praesentium necessitatibus quam temporibus explicabo in quibusdam
+          tenetur? Officia, aut necessitatibus?
+        </p>
+        <CardsAdv />
+
+        <MainForm client:visible style="Home" />
+      </div>
+    </Pattern>
   </Section>
-  <Section>
-    <div class="wrapper">
-      <HeadingH2>ventajas</HeadingH2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
-        libero doloremque, voluptate dolorem nemo delectus architecto
-        accusantium omnis nobis placeat quia inventore voluptas alias animi!
-        Consequatur rem at labore.
-      </p>
-    </div>
-  </Section>
+
+  <!-- escuela -->
+
   <Section>
     <div class="wrapper">
       <HeadingH2>sobre la escuela</HeadingH2>
@@ -72,6 +74,9 @@ import Layout from "@/layouts/Layout.astro";
       </p>
     </div>
   </Section>
+
+  <!-- preguntas frecuentes -->
+
   <Section>
     <div class="wrapper">
       <HeadingH2>preguntas frecuentes</HeadingH2>
@@ -94,5 +99,11 @@ import Layout from "@/layouts/Layout.astro";
       margin-inline: auto;
       margin-top: 2rem;
     }
+  }
+
+  .pattern {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 0;
   }
 </style>
