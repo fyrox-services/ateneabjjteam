@@ -1,0 +1,99 @@
+---
+import { FAQS } from "@/data/faqs";
+import ArrowLong from "@/components/icons/ArrowLong.astro";
+---
+
+<ul id="ul-faqs">
+  {
+    FAQS.map(({ heading, text }, i) => {
+      return (
+        <li
+          class:list={{
+            active: i === 0,
+          }}
+        >
+          <header>
+            <h2>{heading}</h2>
+
+            <div>
+              <ArrowLong size={20} />
+            </div>
+          </header>
+          {text.map((p) => {
+            return <p>{p}</p>;
+          })}
+        </li>
+      );
+    })
+  }
+</ul>
+
+<script src="@/helpers/handleFaqs"></script>
+
+<style>
+  ul {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  li {
+    --padding: 0.5lh;
+    padding-bottom: 5rem;
+  }
+
+  header {
+    display: flex;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding) 0;
+    cursor: pointer;
+  }
+
+  div {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+  }
+
+  p {
+    padding: var(--padding) 0;
+    transition: all 0.6s ease;
+  }
+
+  li.active div {
+    transform: rotate(90deg);
+  }
+
+  footer {
+    padding: var(--padding) 0;
+  }
+
+  h2 {
+    font-size: var(--fs-2xl);
+    color: var(--primary);
+    font-family: var(--ff-heading);
+  }
+
+  .links-h2 {
+    color: var(--white);
+    margin-top: 5rem;
+  }
+
+  .li-link {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20px auto;
+    gap: 1rem;
+  }
+
+  a {
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--link);
+  }
+</style>

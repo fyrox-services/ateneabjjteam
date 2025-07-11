@@ -30,8 +30,8 @@
   --third: #00b3d6;
   --danger: #c21616;
   --link: #006eff;
-  --ws: #25d366;
-  --ws-dark: #0a6f2f;
+  --wa: #25d366;
+  --wa-dark: #0a6f2f;
 
   --black: #000;
   --gray: #ccc;
@@ -96,7 +96,6 @@ body {
   font-size: var(--fs-base); /* Tamaño base de texto */
   color: var(--black);
   padding-top: var(--header-height);
-  padding-bottom: 50rem;
 }
 
 main {

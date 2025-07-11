@@ -1,7 +1,12 @@
-.wrapper {
+.wrapper,
+.wrapper-max {
   width: 95%;
   max-width: 1200px;
   margin-inline: auto;
+}
+
+.wrapper-max {
+  max-width: 700px;
 }
 
 /* Impedir el scroll cuando salga la modal */
@@ -15,7 +20,7 @@
   border: none;
   margin-top: 1rem;
   padding: 0.5rem 2rem;
-  border-radius: var(--radius);
+  border-radius: var(--radius-l);
   color: var(--white);
   transition: background-color 0.3s ease;
 }

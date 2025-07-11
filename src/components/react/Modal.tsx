@@ -1,5 +1,5 @@
 import { Close } from "@/components/icons/Close";
-import { isModalActive, modalContent } from "@/stores";
+import { isModalActive, modalContent, modality } from "@/stores";
 import css from "@/styles/components/Modal.module.css";
 import { useStore } from "@nanostores/react";
 import { MainForm } from "./MainForm";
@@ -10,6 +10,7 @@ export function Modal() {
     isModalActive.set(false);
     document.body.classList.remove("not-scrollable");
     modalContent.set("form");
+    modality.set("");
   }
 
   const $isModalActive = useStore(isModalActive);

@@ -1,5 +1,6 @@
 ---
 import Arrow from "@/components/icons/Arrow.astro";
+import WhatsApp from "./icons/WhatsApp.astro";
 ---
 
 <nav id="header-nav" class="mask">
@@ -60,6 +61,11 @@ import Arrow from "@/components/icons/Arrow.astro";
     </li>
     <li>
       <a href="">contacto</a>
+    </li>
+    <li>
+      <a class="wa" href="">
+        escríbenos <WhatsApp size={20} />
+      </a>
     </li>
   </ul>
 </nav>
@@ -142,6 +148,10 @@ import Arrow from "@/components/icons/Arrow.astro";
       display: flex;
       align-items: center;
       transition: transform 0.3s ease;
+    }
+
+    .wa {
+      display: none;
     }
   }
 
@@ -248,6 +258,26 @@ import Arrow from "@/components/icons/Arrow.astro";
     /* elimina la máscara del menú en mobile */
     .mask::after {
       display: none;
+    }
+
+    .wa {
+      border: 1px solid var(--wa);
+      border-radius: var(--radius-l);
+      padding: 0.3rem 1rem;
+      font-size: var(--fs-sm);
+      color: var(--wa);
+      display: flex;
+      gap: 0.5rem;
+      text-transform: capitalize;
+      background-color: var(--white);
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .wa:hover {
+      background-color: var(--wa-dark);
+      color: var(--white) !important;
     }
   }
 </style>
