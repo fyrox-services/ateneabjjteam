@@ -95,6 +95,7 @@
 .Submit {
   grid-column: 1/-1;
   font-size: var(--fs-md);
+  height: fit-content;
 }
 
 /* MODFIERS */

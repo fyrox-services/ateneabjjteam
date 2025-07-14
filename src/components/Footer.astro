@@ -1,6 +1,78 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/mark/logo.svg";
+import WhatsApp from "./icons/WhatsApp.astro";
+import Location from "./icons/Location.astro";
+import Email from "./icons/Email.astro";
+---
+
 <footer>
-  <div class="wrapper">
-    <p>footer</p>
+  <div class="wrapper footer-wrap">
+    <Image
+      width={100}
+      height={100}
+      src={logo}
+      alt="logo de atenea brazilian jiu jitsu team en madrid"
+    />
+    <nav>
+      <!-- acerca de  -->
+      <div>
+        <h2>acerca de</h2>
+        <ul>
+          <li>
+            <a href=""> escuela </a>
+          </li>
+          <li>
+            <a href=""> precios </a>
+          </li>
+          <li>
+            <a href=""> FAQs </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- contacto -->
+      <div class="contact-block">
+        <h2>contacto</h2>
+        <ul>
+          <li>
+            <a href="">
+              <WhatsApp size={25} />
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="https://share.google/YuOBtzMU4CTpmBKmQ" target="_blank">
+              <Location size={25} />
+              C/ del Canal de Panamá, 3, 28027, Madrid
+            </a>
+          </li>
+          <li>
+            <a href="https://share.google/YuOBtzMU4CTpmBKmQ" target="_blank">
+              <Email size={25} />
+              info@ateneabjjteam.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- legal -->
+      <div>
+        <h2>legal</h2>
+        <ul>
+          <li>
+            <a href="">política de privacidad</a>
+          </li>
+          <li>
+            <a href="">política de cookies</a>
+          </li>
+          <li>
+            <a href="">aviso legal</a>
+          </li>
+        </ul>
+      </div>
+      <!-- fin-nav -->
+    </nav>
   </div>
 </footer>
 
@@ -8,6 +80,56 @@
   footer {
     background-color: var(--light);
     margin-top: 5rem;
-    padding: 10rem;
+    padding: 2rem 0 5rem;
+  }
+
+  .footer-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  ul {
+    margin-top: 1rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  h2 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-xl);
+  }
+
+  a {
+    font-size: var(--fs-md);
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--primary);
+  }
+
+  .contact-block a {
+    display: grid;
+    gap: 0.5rem;
+    align-items: center;
+    /* max-width: 25ch; */
+    grid-template-columns: auto auto;
+    justify-content: left;
+  }
+
+  @media (min-width: 1024px) {
+    nav {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 5rem;
+    }
   }
 </style>

@@ -24,4 +24,10 @@ export const FAQS = [
       "Evidentemente, si eres una persona deportista y con buena forma física, influirá en tu rendimiento en el tatami. Sin embargo, no es necesario, ya que el propio jiu jitsu poco a poco irá mejorando tus capacidades físicas. Además, contamos con un programa de preparación física adaptado al bjj con un instructor que imparte clases personalizadas que te ayudará aún más a conseguir tus objetivos."
     ],
   },
+  {
+    heading: "¿Cuál de las dos disciplinas es mejor? ¿Puedo practicar las dos?",
+    text: [
+      "Nosotros recomendamos poder practicar ambas disciplinas ya que son totalmente complementarias, y entrenar una te ayuda a desarrollar ciertas habilidades para la otra y viceversa."
+    ],
+  },
 ];
