@@ -67,21 +67,27 @@ import Layout from "@/layouts/Layout.astro";
 
   <Section>
     <div class="wrapper school">
-      <div>
-        <HeadingH2>sobre la escuela</HeadingH2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
-          libero doloremque, voluptate dolorem nemo delectus architecto
-          accusantium omnis nobis placeat quia inventore voluptas alias animi!
-          Consequatur rem at labore.
-        </p>
-
-        <a class="btn link-page" href="/es/escuela/">Más información</a>
-      </div>
+      <HeadingH2>sobre la escuela</HeadingH2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+        libero doloremque, voluptate dolorem nemo delectus architecto
+        accusantium omnis nobis placeat quia inventore voluptas alias animi!
+        Consequatur rem at labore.
+      </p>
     </div>
 
     <Section>
       <ImagesGrid />
+
+      <div class="wrapper">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi
+          impedit reprehenderit voluptatibus adipisci totam sed saepe. Obcaecati
+          aut repudiandae autem placeat. Eaque atque ab illo natus facilis.
+          Eligendi, vel tempore.
+        </p>
+        <a class="btn link-page" href="/es/escuela/">Más información</a>
+      </div>
     </Section>
 
     <Section>
@@ -116,16 +122,9 @@ import Layout from "@/layouts/Layout.astro";
   .link-page {
     margin-inline: auto;
     display: flex;
-    /* width: fit-content; */
     text-align: center;
     justify-content: center;
     margin-top: 2rem;
-  }
-
-  .school {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
   }
 
   /* DESKTOP */
