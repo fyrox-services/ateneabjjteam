@@ -1,0 +1,91 @@
+---
+import proof from "@/assets/icons/prueba.png";
+import chose from "@/assets/icons/elegir.png";
+import progress from "@/assets/icons/progreso.png";
+import { Image } from "astro:assets";
+
+const steps = [
+  {
+    icon: proof,
+    name: "ven a probar",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+  },
+  {
+    icon: chose,
+    name: "elige modalidad",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+  },
+  {
+    icon: progress,
+    name: "comienza a entrenar",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+  },
+];
+---
+
+<ul>
+  {
+    steps.map(({ description, name, icon }) => {
+      return (
+        <li>
+          <header>
+            <picture>
+              <Image src={icon} alt={name} />
+            </picture>
+            <h3>{name}</h3>
+          </header>
+          <p>{description}</p>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  picture {
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.8rem;
+    background: linear-gradient(145deg, var(--dark-300), var(--black));
+  }
+
+  h3 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-xl);
+  }
+
+  ul {
+    display: grid;
+    gap: 2rem;
+    margin-top: 5rem;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  p {
+    font-size: var(--fs-md);
+  }
+
+  @media (min-width: 1024px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

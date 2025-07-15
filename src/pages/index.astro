@@ -2,6 +2,7 @@
 import Above from "@/components/Above.astro";
 import CardsAdv from "@/components/CardsAdv.astro";
 import CardsServices from "@/components/CardsServices.astro";
+import CardsStep from "@/components/CardsStep.astro";
 import Faqs from "@/components/Faqs.astro";
 import HeadingH2 from "@/components/HeadingH2.astro";
 import ImagesGrid from "@/components/ImagesGrid.astro";
@@ -57,6 +58,17 @@ import Layout from "@/layouts/Layout.astro";
           tenetur? Officia, aut necessitatibus?
         </p>
         <CardsAdv />
+
+        <div class="how-star">
+          <HeadingH2>cómo empezar</HeadingH2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga aut
+            error fugit sapiente repellat! Repellat quaerat doloribus tempore,
+            ad praesentium necessitatibus quam temporibus explicabo in quibusdam
+            tenetur? Officia, aut necessitatibus?
+          </p>
+          <CardsStep />
+        </div>
 
         <MainForm client:visible style="Home" />
       </div>
@@ -125,6 +137,10 @@ import Layout from "@/layouts/Layout.astro";
     text-align: center;
     justify-content: center;
     margin-top: 2rem;
+  }
+
+  .how-star {
+    margin: 5rem 0;
   }
 
   /* DESKTOP */
