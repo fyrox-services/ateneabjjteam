@@ -1,17 +1,20 @@
 ---
-import CardsServices from "@/components/CardsServices.astro";
-import Hero from "@/components/Hero.astro";
-import { programs, mainClasses } from "@/data/classes";
-import Layout from "@/layouts/Layout.astro";
+import { Pattern } from "./react/Pattern";
+
+interface Props {
+  h1: string;
+  tagline: string;
+}
+
+const { h1, tagline } = Astro.props;
 ---
 
-<Layout>
-  <Hero h1="clases" tagline="Todas nuestras clases y programas" />
-  <div class="wrapper">
-    <CardsServices cards={mainClasses} style="classes" />
-    <CardsServices cards={programs} style="programs" />
+<Pattern type={2}>
+  <div class="pattern wrapper hero">
+    <h1>{h1}</h1>
+    <p>{tagline}</p>
   </div>
-</Layout>
+</Pattern>
 
 <style>
   .hero {

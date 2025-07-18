@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
 import "@/styles/utils.css";
 import "@/styles/animations.css";
+import { Modal } from "@/components/react/Modal";
 ---
 
 <!doctype html>
@@ -43,5 +44,8 @@ import "@/styles/animations.css";
       <slot />
     </main>
     <Footer />
+    <Modal client:idle />
   </body>
 </html>
+
+<script src="@/helpers/handleModal"></script>

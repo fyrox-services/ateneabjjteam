@@ -20,7 +20,6 @@ btnMainCta.forEach((btn) => {
   btn.addEventListener("click", openModal);
 });
 
-
 // Lógica para la modal
 cardsServices.forEach((card) => {
   const btnHours = card.querySelector(".btn-hours");
