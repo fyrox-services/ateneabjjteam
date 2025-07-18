@@ -12,7 +12,7 @@ import BtnMenuMobile from "@/components/BtnMenuMobile.astro";
         src={logo}
         alt="logo de atenea brazilian jiu jitsu team en madrid"
       />
-      <span>atenea bjj team</span>
+      <span id="business-name">atenea bjj team</span>
     </a>
 
     <BtnMenuMobile />
@@ -46,6 +46,11 @@ import BtnMenuMobile from "@/components/BtnMenuMobile.astro";
   a span {
     font-size: var(--fs-sm);
     text-transform: uppercase;
+    transition: opacity 0.3s ease;
+  }
+
+  span.active {
+    opacity: 0;
   }
 
   div {

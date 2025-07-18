@@ -61,3 +61,9 @@
     rgba(0, 0, 0, 0.8) 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
+
+.pattern {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 0;
+}
