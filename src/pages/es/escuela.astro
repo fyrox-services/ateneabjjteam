@@ -1,8 +1,201 @@
 ---
+import HeadingH2 from "@/components/HeadingH2.astro";
 import Hero from "@/components/Hero.astro";
+import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import aitana from "@/assets/coaches/aitana.png";
+import renzo from "@/assets/coaches/renzo.png";
+import jackson from "@/assets/coaches/jackson.png";
+import eibert from "@/assets/coaches/eibert.png";
+import { Pattern } from "@/components/react/Pattern";
+
+const coaches = [
+  {
+    name: "renzo martínez",
+    belt: "negro",
+    head: "mathias ribeiro",
+    photo: renzo,
+    description: [
+      "Comenzó a entrenar en su ciudad natal, Caracas, Venezuela, en el año 2010 y desde entonces se ha dedicado 100% al jiu jitsu de competición.",
+      "Cuenta con una larga trayectoria deportiva. En 2021, se proclamó campeón de Europa con kimono y sin kimono y se posicionó como número 1 en el ranking mundial AJP en cinturón marrón. En los World Combat Games Riyadh 2023, quedó entre los 7 mejores atletas de Grappling. Además, fue subcampeón de Europa en cinturón negro en el European NoGi Championship 2023 IBJJF.",
+    ],
+  },
+  {
+    name: "jackson",
+    belt: "negro",
+    photo: jackson,
+    head: "renzo martínez",
+    description: [
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error aliquid aliquam a et suscipit officiis ut iste quidem sint. Quaerat eos consequuntur quisquam ipsa atque consectetur saepe aperiam sapiente laboriosam.",
+    ],
+  },
+  {
+    name: "aitana moreno",
+    belt: "marrón",
+    photo: aitana,
+    head: "renzo martínez",
+    description: [
+      "Empezó a entrenar jiu-jitsu en 2021 y un año después se dedicó profesionalmente como atleta competidora. En octubre de 2023, hizo historia al ser la primera mujer con discapacidad en España en ganar el campeonato mundial de Abu Dhabi World Para Jiu-Jitsu Championship.",
+      "Aitana se ha destacado en competiciones para personas con y sin discapacidad, ganando títulos notables en la categoría adulto como el tercer lugar en el campeonato Europeo IBJJF 2024.",
+    ],
+  },
+
+  {
+    name: "eibert rengel",
+    belt: "marrón",
+    photo: eibert,
+    head: "renzo martínez",
+    description: [
+      "Es instructor principal de las clases de la mañana con kimono y sin kimono. Comenzó a practicar jiu-jitsu en el año 2016. En el 2023, se proclamó múltiple medallista de Gi y Nogi, a nivel nacional e internacional.",
+    ],
+  },
+];
 ---
 
 <Layout>
   <Hero h1="escuela" tagline="sumérgete en la ola" />
+  <Section class="wrapper">
+    <HeadingH2>profesores</HeadingH2>
+
+    <ul>
+      {
+        coaches.map(({ belt, description, name, photo, head }) => {
+          return (
+            <li>
+              <Pattern type={3}>
+                <div class="pattern li-wrap">
+                  <Image src={photo} alt={"TODO"} />
+                  <div class="text">
+                    <header>
+                      <h3>{name}</h3>
+                      <h4 class="belt">
+                        cinturón
+                        {belt}
+                        <span>bajo {head}</span>
+                      </h4>
+                    </header>
+                    <div>
+                      {description.map((p) => {
+                        return <p>{p}</p>;
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </Pattern>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </Section>
 </Layout>
+
+<style>
+  ul {
+    display: grid;
+    gap: 8rem;
+    margin-block: 5rem;
+  }
+
+  li {
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  .li-wrap {
+    position: relative;
+    display: flex;
+    padding: 8rem 2rem 2rem;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  h3 {
+    color: var(--primary);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    font-family: var(--ff-heading);
+    font-size: var(--fs-2xl);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .belt {
+    font-family: var(--ff-base-bold);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .belt span {
+    font-family: var(--ff-base);
+    font-size: var(--fs-md);
+  }
+
+  .text {
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  p {
+    margin-block: 1lh;
+  }
+
+  li::before,
+  li::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    z-index: 3;
+  }
+
+  li::before {
+    top: 0;
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    background-color: var(--secondary);
+  }
+
+  li::after {
+    background-color: var(--third);
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  }
+
+  img {
+    max-width: 15rem;
+    mask-image: radial-gradient(100% 100% at 50% 0%, white 50%, transparent);
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    .li-wrap {
+      flex-direction: row;
+      padding: 2rem;
+      align-items: flex-start;
+    }
+
+    h3 {
+      font-size: var(--fs-3xl);
+      position: initial;
+      padding: 1rem;
+    }
+
+    img {
+      max-width: 20rem;
+    }
+  }
+</style>

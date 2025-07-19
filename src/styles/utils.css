@@ -62,8 +62,12 @@
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-.pattern {
+.pattern,
+.pattern-space {
   position: relative;
   z-index: 1;
+}
+
+.pattern-space {
   padding: 5rem 0;
 }
