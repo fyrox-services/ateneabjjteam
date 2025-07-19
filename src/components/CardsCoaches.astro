@@ -1,0 +1,154 @@
+---
+import { coaches } from "@/data/coaches";
+import { Pattern } from "./react/Pattern";
+import { Image } from "astro:assets";
+---
+
+<ul>
+  {
+    coaches.map(({ belt, description, name, photo, head, rol }) => {
+      return (
+        <li>
+          <Pattern type={3}>
+            <div class="pattern li-wrap">
+              <Image src={photo} alt={"TODO"} />
+              <div class="text">
+                <header>
+                  <h3>{name}</h3>
+                  <h4 class="belt">
+                    cinturón
+                    {belt}
+                    <span>bajo {head}</span>
+                  </h4>
+                </header>
+                <div>
+                  {description.map((p) => {
+                    return <p>{p}</p>;
+                  })}
+                  <span class="rol">{rol}</span>
+                </div>
+              </div>
+            </div>
+          </Pattern>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    gap: 8rem;
+    margin-block: 5rem;
+  }
+
+  li {
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  .li-wrap {
+    position: relative;
+    display: flex;
+    padding: 8rem 2rem 2rem;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  h3 {
+    color: var(--primary);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    font-family: var(--ff-heading);
+    font-size: var(--fs-2xl);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .belt {
+    font-family: var(--ff-base-bold);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .belt span {
+    font-family: var(--ff-base);
+    font-size: var(--fs-md);
+  }
+
+  .text {
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  p {
+    margin-block: 1lh;
+  }
+
+  li::before,
+  li::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    z-index: 3;
+  }
+
+  li::before {
+    top: 0;
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    background-color: var(--secondary);
+  }
+
+  li::after {
+    background-color: var(--third);
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  }
+
+  img {
+    max-width: 15rem;
+    mask-image: radial-gradient(100% 100% at 50% 0%, white 50%, transparent);
+  }
+
+  .rol {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: var(--fs-md);
+    text-transform: capitalize;
+    border-radius: var(--radius-l);
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    .li-wrap {
+      flex-direction: row;
+      padding: 2rem;
+      align-items: flex-start;
+    }
+
+    h3 {
+      font-size: var(--fs-3xl);
+      position: initial;
+      padding: 1rem;
+    }
+
+    img {
+      max-width: 20rem;
+    }
+  }
+</style>

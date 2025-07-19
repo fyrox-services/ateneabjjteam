@@ -14,6 +14,15 @@ export interface Hours {
   hour: string;
 }
 
+export interface Coach {
+  name: string;
+  belt: string;
+  head: string;
+  rol: string
+  photo: ImageMetadata;
+  description: string[];
+}
+
 // Forms
 
 export interface AllFormFields {

@@ -4,6 +4,7 @@ import CardsAdv from "@/components/CardsAdv.astro";
 import CardsServices from "@/components/CardsServices.astro";
 import CardsStep from "@/components/CardsStep.astro";
 import Faqs from "@/components/Faqs.astro";
+import HeadingDescription from "@/components/HeadingDescription.astro";
 import HeadingH2 from "@/components/HeadingH2.astro";
 import ImagesGrid from "@/components/ImagesGrid.astro";
 import { MainForm } from "@/components/react/MainForm";
@@ -19,12 +20,12 @@ import Layout from "@/layouts/Layout.astro";
   <Section class="first">
     <div class="wrapper">
       <HeadingH2>clases principales</HeadingH2>
-      <p>
+      <HeadingDescription>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
         libero doloremque, voluptate dolorem nemo delectus architecto
         accusantium omnis nobis placeat quia inventore voluptas alias animi!
         Consequatur rem at labore.
-      </p>
+      </HeadingDescription>
 
       <CardsServices cards={mainClasses} />
     </div>
@@ -34,12 +35,12 @@ import Layout from "@/layouts/Layout.astro";
   <Section>
     <div class="wrapper">
       <HeadingH2>programas</HeadingH2>
-      <p>
+      <HeadingDescription>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
         libero doloremque, voluptate dolorem nemo delectus architecto
         accusantium omnis nobis placeat quia inventore voluptas alias animi!
         Consequatur rem at labore.
-      </p>
+      </HeadingDescription>
       <CardsServices cards={programs} style="programs" />
     </div>
   </Section>
@@ -50,22 +51,22 @@ import Layout from "@/layouts/Layout.astro";
     <Pattern>
       <div class="pattern-space wrapper">
         <HeadingH2>ventajas</HeadingH2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga aut
-          error fugit sapiente repellat! Repellat quaerat doloribus tempore, ad
-          praesentium necessitatibus quam temporibus explicabo in quibusdam
-          tenetur? Officia, aut necessitatibus?
-        </p>
+        <HeadingDescription>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+          libero doloremque, voluptate dolorem nemo delectus architecto
+          accusantium omnis nobis placeat quia inventore voluptas alias animi!
+          Consequatur rem at labore.
+        </HeadingDescription>
         <CardsAdv />
 
         <div class="how-star">
           <HeadingH2>cómo empezar</HeadingH2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga aut
-            error fugit sapiente repellat! Repellat quaerat doloribus tempore,
-            ad praesentium necessitatibus quam temporibus explicabo in quibusdam
-            tenetur? Officia, aut necessitatibus?
-          </p>
+          <HeadingDescription>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            commodi libero doloremque, voluptate dolorem nemo delectus
+            architecto accusantium omnis nobis placeat quia inventore voluptas
+            alias animi! Consequatur rem at labore.
+          </HeadingDescription>
           <CardsStep />
         </div>
 
@@ -79,24 +80,24 @@ import Layout from "@/layouts/Layout.astro";
   <Section>
     <div class="wrapper school">
       <HeadingH2>sobre la escuela</HeadingH2>
-      <p>
+      <HeadingDescription>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
         libero doloremque, voluptate dolorem nemo delectus architecto
         accusantium omnis nobis placeat quia inventore voluptas alias animi!
         Consequatur rem at labore.
-      </p>
+      </HeadingDescription>
     </div>
 
     <Section>
       <ImagesGrid />
 
       <div class="wrapper">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi
-          impedit reprehenderit voluptatibus adipisci totam sed saepe. Obcaecati
-          aut repudiandae autem placeat. Eaque atque ab illo natus facilis.
-          Eligendi, vel tempore.
-        </p>
+        <HeadingDescription>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+          libero doloremque, voluptate dolorem nemo delectus architecto
+          accusantium omnis nobis placeat quia inventore voluptas alias animi!
+          Consequatur rem at labore.
+        </HeadingDescription>
         <a class="btn link-page" href="/es/escuela/">Más información</a>
       </div>
     </Section>
@@ -104,12 +105,12 @@ import Layout from "@/layouts/Layout.astro";
     <Section>
       <div class="wrapper-max">
         <HeadingH2>preguntas frecuentes</HeadingH2>
-        <p>
+        <HeadingDescription>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
           libero doloremque, voluptate dolorem nemo delectus architecto
           accusantium omnis nobis placeat quia inventore voluptas alias animi!
           Consequatur rem at labore.
-        </p>
+        </HeadingDescription>
 
         <Faqs />
       </div>
@@ -118,10 +119,6 @@ import Layout from "@/layouts/Layout.astro";
 </Layout>
 
 <style>
-  p {
-    margin-top: 1rem;
-  }
-
   .link-page {
     margin-inline: auto;
     display: flex;
@@ -136,12 +133,6 @@ import Layout from "@/layouts/Layout.astro";
 
   /* DESKTOP */
   @media (min-width: 1024px) {
-    p {
-      text-align: center;
-      max-width: 70ch;
-      margin-inline: auto;
-    }
-
     .link-page {
       width: fit-content;
     }

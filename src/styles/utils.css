@@ -71,3 +71,10 @@
 .pattern-space {
   padding: 5rem 0;
 }
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
