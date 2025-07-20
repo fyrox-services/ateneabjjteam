@@ -1,8 +1,37 @@
 ---
+import BtnMainCta from "@/components/BtnMainCta.astro";
+import HeadingDescription from "@/components/HeadingDescription.astro";
+import HeadingH2 from "@/components/HeadingH2.astro";
 import Hero from "@/components/Hero.astro";
+import Section from "@/components/Section.astro";
+import TablePricing from "@/components/TablePricing.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
   <Hero h1="precios" tagline="sumérgete en la ola" />
+
+  <Section class="wrapper">
+    <HeadingH2>solicita tu clase de prueba</HeadingH2>
+
+    <HeadingDescription>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+      libero doloremque, voluptate dolorem nemo delectus architecto accusantium
+      omnis nobis placeat quia inventore voluptas alias animi! Consequatur rem
+      at labore.
+    </HeadingDescription>
+
+    <div class="center-content mt-3">
+      <BtnMainCta />
+    </div>
+
+    <div class="mt-6">
+      <HeadingH2>principales</HeadingH2>
+      <TablePricing />
+    </div>
+    <div class="mt-6">
+      <HeadingH2>niños</HeadingH2>
+      <TablePricing />
+    </div>
+  </Section>
 </Layout>

@@ -1,0 +1,142 @@
+---
+import { formatearMoneda } from "@/helpers/formatCurrency";
+import Buy from "@/components/icons/Buy.astro";
+
+const plans = [
+  {
+    name: "Gi y NoGi",
+    price: 110,
+    link: "https://checkout.stripe.com/c/pay/cs_live_b1sNMjo7OPtNtzLz5V2ubmra6oyIkKAxkKMLPeBT1Xw4UWw6SOKE4Frbkr#fid2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FY2RpdmApJ3Zxd2x1YERmZmpwa3EnPydkZmZxWjRUaXFDXE5wXWRDRkFdQWsnKSdkdWxOYHwnPyd1blppbHNgWl13VWJnbEpjNm98Mj1MVlFNYWhid3Z2UjU1MmNDQG9naUgnKSdjd2poVmB3c2B3Jz9xd3BgKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl",
+    monthly: true,
+  },
+  {
+    name: "Solo Gi",
+    price: 90,
+    link: "",
+    monthly: true,
+  },
+  {
+    name: "Solo NoGi",
+    price: 90,
+    link: "",
+    monthly: true,
+  },
+  {
+    name: "Niños de 4 a 7 años",
+    price: 75,
+    link: "",
+    monthly: true,
+  },
+  {
+    name: "Niños de 8 a 10 años",
+    price: 75,
+    link: "",
+    monthly: true,
+  },
+  {
+    name: "Niños de 11 a 15 años - 3 días/semana",
+    price: 75,
+    link: "",
+    monthly: true,
+  },
+  {
+    name: "Niños de 11 a 15 años - 5 días/semana",
+    price: 80,
+    link: "",
+    monthly: true,
+  },
+];
+---
+
+<ul>
+  {
+    plans.map(({ link, monthly, name, price }) => {
+      return (
+        <li>
+          <h3>{name}</h3>
+          <span class="price">
+            {formatearMoneda(price)}
+            <span class="monthly">{monthly && "/mes"}</span>
+          </span>
+          <a target="_blank" rel="noopener noreferrer" href={link}>
+            <span>comprar</span>
+            <Buy size={25} />
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    margin-top: 3rem;
+    /* overflow: hidden; */
+  }
+
+  li {
+    /* background-color: lightcoral; */
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    /* border: 1px solid gray; */
+    gap: 2rem;
+    min-height: 150px;
+    border-radius: var(--radius);
+  }
+
+  li:nth-child(odd) {
+    /* box-shadow: var(--shadow); */
+    background-color: var(--light);
+  }
+
+  li:nth-child(odd) {
+  }
+
+  .price {
+    text-align: right;
+  }
+
+  .monthly {
+    font-size: var(--fs-md);
+  }
+
+  a {
+    grid-column: 1/-1;
+    border: 1px solid var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-l);
+    text-align: center;
+    color: var(--primary);
+    font-size: var(--fs-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  a:hover {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+
+  @media (min-width: 1024px) {
+    ul {
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
+    li {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    a {
+      grid-column: 3/4;
+    }
+  }
+</style>
