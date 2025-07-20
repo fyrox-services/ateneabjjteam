@@ -23,16 +23,6 @@ export interface Coach {
   description: string[];
 }
 
-// Forms
-
-export interface AllFormFields {
-  name: string;
-  email: string;
-  phone: string;
-  modality: Modality;
-  hours: string;
-}
-
 interface Schedule {
   label: string;
   hours: string[];
@@ -43,3 +33,18 @@ export interface AllHours {
   nogi: Schedule[];
   kids: Schedule[];
 }
+
+// Forms
+
+export interface AllFormFields {
+  name: string;
+  email: string;
+  phone: string;
+  modality: Modality;
+  hours: string;
+  msg: string
+  legal: boolean
+}
+
+
+export type ContactForm = Pick<AllFormFields, "name" | "email" | "phone" | 'msg' | 'legal'>

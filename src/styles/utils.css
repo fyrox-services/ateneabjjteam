@@ -76,6 +76,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* MARGINS */
+
+.mt-3 {
   margin-top: 3rem;
 }
 

@@ -1,10 +1,11 @@
-export function Pattern({
-  children,
-  type = 1,
-}: {
-  children: any;
+import type { ReactNode } from "react";
+
+interface Props {
+  children: ReactNode;
   type?: number;
-}) {
+}
+
+export function Pattern({ children, type = 1 }: Props) {
   if (type === 1) {
     return (
       <div className="min-h-screen w-full bg-white relative">

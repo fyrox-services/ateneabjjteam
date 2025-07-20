@@ -3,27 +3,22 @@ import { useStore } from "@nanostores/react";
 import { modality } from "@/stores";
 import { useForm } from "react-hook-form";
 import { useHandleForm } from "@/hooks/useHandleForm";
-import type { AllFormFields, Modality } from "@/types";
+import type { ContactForm } from "@/types";
 import { FEEDBACK_MESSAGES } from "@/data/feedbackMessages";
-import { OptGroup } from "./OptGroup";
 
 interface Props {
   style?: string;
 }
 
-const slectModality: Modality[] = ["kimono - gi", "grappling - nogi", "niños"];
-
-export function MainForm({ style = "" }: Props) {
+export function ContactForm({ style = "" }: Props) {
   const $modality = useStore(modality);
 
   const { defaultValues, loading, onSubmit, submitStateContent } =
-    useHandleForm<AllFormFields>(
+    useHandleForm<ContactForm>(
       {
         name: "",
         email: "",
         phone: "",
-        modality: $modality,
-        hours: "",
         msg: "",
         legal: false,
       },
@@ -32,16 +27,9 @@ export function MainForm({ style = "" }: Props) {
 
   const {
     register,
-    setValue,
     formState: { errors },
     handleSubmit,
   } = useForm({ defaultValues });
-
-  function renderOptionsHours() {
-    if ($modality === "kimono - gi") return <OptGroup options={"gi"} />;
-    if ($modality === "grappling - nogi") return <OptGroup options={"nogi"} />;
-    if ($modality === "niños") return <OptGroup options={"kids"} />;
-  }
 
   return (
     <form
@@ -78,55 +66,6 @@ export function MainForm({ style = "" }: Props) {
       <div className={css.Field}>
         <label htmlFor="phone">teléfono</label>
         <input id="phone" type="tel" />
-      </div>
-
-      {/*  modalidad */}
-
-      <div className={`${css.Field} ${css.Modality}`}>
-        <label className={css.Label} htmlFor="modality">
-          modalidad
-        </label>
-        <select
-          id="modality"
-          {...register("modality", {
-            required: FEEDBACK_MESSAGES.ERROR.MODALITY,
-            onChange: (e) => {
-              modality.set(e.target.value);
-              setValue("hours", "");
-            },
-          })}
-        >
-          <option value="" disabled>
-            -- Selccione --
-          </option>
-          {slectModality.map((modality, i) => {
-            return (
-              <option key={i} value={modality}>
-                {modality}
-              </option>
-            );
-          })}
-        </select>
-      </div>
-
-      {/*  horario */}
-
-      <div className={`${css.Field} ${css.Hours}`}>
-        <label className={css.Label} htmlFor="hours">
-          horario
-        </label>
-        <select
-          id="hours"
-          {...register("hours", {
-            required: FEEDBACK_MESSAGES.ERROR.MODALITY,
-          })}
-        >
-          <option defaultValue="" disabled value="">
-            -- Selccione --
-          </option>
-
-          {renderOptionsHours()}
-        </select>
       </div>
 
       {/*  mensaje */}

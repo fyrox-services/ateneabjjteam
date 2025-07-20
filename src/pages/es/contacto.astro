@@ -1,8 +1,19 @@
 ---
 import Hero from "@/components/Hero.astro";
+import { ContactForm } from "@/components/react/ContactForm";
+import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
-  <Hero h1="contáctanos" tagline="sumérgete en la ola" />
+  <Hero
+    h1="contáctanos"
+    tagline="Si tienes preguntas sobre nuestras clases, programas o simplemente quieres saber más sobre el Jiu-Jitsu, estamos aquí para ayudarte."
+  />
+
+  <Section class="wrapper">
+    <div class="center-content">
+      <ContactForm style="Contact" />
+    </div>
+  </Section>
 </Layout>

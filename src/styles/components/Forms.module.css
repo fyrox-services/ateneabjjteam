@@ -108,6 +108,11 @@
   height: auto;
 }
 
+.Form.Contact {
+  box-shadow: var(--shadow);
+  height: fit-content;
+}
+
 /* DESKTOP */
 
 @media (min-width: 1024px) {
