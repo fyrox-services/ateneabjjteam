@@ -7,19 +7,21 @@ import CardsCoaches from "@/components/CardsCoaches.astro";
 import ImagesGrid from "@/components/ImagesGrid.astro";
 import HeadingDescription from "@/components/HeadingDescription.astro";
 import BtnMainCta from "@/components/BtnMainCta.astro";
+import CardsStep from "@/components/CardsStep.astro";
 ---
 
 <Layout>
   <Hero h1="escuela" tagline="sumérgete en la ola" />
 
-  <Section>
-    <HeadingH2>historia y estilo</HeadingH2>
+  <Section class="wrapper">
+    <HeadingH2>historia y valores</HeadingH2>
     <HeadingDescription>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
       libero doloremque, voluptate dolorem nemo delectus architecto accusantium
       omnis nobis placeat quia inventore voluptas alias animi! Consequatur rem
       at labore.
     </HeadingDescription>
+    <CardsStep />
   </Section>
 
   <Section class="wrapper">
@@ -28,18 +30,22 @@ import BtnMainCta from "@/components/BtnMainCta.astro";
   </Section>
 
   <Section>
-    <HeadingH2>nuestro espacio</HeadingH2>
+    <div class="wrapper">
+      <HeadingH2>nuestro espacio</HeadingH2>
+    </div>
 
     <ImagesGrid />
-    <HeadingH2>ven a conocernos</HeadingH2>
-    <HeadingDescription>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
-      libero doloremque, voluptate dolorem nemo delectus architecto accusantium
-      omnis nobis placeat quia inventore voluptas alias animi! Consequatur rem
-      at labore.
-    </HeadingDescription>
-    <div class="center-content">
-      <BtnMainCta />
+    <div class="wrapper">
+      <HeadingH2>ven a conocernos</HeadingH2>
+      <HeadingDescription>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+        libero doloremque, voluptate dolorem nemo delectus architecto
+        accusantium omnis nobis placeat quia inventore voluptas alias animi!
+        Consequatur rem at labore.
+      </HeadingDescription>
+      <div class="center-content">
+        <BtnMainCta />
+      </div>
     </div>
   </Section>
 </Layout>

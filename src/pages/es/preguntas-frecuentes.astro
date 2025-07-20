@@ -1,8 +1,20 @@
 ---
+import Faqs from "@/components/Faqs.astro";
+import HeadingH2 from "@/components/HeadingH2.astro";
 import Hero from "@/components/Hero.astro";
+import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
   <Hero h1="preguntas frecuentes" tagline="sumérgete en la ola" />
+  <Section class="wrapper-max">
+    <HeadingH2>bloque 1</HeadingH2>
+    <Faqs />
+  </Section>
+
+  <Section class="wrapper-max">
+    <HeadingH2>bloque 1</HeadingH2>
+    <Faqs />
+  </Section>
 </Layout>

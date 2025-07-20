@@ -1,43 +1,52 @@
-const ulFaqs = document.getElementById("ul-faqs");
-const items = ulFaqs?.querySelectorAll("li");
+const ulFaqs = document.querySelectorAll(".ul-faqs");
 
-items?.forEach((item) => {
-  const header = item.querySelector("header");
-  const p = item.querySelector("p");
+ulFaqs.forEach((ul) => {
+  const items = ul?.querySelectorAll("li");
 
-  if (!header) return;
+  items?.forEach((item) => {
+    const header = item.querySelector("header");
+    const p = item.querySelector("p");
 
-  const headerHeight = header.scrollHeight;
-  const fullHeight = item.scrollHeight;
+    if (!header) return;
 
-  // Establecer altura inicial
-  const isInitiallyActive = item.classList.contains("active");
-  item.style.height = isInitiallyActive
-    ? `${fullHeight}px`
-    : `${headerHeight}px`;
-  item.style.overflow = "hidden";
+    const headerHeight = header.scrollHeight;
+    const fullHeight = item.scrollHeight;
 
-  header.addEventListener("click", () => {
-    const isActive = item.classList.contains("active");
-    const expandedHeight = item.scrollHeight;
-    const collapsedHeight = header.scrollHeight;
+    // Establecer altura inicial
+    const isInitiallyActive = item.classList.contains("active");
+    item.style.height = isInitiallyActive
+      ? `${fullHeight}px`
+      : `${headerHeight}px`;
+    item.style.overflow = "hidden";
 
-    // Altura final: al contrario del estado actual
-    const fromHeight = isActive ? expandedHeight : collapsedHeight;
-    const toHeight = isActive ? collapsedHeight : expandedHeight;
+    header.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+      const expandedHeight = item.scrollHeight;
+      const collapsedHeight = header.scrollHeight;
 
-    item.animate([{ height: `${fromHeight}px` }, { height: `${toHeight}px` }], {
-      duration: 500,
-      fill: "forwards",
-      easing: "ease",
+      // Altura final: al contrario del estado actual
+      const fromHeight = isActive ? expandedHeight : collapsedHeight;
+      const toHeight = isActive ? collapsedHeight : expandedHeight;
+
+      item.animate(
+        [{ height: `${fromHeight}px` }, { height: `${toHeight}px` }],
+        {
+          duration: 500,
+          fill: "forwards",
+          easing: "ease",
+        }
+      );
+
+      p?.animate(
+        [{ opacity: isActive ? 1 : 0 }, { opacity: isActive ? 0 : 1 }],
+        {
+          duration: 500,
+          fill: "forwards",
+          easing: "ease",
+        }
+      );
+
+      item.classList.toggle("active");
     });
-
-    p?.animate([{ opacity: isActive ? 1 : 0 }, { opacity: isActive ? 0 : 1 }], {
-      duration: 500,
-      fill: "forwards",
-      easing: "ease",
-    });
-
-    item.classList.toggle("active");
   });
 });
