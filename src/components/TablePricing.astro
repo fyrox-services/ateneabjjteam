@@ -1,59 +1,24 @@
 ---
 import { formatearMoneda } from "@/helpers/formatCurrency";
 import Buy from "@/components/icons/Buy.astro";
+import type { Plan } from "@/types";
 
-const plans = [
-  {
-    name: "Gi y NoGi",
-    price: 110,
-    link: "https://checkout.stripe.com/c/pay/cs_live_b1sNMjo7OPtNtzLz5V2ubmra6oyIkKAxkKMLPeBT1Xw4UWw6SOKE4Frbkr#fid2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FY2RpdmApJ3Zxd2x1YERmZmpwa3EnPydkZmZxWjRUaXFDXE5wXWRDRkFdQWsnKSdkdWxOYHwnPyd1blppbHNgWl13VWJnbEpjNm98Mj1MVlFNYWhid3Z2UjU1MmNDQG9naUgnKSdjd2poVmB3c2B3Jz9xd3BgKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl",
-    monthly: true,
-  },
-  {
-    name: "Solo Gi",
-    price: 90,
-    link: "",
-    monthly: true,
-  },
-  {
-    name: "Solo NoGi",
-    price: 90,
-    link: "",
-    monthly: true,
-  },
-  {
-    name: "Niños de 4 a 7 años",
-    price: 75,
-    link: "",
-    monthly: true,
-  },
-  {
-    name: "Niños de 8 a 10 años",
-    price: 75,
-    link: "",
-    monthly: true,
-  },
-  {
-    name: "Niños de 11 a 15 años - 3 días/semana",
-    price: 75,
-    link: "",
-    monthly: true,
-  },
-  {
-    name: "Niños de 11 a 15 años - 5 días/semana",
-    price: 80,
-    link: "",
-    monthly: true,
-  },
-];
+interface Props {
+  plans: Plan[];
+}
+
+const { plans } = Astro.props;
 ---
 
 <ul>
   {
-    plans.map(({ link, monthly, name, price }) => {
+    plans.map(({ link, monthly, name, price, tagline }) => {
       return (
         <li>
-          <h3>{name}</h3>
+          <div>
+            <h3>{name}</h3>
+            {tagline && <span class="tagline">{tagline}</span>}
+          </div>
           <span class="price">
             {formatearMoneda(price)}
             <span class="monthly">{monthly && "/mes"}</span>
@@ -72,27 +37,25 @@ const plans = [
   ul {
     display: grid;
     margin-top: 3rem;
-    /* overflow: hidden; */
   }
 
   li {
-    /* background-color: lightcoral; */
     display: grid;
-    padding: 2rem;
-    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 1rem;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    /* border: 1px solid gray; */
     gap: 2rem;
     min-height: 150px;
     border-radius: var(--radius);
   }
 
   li:nth-child(odd) {
-    /* box-shadow: var(--shadow); */
     background-color: var(--light);
   }
 
-  li:nth-child(odd) {
+  .tagline {
+    font-size: var(--fs-md);
+    color: var(--third);
   }
 
   .price {
@@ -133,6 +96,11 @@ const plans = [
 
     li {
       grid-template-columns: repeat(3, 1fr);
+      padding: 2rem;
+    }
+
+    .price {
+      text-align: center;
     }
 
     a {

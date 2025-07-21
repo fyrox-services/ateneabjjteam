@@ -1,16 +1,37 @@
 ---
 import CardsServices from "@/components/CardsServices.astro";
+import HeadingDescription from "@/components/HeadingDescription.astro";
+import HeadingH2 from "@/components/HeadingH2.astro";
 import Hero from "@/components/Hero.astro";
+import Section from "@/components/Section.astro";
 import { programs, mainClasses } from "@/data/classes";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
   <Hero h1="clases" tagline="Todas nuestras clases y programas" />
-  <div class="wrapper">
+
+  <Section class="wrapper">
+    <HeadingH2>clases principales</HeadingH2>
+    <HeadingDescription>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+      libero doloremque, voluptate dolorem nemo delectus architecto accusantium
+      omnis nobis placeat quia inventore voluptas alias animi! Consequatur rem
+      at labore.
+    </HeadingDescription>
     <CardsServices cards={mainClasses} style="classes" />
+  </Section>
+
+  <Section class="wrapper">
+    <HeadingH2>programas</HeadingH2>
+    <HeadingDescription>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi
+      libero doloremque, voluptate dolorem nemo delectus architecto accusantium
+      omnis nobis placeat quia inventore voluptas alias animi! Consequatur rem
+      at labore.
+    </HeadingDescription>
     <CardsServices cards={programs} style="programs" />
-  </div>
+  </Section>
 </Layout>
 
 <style>

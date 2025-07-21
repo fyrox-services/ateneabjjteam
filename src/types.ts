@@ -18,7 +18,7 @@ export interface Coach {
   name: string;
   belt: string;
   head: string;
-  rol: string
+  rol: string;
   photo: ImageMetadata;
   description: string[];
 }
@@ -34,6 +34,14 @@ export interface AllHours {
   kids: Schedule[];
 }
 
+export interface Plan {
+  name: string;
+  price: number;
+  link: string;
+  monthly?: boolean;
+  tagline?: string
+}
+
 // Forms
 
 export interface AllFormFields {
@@ -42,9 +50,11 @@ export interface AllFormFields {
   phone: string;
   modality: Modality;
   hours: string;
-  msg: string
-  legal: boolean
+  msg: string;
+  legal: boolean;
 }
 
-
-export type ContactForm = Pick<AllFormFields, "name" | "email" | "phone" | 'msg' | 'legal'>
+export type ContactForm = Pick<
+  AllFormFields,
+  "name" | "email" | "phone" | "msg" | "legal"
+>;

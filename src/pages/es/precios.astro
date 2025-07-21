@@ -5,6 +5,7 @@ import HeadingH2 from "@/components/HeadingH2.astro";
 import Hero from "@/components/Hero.astro";
 import Section from "@/components/Section.astro";
 import TablePricing from "@/components/TablePricing.astro";
+import { kids, mainClasses, oneTime, privateSessions } from "@/data/pricing";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -27,11 +28,19 @@ import Layout from "@/layouts/Layout.astro";
 
     <div class="mt-6">
       <HeadingH2>principales</HeadingH2>
-      <TablePricing />
+      <TablePricing plans={mainClasses} />
     </div>
     <div class="mt-6">
       <HeadingH2>niños</HeadingH2>
-      <TablePricing />
+      <TablePricing plans={kids} />
+    </div>
+    <div class="mt-6">
+      <HeadingH2>abonos puntuales</HeadingH2>
+      <TablePricing plans={oneTime} />
+    </div>
+    <div class="mt-6">
+      <HeadingH2>sesiones privadas</HeadingH2>
+      <TablePricing plans={privateSessions} />
     </div>
   </Section>
 </Layout>
