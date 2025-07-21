@@ -1,0 +1,26 @@
+export const siteName = "Laura Buendía - Perito Médico";
+const BASE_URL_WS = "https://wa.me/634254179?text=";
+const buildMsg = (msg: string) => {
+  return `${BASE_URL_WS}${encodeURI(msg)}`;
+};
+
+export const GLOBAL_DATA = {
+  PHONE_NUMBER: "634254179",
+  CALL_LINK: "tel:634254179",
+  PHONE_MASK: "634 254 179",
+  MAIL_TO: "mailto:info@ateneabjjteam.com",
+  MAIL_TEXT: "info@ateneabjjteam.com",
+};
+
+export const WHATSAPP_MSG = {
+  GENERAL: buildMsg("Hola, me gustaría tener más información sobre: "),
+  COMPETITION: buildMsg(
+    "Hola, me gustaría tener más información sobre el programa de competición:"
+  ),
+  PRIVATE_SESSIONS: buildMsg(
+    "Hola, me gustaría tener más información sobre las sesiones privadas:"
+  ),
+  COMPANIES: buildMsg(
+    "Hola, me gustaría tener más información sobre el jiu jitsu para empresas:"
+  ),
+};

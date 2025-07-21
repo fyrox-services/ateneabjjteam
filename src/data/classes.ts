@@ -9,6 +9,7 @@ import privateSessions from "@/assets/classes/sesiones-privadas.jpeg";
 
 
 import type { Classes } from "@/types";
+import { WHATSAPP_MSG } from "@/vars";
 
 export const mainClasses: Classes[] = [
   {
@@ -42,6 +43,7 @@ export const programs: Classes[] = [
     img: competition,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+    wa: WHATSAPP_MSG.COMPETITION
   },
   {
     heading: "sesiones privadas",
@@ -49,6 +51,8 @@ export const programs: Classes[] = [
     img: privateSessions,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+    wa: WHATSAPP_MSG.PRIVATE_SESSIONS
+
   },
   {
     heading: "empresas",
@@ -56,5 +60,7 @@ export const programs: Classes[] = [
     img: bjjCompanies,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+    wa: WHATSAPP_MSG.COMPANIES
+
   },
 ];

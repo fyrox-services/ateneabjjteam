@@ -1,10 +1,20 @@
 ---
 import WhatsApp from "@/components/icons/WhatsApp.astro";
+import { WHATSAPP_MSG } from "@/vars";
+
+interface Props {
+  link?: string;
+}
+
+const { link = WHATSAPP_MSG.GENERAL } = Astro.props;
 ---
 
 <button>
   <slot>
-    <span> información por WA </span>
+    <a target="_blank" rel="noopener noreferrer" href={link}>
+      información por WA
+    </a>
+
     <WhatsApp size={25} />
   </slot>
 </button>

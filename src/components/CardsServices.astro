@@ -22,7 +22,7 @@ const { cards, style = "classes" } = Astro.props;
   ]}
 >
   {
-    cards.map(({ heading, text, img, description }) => {
+    cards.map(({ heading, text, img, description, wa }) => {
       return (
         <li class="card" data-modality={heading}>
           <div class="card-inner">
@@ -40,7 +40,7 @@ const { cards, style = "classes" } = Astro.props;
                   </button>
                 ) : (
                   // TODO: Poner enlaces a wa
-                  <BtnWhatsApp />
+                  <BtnWhatsApp link={wa} />
                 )}
               </header>
 

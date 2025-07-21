@@ -1,5 +1,6 @@
 ---
 // import Arrow from "@/components/icons/Arrow.astro";
+import { WHATSAPP_MSG } from "@/vars";
 import WhatsApp from "./icons/WhatsApp.astro";
 
 // import { getRelativeLocaleUrl } from "astro:i18n";
@@ -57,7 +58,12 @@ import WhatsApp from "./icons/WhatsApp.astro";
 
     <!-- WA btn  -->
     <li>
-      <a class="wa" href="">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        class="wa"
+        href={WHATSAPP_MSG.GENERAL}
+      >
         escríbenos <WhatsApp size={20} />
       </a>
     </li>

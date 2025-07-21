@@ -7,6 +7,7 @@ export interface Classes {
   text: string;
   img: ImageMetadata;
   description: string;
+  wa?: string 
 }
 
 export interface Hours {
