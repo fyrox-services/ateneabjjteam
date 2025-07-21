@@ -1,0 +1,112 @@
+---
+import Chat from "@/components/icons/Chat.astro";
+import WhatsApp from "@/components/icons/WhatsApp.astro";
+import { WHATSAPP_MSG } from "@/vars";
+import Appointment from "@/components/icons/Appointment.astro";
+---
+
+<div id="btn-float-wrap" class="btn-float-mobile wrapper">
+  <button id="btn-float-mobile" class="btn-chat">
+    <Chat />
+  </button>
+  <div id="hidden-btns" class="hidden-btns">
+    <a href={WHATSAPP_MSG.GENERAL}>
+      <WhatsApp size={25} />
+    </a>
+    <button>
+      <Appointment />
+    </button>
+  </div>
+</div>
+
+<script src="@/helpers/handleBtnFloat.ts"></script>
+
+<style>
+  .btn-float-mobile {
+    display: flex;
+    position: fixed;
+    bottom: 5%;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 110;
+    transform: translateY(200px);
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease,
+      visibility 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .btn-float-mobile.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .btn-chat {
+    width: 4rem;
+    height: 4rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background-color: var(--secondary);
+    color: var(--primary);
+    border: 1px solid var(--black);
+    box-shadow: var(--shadow);
+  }
+
+  .hidden-btns {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    height: fit-content;
+    /* width: fit-content; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: -1;
+  }
+
+  .hidden-btns a,
+  .hidden-btns button {
+    background-color: var(--primary);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    border-radius: var(--radius-full);
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease,
+      visibility 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .hidden-btns > * {
+    color: var(--white);
+  }
+
+  .hidden-btns.active > *:nth-child(1) {
+    transform: translateY(-80px);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hidden-btns.active > *:nth-child(2) {
+    transform: translateY(-150px);
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
