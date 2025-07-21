@@ -9,6 +9,7 @@ import HeadingDescription from "@/components/HeadingDescription.astro";
 import BtnMainCta from "@/components/BtnMainCta.astro";
 import CardsStep from "@/components/CardsStep.astro";
 import { principles } from "@/data/steps";
+import { imagesSchool } from "@/data/images";
 ---
 
 <Layout>
@@ -35,7 +36,8 @@ import { principles } from "@/data/steps";
       <HeadingH2>nuestro espacio</HeadingH2>
     </div>
 
-    <ImagesGrid />
+    <ImagesGrid images={imagesSchool} />
+
     <div class="wrapper">
       <HeadingH2>ven a conocernos</HeadingH2>
       <HeadingDescription>

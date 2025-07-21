@@ -11,6 +11,7 @@ import { MainForm } from "@/components/react/MainForm";
 import { Pattern } from "@/components/react/Pattern";
 import Section from "@/components/Section.astro";
 import { mainClasses, programs } from "@/data/classes";
+import { imagesHome } from "@/data/images";
 import { howStart } from "@/data/steps";
 import Layout from "@/layouts/Layout.astro";
 ---
@@ -89,7 +90,7 @@ import Layout from "@/layouts/Layout.astro";
       </HeadingDescription>
     </div>
 
-    <ImagesGrid />
+    <ImagesGrid images={imagesHome} />
 
     <div class="wrapper">
       <HeadingDescription>
