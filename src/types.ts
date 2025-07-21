@@ -48,6 +48,11 @@ export interface Step {
   description: string;
 }
 
+export interface FAQ {
+  heading: string;
+  text: string[];
+}
+
 // Forms
 
 export interface AllFormFields {

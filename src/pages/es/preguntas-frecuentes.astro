@@ -3,18 +3,24 @@ import Faqs from "@/components/Faqs.astro";
 import HeadingH2 from "@/components/HeadingH2.astro";
 import Hero from "@/components/Hero.astro";
 import Section from "@/components/Section.astro";
+import { newMembers, suscribtions, classes_programs } from "@/data/faqs";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
   <Hero h1="preguntas frecuentes" tagline="sumérgete en la ola" />
   <Section class="wrapper-max">
-    <HeadingH2>bloque 1</HeadingH2>
-    <Faqs />
+    <HeadingH2>inscripciones</HeadingH2>
+    <Faqs faqs={suscribtions} />
   </Section>
 
   <Section class="wrapper-max">
-    <HeadingH2>bloque 1</HeadingH2>
-    <Faqs />
+    <HeadingH2>nuevos miembros</HeadingH2>
+    <Faqs faqs={newMembers} />
+  </Section>
+
+  <Section class="wrapper-max">
+    <HeadingH2>clases y programas</HeadingH2>
+    <Faqs faqs={classes_programs} />
   </Section>
 </Layout>

@@ -1,11 +1,17 @@
 ---
-import { FAQS } from "@/data/faqs";
 import ArrowLong from "@/components/icons/ArrowLong.astro";
+import type { FAQ } from "@/types";
+
+interface Props {
+  faqs: FAQ[];
+}
+
+const { faqs } = Astro.props;
 ---
 
 <ul class="ul-faqs">
   {
-    FAQS.map(({ heading, text }, i) => {
+    faqs.map(({ heading, text }, i) => {
       return (
         <li
           class:list={{

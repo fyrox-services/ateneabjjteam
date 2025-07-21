@@ -11,6 +11,7 @@ import { MainForm } from "@/components/react/MainForm";
 import { Pattern } from "@/components/react/Pattern";
 import Section from "@/components/Section.astro";
 import { mainClasses, programs } from "@/data/classes";
+import { homeFaqs } from "@/data/faqs";
 import { imagesHome } from "@/data/images";
 import { howStart } from "@/data/steps";
 import Layout from "@/layouts/Layout.astro";
@@ -112,7 +113,7 @@ import Layout from "@/layouts/Layout.astro";
           Consequatur rem at labore.
         </HeadingDescription>
 
-        <Faqs />
+        <Faqs faqs={homeFaqs} />
       </div>
     </div>
   </Section>
