@@ -8,6 +8,7 @@ import ImagesGrid from "@/components/ImagesGrid.astro";
 import HeadingDescription from "@/components/HeadingDescription.astro";
 import BtnMainCta from "@/components/BtnMainCta.astro";
 import CardsStep from "@/components/CardsStep.astro";
+import { principles } from "@/data/steps";
 ---
 
 <Layout>
@@ -21,7 +22,7 @@ import CardsStep from "@/components/CardsStep.astro";
       omnis nobis placeat quia inventore voluptas alias animi! Consequatur rem
       at labore.
     </HeadingDescription>
-    <CardsStep />
+    <CardsStep steps={principles} />
   </Section>
 
   <Section class="wrapper">

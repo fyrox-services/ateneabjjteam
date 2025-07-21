@@ -39,7 +39,13 @@ export interface Plan {
   price: number;
   link: string;
   monthly?: boolean;
-  tagline?: string
+  tagline?: string;
+}
+
+export interface Step {
+  icon: ImageMetadata;
+  name: string;
+  description: string;
 }
 
 // Forms

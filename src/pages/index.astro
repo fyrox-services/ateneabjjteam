@@ -11,6 +11,7 @@ import { MainForm } from "@/components/react/MainForm";
 import { Pattern } from "@/components/react/Pattern";
 import Section from "@/components/Section.astro";
 import { mainClasses, programs } from "@/data/classes";
+import { howStart } from "@/data/steps";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -67,7 +68,7 @@ import Layout from "@/layouts/Layout.astro";
             architecto accusantium omnis nobis placeat quia inventore voluptas
             alias animi! Consequatur rem at labore.
           </HeadingDescription>
-          <CardsStep />
+          <CardsStep steps={howStart} />
         </div>
 
         <MainForm client:visible style="Home" />
