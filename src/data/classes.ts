@@ -1,6 +1,13 @@
-import gi from "@/assets/deco/gi.jpg";
-import nogi from "@/assets/deco/nogi.jpg";
-import kids from "@/assets/deco/kids.jpg";
+import nogi from "@/assets/classes/nogi.jpg"
+import gi from "@/assets/classes/kimono.jpg";
+import kids from "@/assets/classes/niños.jpg";
+
+import competition from "@/assets/classes/competicion.jpg";
+import bjjCompanies from "@/assets/classes/bjj-para-empresas.jpg";
+import privateSessions from "@/assets/classes/sesiones-privadas.jpeg";
+
+
+
 import type { Classes } from "@/types";
 
 export const mainClasses: Classes[] = [
@@ -32,21 +39,21 @@ export const programs: Classes[] = [
   {
     heading: "competición",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
-    img: gi,
+    img: competition,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
   },
   {
     heading: "sesiones privadas",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
-    img: nogi,
+    img: privateSessions,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
   },
   {
     heading: "empresas",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
-    img: kids,
+    img: bjjCompanies,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
   },

@@ -27,7 +27,7 @@ const { h1, tagline } = Astro.props;
   h1 {
     color: var(--primary);
     font-family: var(--ff-heading);
-    font-size: var(--fs-4xl);
+    font-size: var(--fs-3xl);
     text-align: center;
     border-bottom: 1px solid var(--third);
     width: fit-content;
@@ -39,5 +39,11 @@ const { h1, tagline } = Astro.props;
     text-align: center;
     font-size: var(--fs-md);
     max-width: 70ch;
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: var(--fs-4xl);
+    }
   }
 </style>

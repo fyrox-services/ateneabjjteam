@@ -111,6 +111,9 @@
 .Form.Contact {
   box-shadow: var(--shadow);
   height: fit-content;
+  overflow-y: visible;
+  max-height: none;
+  overflow: hidden;
 }
 
 /* DESKTOP */
