@@ -9,7 +9,7 @@ import WhatsApp from "./icons/WhatsApp.astro";
 // const aboutURL = getRelativeLocaleUrl("en", "abo");
 ---
 
-<nav id="header-nav" class="mask">
+<nav id="header-nav">
   <ul class="menu">
     <!-- li con submenu -->
     <!-- <li class="li-with-sub-menu">
@@ -87,9 +87,7 @@ import WhatsApp from "./icons/WhatsApp.astro";
       align-items: center;
       transform: translateX(100%);
       transition: transform 0.3s ease;
-      background-image: url("/img/deco/bg-menu-mobile.jpg");
-      background-position: center center;
-      background-size: cover;
+      background: linear-gradient(45deg, var(--black), var(--dark-300));
     }
 
     nav.active {
