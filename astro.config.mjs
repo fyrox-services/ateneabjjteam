@@ -10,6 +10,13 @@ export default defineConfig({
   server: {
     host: true,
   },
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
 
   integrations: [react()],
 
