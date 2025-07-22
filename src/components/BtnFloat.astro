@@ -13,7 +13,7 @@ import Appointment from "@/components/icons/Appointment.astro";
     <a href={WHATSAPP_MSG.GENERAL}>
       <WhatsApp size={25} />
     </a>
-    <button>
+    <button id="btn-free-class">
       <Appointment />
     </button>
   </div>
@@ -67,7 +67,6 @@ import Appointment from "@/components/icons/Appointment.astro";
     bottom: 0;
     top: 0;
     height: fit-content;
-    /* width: fit-content; */
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -108,5 +107,11 @@ import Appointment from "@/components/icons/Appointment.astro";
     transform: translateY(-150px);
     opacity: 1;
     visibility: visible;
+  }
+
+  @media (min-width: 1024px) {
+    .btn-float-mobile {
+      display: none;
+    }
   }
 </style>

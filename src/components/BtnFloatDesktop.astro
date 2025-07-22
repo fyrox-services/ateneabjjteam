@@ -1,0 +1,44 @@
+---
+import Gift from "./icons/Gift.astro";
+---
+
+<div class="btn-float-desktop">
+  <button id="btn-free-class-desktop">
+    Reserva tu clase gratis
+    <Gift size={20} />
+  </button>
+</div>
+
+<style>
+  .btn-float-desktop {
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 110;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    border-radius: var(--radius) 0 0 0;
+    font-size: var(--fs-md);
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: var(--third);
+  }
+
+  @media (max-width: 1024px) {
+    .btn-float-desktop {
+      display: none;
+    }
+  }
+</style>

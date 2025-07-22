@@ -5,10 +5,14 @@ import Hero from "@/components/Hero.astro";
 import Section from "@/components/Section.astro";
 import { newMembers, suscribtions, classes_programs } from "@/data/faqs";
 import Layout from "@/layouts/Layout.astro";
+import BtnFloatDesktop from "@/components/BtnFloatDesktop.astro";
 ---
 
 <Layout>
-  <Hero h1="preguntas frecuentes" tagline="sumérgete en la ola" />
+  <Hero
+    h1="preguntas frecuentes"
+    tagline="si tienes más preguntas contáctanos"
+  />
   <Section class="wrapper-max">
     <HeadingH2>inscripciones</HeadingH2>
     <Faqs faqs={suscribtions} />
@@ -23,4 +27,5 @@ import Layout from "@/layouts/Layout.astro";
     <HeadingH2>clases y programas</HeadingH2>
     <Faqs faqs={classes_programs} />
   </Section>
+  <BtnFloatDesktop />
 </Layout>
