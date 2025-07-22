@@ -1,0 +1,16 @@
+---
+import Hero from "@/components/Hero.astro";
+import Section from "@/components/Section.astro";
+import TableSchedule from "@/components/TableSchedule.astro";
+import TableScheduleDesktop from "@/components/TableScheduleDesktop.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <Hero h1="horarios" tagline="Todas las clases de la semana" />
+
+  <Section class="wrapper">
+    <TableSchedule />
+    <TableScheduleDesktop />
+  </Section>
+</Layout>

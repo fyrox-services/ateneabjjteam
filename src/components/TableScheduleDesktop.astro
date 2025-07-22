@@ -1,0 +1,126 @@
+---
+import { days } from "@/data/schedule";
+---
+
+<div class="table-wrap">
+  <table>
+    <!-- encabezados -->
+
+    <thead>
+      <tr>
+        {
+          days.map(({ name }) => {
+            return <th>{name}</th>;
+          })
+        }
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        {
+          days.map(({ name, classes }) => {
+            return (
+              <td data-day={name}>
+                {classes.map((c) => {
+                  return (
+                    <div data-name={c.modality} class="block">
+                      <span class="modality">{c.modality}</span>
+                      <div class="hour">
+                        <span>{c.start} </span>
+                        <span>{c.end}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </td>
+            );
+          })
+        }
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .table-wrap {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  thead th {
+    padding: 1rem;
+    text-transform: uppercase;
+    font-family: var(--ff-base-bold);
+    background-color: var(--secondary);
+    border-right: 1px dashed var(--dark-900);
+  }
+
+  thead th:last-of-type {
+    border: none;
+  }
+
+  table td {
+    vertical-align: top;
+  }
+
+  [data-day="sábado"] {
+    background-color: var(--light);
+    border-left: 1px dashed var(--dark-900);
+
+    display: table-cell;
+    vertical-align: middle !important;
+  }
+
+  [data-day="sábado"] div {
+    background-color: var(--light);
+  }
+
+  [data-name="free"] {
+    /* background-color: red !important; */
+  }
+
+  [data-name="free"] * {
+    opacity: 0;
+  }
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0.5rem;
+    align-items: center;
+    gap: 1rem;
+    height: max-content;
+  }
+
+  .block:nth-child(odd) {
+    background-color: var(--light);
+  }
+
+  .block:nth-child(even) {
+    border-top: 1px dashed var(--dark-900);
+    border-bottom: 1px dashed var(--dark-900);
+  }
+
+  .modality {
+    font-size: var(--fs-md);
+  }
+
+  .hour {
+    font-size: var(--fs-md);
+    color: var(--primary);
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 1024px) {
+    table {
+      display: none;
+    }
+  }
+</style>
