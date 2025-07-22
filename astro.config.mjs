@@ -9,6 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   server: {
     host: true,
+    allowedHosts: true,
   },
   i18n: {
     defaultLocale: "es",
