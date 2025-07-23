@@ -1,8 +1,9 @@
 ---
-import selfConfidence from "@/assets/deco/autoconfianza.png";
-import mentalControl from "@/assets/deco/fortaleza_mental.png";
-import personalDefense from "@/assets/deco/defensa_personal.png";
-import balance from "@/assets/deco/equilibrio.png";
+import selfConfidence from "@/assets/svg/autoconfianza.svg";
+import mentalControl from "@/assets/svg/fortaleza-mental.svg";
+import personalDefense from "@/assets/svg/defensa-personal.svg";
+import balance from "@/assets/svg/psicomotricidad.svg";
+
 import { Image } from "astro:assets";
 
 const advs = [
@@ -59,6 +60,7 @@ const advs = [
   li {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
     position: relative;
     padding: 2rem;
@@ -80,13 +82,11 @@ const advs = [
   }
 
   img {
-    max-width: 10rem;
+    min-width: 5rem;
   }
 
   p {
     font-size: var(--fs-md);
-    /* max-width: 40ch; */
-    /* margin-inline: auto; */
   }
 
   /* DESKTOP */
