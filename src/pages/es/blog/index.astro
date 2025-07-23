@@ -1,0 +1,18 @@
+---
+import Hero from "@/components/Hero.astro";
+import Section from "@/components/Section.astro";
+import WrapperPosts from "@/components/WrapperPosts.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+
+console.log(posts);
+---
+
+<Layout>
+  <Hero h1="blog" tagline="sumérgete en la ola" />
+  <Section class="wrapper no-space">
+    <WrapperPosts posts={posts} />
+  </Section>
+</Layout>

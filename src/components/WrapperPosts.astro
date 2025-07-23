@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostCard from "@/components/PostCard.astro";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+  loadEager?: boolean;
+}
+
+const { posts, loadEager = true } = Astro.props;
+---
+
+<ul>
+  {
+    posts
+      .sort((a, b) => {
+        return Number(b.data.datePublished) - Number(a.data.datePublished);
+      })
+      .map((post, i) => {
+        return <PostCard first={loadEager && i <= 2} post={post} />;
+      })
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    gap: 2rem;
+    margin: 3rem 0 0;
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

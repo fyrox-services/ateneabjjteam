@@ -1,0 +1,89 @@
+---
+import { transformDate } from "@/helpers/transformDate";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+  first: boolean;
+}
+
+const { post, first } = Astro.props;
+const { data, slug } = post;
+const cleanSlug = slug.split("/")[1];
+---
+
+<li>
+  <article>
+    <a aria-label={`Ir a la página de ${data.h1}`} href={`${cleanSlug}/`}>
+      <picture class="mask-1">
+        <h3>{data.h1}</h3>
+        <Image
+          loading={first ? "eager" : "lazy"}
+          width={600}
+          height={400}
+          src={`/img/blog/${data.image}`}
+          alt={data.h1}
+        />
+      </picture>
+      <p>{data.metaDescription}</p>
+      <footer>
+        <span>{transformDate(data.datePublished)}</span>
+        <span>{data.readingTime} min de lectura</span>
+      </footer>
+    </a>
+  </article>
+</li>
+
+<style>
+  li {
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  picture {
+    position: relative;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  h3,
+  p {
+    padding: 1rem 2rem;
+  }
+
+  h3 {
+    position: absolute;
+    color: var(--white);
+    z-index: 10;
+    font-size: var(--fs-2xl);
+    line-height: 1.25;
+  }
+
+  p {
+    font-size: var(--fs-sm);
+  }
+
+  footer {
+    border-top: 1px solid var(--gray);
+    margin: 0 2rem;
+    padding: 1rem 0;
+    font-size: var(--fs-xs);
+    color: var(--dark-900);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    li:hover {
+      transform: scale(1.03);
+    }
+  }
+</style>
