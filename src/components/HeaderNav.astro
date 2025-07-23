@@ -1,7 +1,7 @@
 ---
 // import Arrow from "@/components/icons/Arrow.astro";
-import { WHATSAPP_MSG } from "@/vars";
-import WhatsApp from "./icons/WhatsApp.astro";
+import { GLOBAL_DATA } from "@/vars";
+import Phone from "@/components/icons/Phone.astro";
 
 // import { getRelativeLocaleUrl } from "astro:i18n";
 
@@ -64,10 +64,11 @@ import WhatsApp from "./icons/WhatsApp.astro";
       <a
         target="_blank"
         rel="noopener noreferrer"
-        class="wa"
-        href={WHATSAPP_MSG.GENERAL}
+        class="call"
+        href={GLOBAL_DATA.CALL_LINK}
       >
-        escríbenos <WhatsApp size={20} />
+        {GLOBAL_DATA.PHONE_MASK}
+        <Phone size={20} />
       </a>
     </li>
   </ul>
@@ -263,7 +264,7 @@ import WhatsApp from "./icons/WhatsApp.astro";
       display: none;
     }
 
-    .wa {
+    .call {
       border: 1px solid var(--wa);
       border-radius: var(--radius-l);
       padding: 0.3rem 1rem;
@@ -278,7 +279,7 @@ import WhatsApp from "./icons/WhatsApp.astro";
         color 0.3s ease;
     }
 
-    .wa:hover {
+    .call:hover {
       background-color: var(--wa-dark);
       color: var(--white) !important;
     }

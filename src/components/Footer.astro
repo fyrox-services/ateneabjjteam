@@ -4,6 +4,8 @@ import logo from "@/assets/mark/logo.svg";
 import WhatsApp from "./icons/WhatsApp.astro";
 import Location from "./icons/Location.astro";
 import Email from "./icons/Email.astro";
+import { GLOBAL_DATA, WHATSAPP_MSG } from "@/vars";
+import Phone from "./icons/Phone.astro";
 ---
 
 <footer>
@@ -20,13 +22,19 @@ import Email from "./icons/Email.astro";
         <h2>acerca de</h2>
         <ul>
           <li>
-            <a href=""> escuela </a>
+            <a href="/es/escuela/"> escuela </a>
           </li>
           <li>
-            <a href=""> precios </a>
+            <a href="/es/clases/"> clases </a>
           </li>
           <li>
-            <a href=""> FAQs </a>
+            <a href="/es/horarios/"> horarios </a>
+          </li>
+          <li>
+            <a href="/es/precios/"> precios </a>
+          </li>
+          <li>
+            <a href="/es/preguntas-frecuentes/"> FAQs </a>
           </li>
         </ul>
       </div>
@@ -36,21 +44,35 @@ import Email from "./icons/Email.astro";
         <h2>contacto</h2>
         <ul>
           <li>
-            <a href="">
+            <a href={GLOBAL_DATA.CALL_LINK}>
+              <Phone size={25} />
+              {GLOBAL_DATA.PHONE_MASK}
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={WHATSAPP_MSG.GENERAL}
+            >
               <WhatsApp size={25} />
               WhatsApp
             </a>
           </li>
           <li>
-            <a href="https://share.google/YuOBtzMU4CTpmBKmQ" target="_blank">
+            <a
+              href="https://share.google/YuOBtzMU4CTpmBKmQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Location size={25} />
               C/ del Canal de Panamá, 3, 28027, Madrid
             </a>
           </li>
           <li>
-            <a href="https://share.google/YuOBtzMU4CTpmBKmQ" target="_blank">
+            <a href={GLOBAL_DATA.MAIL_TO} target="_blank">
               <Email size={25} />
-              info@ateneabjjteam.com
+              {GLOBAL_DATA.MAIL_TEXT}
             </a>
           </li>
         </ul>
