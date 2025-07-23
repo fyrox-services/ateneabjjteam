@@ -1,19 +1,85 @@
 ---
-const days = [
-  {
-    name: "lunes",
-  },
-];
+import { days } from "@/data/schedule";
 ---
 
-<ul class="schedule-mobile">
-  <li>lunes</li>
+<ul>
+  {
+    days.map(({ classes, day }) => {
+      return (
+        <li data-day={day}>
+          <header>{day}</header>
+          {classes.map((c) => {
+            return (
+              <div data-modality={c.modality}>
+                <p class="hour">
+                  <span>{c.start} - </span>
+                  <span>{c.end}</span>
+                </p>
+                <p class="modality">{c.modality}</p>
+              </div>
+            );
+          })}
+        </li>
+      );
+    })
+  }
 </ul>
 
 <style>
+  ul {
+    display: grid;
+    gap: 5rem;
+  }
+
+  li {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  header {
+    padding: 1rem;
+    background-color: var(--secondary);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--fs-md);
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    font-size: var(--fs-md);
+    border-bottom: 1px dashed var(--dark-900);
+  }
+
+  div:nth-child(odd) {
+    background-color: var(--light);
+  }
+
+  div:last-of-type,
+  [data-day="viernes"] div:nth-child(7) {
+    border-bottom: none;
+  }
+
+  [data-modality="free"] {
+    display: none;
+  }
+
+  .hour {
+    color: var(--primary);
+  }
+
   @media (min-width: 1024px) {
-    .schedule-mobile {
+    ul {
       display: none;
     }
   }
 </style>
+
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>

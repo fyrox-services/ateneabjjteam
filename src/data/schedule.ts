@@ -35,17 +35,17 @@ const sameClasses = {
     end: "21:00",
   },
   kids4_7: {
-    modality: "niños de 4 a 7 años",
+    modality: "kids de 4 a 7 años",
     start: "17:15",
     end: "18:00",
   },
   kids8_10: {
-    modality: "niños de 8 a 10 años",
+    modality: "kids de 8 a 10 años",
     start: "17:15",
     end: "18:00",
   },
   kids11_15: {
-    modality: "niños de 11 a 15 años",
+    modality: "kids de 11 a 15 años",
     start: "18:00",
     end: "19:15",
   },
@@ -78,7 +78,7 @@ const sameClasses = {
 
 export const days = [
   {
-    name: "lunes",
+    day: "lunes",
     classes: [
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
@@ -90,7 +90,7 @@ export const days = [
     ],
   },
   {
-    name: "martes",
+    day: "martes",
     classes: [
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
@@ -102,7 +102,7 @@ export const days = [
     ],
   },
   {
-    name: "miércoles",
+    day: "miércoles",
     classes: [
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
@@ -114,7 +114,7 @@ export const days = [
     ],
   },
   {
-    name: "jueves",
+    day: "jueves",
     classes: [
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
@@ -126,7 +126,7 @@ export const days = [
     ],
   },
   {
-    name: "viernes",
+    day: "viernes",
     classes: [
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
@@ -138,7 +138,7 @@ export const days = [
     ],
   },
   {
-    name: "sábado",
+    day: "sábado",
     classes: [sameClasses.openSaturday],
   },
 ];

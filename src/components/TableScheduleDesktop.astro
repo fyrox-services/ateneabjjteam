@@ -9,8 +9,8 @@ import { days } from "@/data/schedule";
     <thead>
       <tr>
         {
-          days.map(({ name }) => {
-            return <th>{name}</th>;
+          days.map(({ day }) => {
+            return <th>{day}</th>;
           })
         }
       </tr>
@@ -19,15 +19,15 @@ import { days } from "@/data/schedule";
     <tbody>
       <tr>
         {
-          days.map(({ name, classes }) => {
+          days.map(({ day, classes }) => {
             return (
-              <td data-day={name}>
+              <td data-day={day}>
                 {classes.map((c) => {
                   return (
-                    <div data-name={c.modality} class="block">
+                    <div data-modality={c.modality} class="block">
                       <span class="modality">{c.modality}</span>
                       <div class="hour">
-                        <span>{c.start} </span>
+                        <span>{c.start} - </span>
                         <span>{c.end}</span>
                       </div>
                     </div>
@@ -56,7 +56,8 @@ import { days } from "@/data/schedule";
   thead th {
     padding: 1rem;
     text-transform: uppercase;
-    font-family: var(--ff-base-bold);
+    /* font-family: var(--ff-base-bold); */
+    font-size: var(--fs-md);
     background-color: var(--secondary);
     border-right: 1px dashed var(--dark-900);
   }
@@ -78,14 +79,14 @@ import { days } from "@/data/schedule";
   }
 
   [data-day="sábado"] div {
-    background-color: var(--light);
+    /* background-color: var(--light); */
   }
 
-  [data-name="free"] {
+  [data-modality="free"] {
     /* background-color: red !important; */
   }
 
-  [data-name="free"] * {
+  [data-modality="free"] * {
     opacity: 0;
   }
 
@@ -113,13 +114,44 @@ import { days } from "@/data/schedule";
 
   .hour {
     font-size: var(--fs-md);
-    color: var(--primary);
+    /* color: var(--primary); */
+  }
+
+  /* MODALIDADES */
+
+  [data-modality="nogi"].block {
+    background-color: lightcoral;
+  }
+
+  [data-modality="kimono"].block {
+    background-color: lightblue;
+  }
+
+  [data-modality="kids de 4 a 7 años"].block {
+    background-color: lightgreen;
+  }
+
+  [data-modality="kids de 8 a 10 años"].block {
+    background-color: lightpink;
+  }
+
+  [data-modality="kids de 11 a 15 años"].block {
+    background-color: lightsalmon;
+  }
+
+  [data-modality="alfombra abierta"].block {
+    background-color: lightgoldenrodyellow;
+  }
+
+  [data-modality="nogi/competición"].block,
+  [data-modality="kimono/competición"].block {
+    background-color: lightseagreen;
   }
 
   /* MOBILE */
 
   @media (max-width: 1024px) {
-    table {
+    .table-wrap {
       display: none;
     }
   }
