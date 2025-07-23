@@ -1,9 +1,13 @@
 ---
 import BtnFloatDesktop from "@/components/BtnFloatDesktop.astro";
 import Hero from "@/components/Hero.astro";
+import Email from "@/components/icons/Email.astro";
+import Phone from "@/components/icons/Phone.astro";
+import WhatsApp from "@/components/icons/WhatsApp.astro";
 import { ContactForm } from "@/components/react/ContactForm";
 import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
+import { GLOBAL_DATA, WHATSAPP_MSG } from "@/vars";
 ---
 
 <Layout>
@@ -16,6 +20,69 @@ import Layout from "@/layouts/Layout.astro";
     <div class="center-content">
       <ContactForm style="Contact" />
     </div>
+    <div class="center-content mt-3">
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={WHATSAPP_MSG.GENERAL}
+          >
+            Escríbenos
+            <WhatsApp size={25} />
+          </a>
+        </li>
+        <li>
+          <a href={GLOBAL_DATA.CALL_LINK}
+            >Llámanos
+            <Phone size={25} />
+          </a>
+        </li>
+        <li>
+          <a href={GLOBAL_DATA.MAIL_TO}
+            >Enviar email
+            <Email size={20} />
+          </a>
+        </li>
+      </ul>
+    </div>
   </Section>
   <BtnFloatDesktop />
 </Layout>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  a {
+    border: 1px solid var(--wa);
+    border: 1px solid var(--wa);
+    border-radius: var(--radius-l);
+    padding: 0.3rem 1rem;
+    font-size: var(--fs-md);
+    color: var(--wa);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  a:hover {
+    background-color: var(--wa-dark);
+    color: var(--white) !important;
+  }
+
+  @media (min-width: 1024px) {
+    ul {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+</style>
