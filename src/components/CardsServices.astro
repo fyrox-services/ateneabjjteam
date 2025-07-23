@@ -142,6 +142,7 @@ const { cards, style = "classes" } = Astro.props;
 
   p {
     color: var(--white);
+    max-width: 30ch;
   }
 
   .card-back p {
@@ -233,6 +234,10 @@ const { cards, style = "classes" } = Astro.props;
   /* DESKTOP */
 
   @media (min-width: 1024px) {
+    ul.programs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     ul {
       grid-template-columns: repeat(3, 1fr);
     }

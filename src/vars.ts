@@ -23,4 +23,7 @@ export const WHATSAPP_MSG = {
   COMPANIES: buildMsg(
     "Hola, me gustaría tener más información sobre el jiu jitsu para empresas:"
   ),
+  DISCA: buildMsg(
+    "Hola, me gustaría tener más información sobre el jiu jitsu para personas con discapacidad:"
+  ),
 };

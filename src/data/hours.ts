@@ -31,6 +31,11 @@ export const nogiHours: Hours[] = [
 ];
 
 export const kidsHours: Hours[] = [
+  // lunes
+  {
+    day: "de lunes a viernes, de 11 a 15 años",
+    hour: "18:00 - 19:15",
+  },
   {
     day: "lunes, de 4 a 7 años",
     hour: "17:15 - 18:00",
@@ -38,10 +43,6 @@ export const kidsHours: Hours[] = [
   {
     day: "martes, de 8 a 10 años",
     hour: "17:15 - 18:00",
-  },
-  {
-    day: "martes, de 11 a 15 años",
-    hour: "18:00 - 19:15",
   },
   {
     day: "miércoles, de 4 a 7 años",
@@ -52,12 +53,15 @@ export const kidsHours: Hours[] = [
     hour: "17:15 - 18:00",
   },
   {
-    day: "jueves, de 11 a 15 años",
-    hour: "18:00 - 19:15",
+    day: "viernes, de 4 a 7 años",
+    hour: "17:15 - 18:00",
   },
 ];
 
-export const allHours :AllHours = {
+
+
+// para el select del formulario de reservar una clase
+export const allHours: AllHours = {
   gi: [
     {
       label: "de lunes a viernes",
@@ -89,7 +93,7 @@ export const allHours :AllHours = {
   kids: [
     {
       label: "de 4 a 7 años",
-      hours: ["lunes, 17:15 - 18:00", "miércoles, 17:15 - 18:00"],
+      hours: ["lunes, 17:15 - 18:00", "miércoles, 17:15 - 18:00", "viernes, 17:15 - 18:00"],
     },
     {
       label: "de 8 a 10 años",
@@ -97,7 +101,14 @@ export const allHours :AllHours = {
     },
     {
       label: "de 11 a 15 años",
-      hours: ["martes, 18:00 - 19:15", "jueves, 18:00 - 19:15"],
+      hours: [
+        "lunes, 18:00 - 19:15", 
+        "martes, 18:00 - 19:15", 
+        "miércoles, 18:00 - 19:15", 
+        "jueves, 18:00 - 19:15",
+        "viernes, 18:00 - 19:15"
+      ],
     },
   ],
+
 };

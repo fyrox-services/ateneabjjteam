@@ -1,6 +1,6 @@
 export type ModalContent = "form" | "hours";
-export type Modality = "" | "kimono - gi" | "grappling - nogi" | "niños";
-export type Programs = "competición" | "sesiones privadas" | "empresas";
+export type Modality = "" | "kimono - gi" | "grappling - nogi" | "niños" 
+export type Programs = "competición" | "sesiones privadas" | "empresas" | 'discapacidad';
 
 export interface Classes {
   heading: Modality | Programs;

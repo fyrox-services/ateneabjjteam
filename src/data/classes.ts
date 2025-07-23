@@ -1,12 +1,10 @@
-import nogi from "@/assets/classes/nogi.jpg"
+import nogi from "@/assets/classes/nogi.jpg";
 import gi from "@/assets/classes/kimono.jpg";
 import kids from "@/assets/classes/niños.jpg";
-
 import competition from "@/assets/classes/competicion.jpg";
+
 import bjjCompanies from "@/assets/classes/bjj-para-empresas.jpg";
 import privateSessions from "@/assets/classes/sesiones-privadas.jpeg";
-
-
 
 import type { Classes } from "@/types";
 import { WHATSAPP_MSG } from "@/vars";
@@ -35,7 +33,6 @@ export const mainClasses: Classes[] = [
   },
 ];
 
-
 export const programs: Classes[] = [
   {
     heading: "competición",
@@ -43,7 +40,7 @@ export const programs: Classes[] = [
     img: competition,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
-    wa: WHATSAPP_MSG.COMPETITION
+    wa: WHATSAPP_MSG.COMPETITION,
   },
   {
     heading: "sesiones privadas",
@@ -51,8 +48,7 @@ export const programs: Classes[] = [
     img: privateSessions,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
-    wa: WHATSAPP_MSG.PRIVATE_SESSIONS
-
+    wa: WHATSAPP_MSG.PRIVATE_SESSIONS,
   },
   {
     heading: "empresas",
@@ -60,7 +56,14 @@ export const programs: Classes[] = [
     img: bjjCompanies,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
-    wa: WHATSAPP_MSG.COMPANIES
-
+    wa: WHATSAPP_MSG.COMPANIES,
+  },
+  {
+    heading: "discapacidad",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
+    img: bjjCompanies,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+    wa: WHATSAPP_MSG.DISCA,
   },
 ];

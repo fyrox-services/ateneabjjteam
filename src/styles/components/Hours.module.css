@@ -42,9 +42,10 @@
 .Table h4 {
   color: var(--white);
   text-transform: uppercase;
-  font-size: var(--fs-md);
+  font-size: var(--fs-sm);
 }
 
 .Table p {
   color: var(--black);
+  font-size: var(--fs-md);
 }
