@@ -58,7 +58,7 @@ import { days } from "@/data/schedule";
     text-transform: uppercase;
     /* font-family: var(--ff-base-bold); */
     font-size: var(--fs-md);
-    background-color: var(--secondary);
+    background-color: var(--white);
     border-right: 1px dashed var(--dark-900);
   }
 
@@ -119,33 +119,23 @@ import { days } from "@/data/schedule";
 
   /* MODALIDADES */
 
-  [data-modality="nogi"].block {
-    background-color: lightcoral;
-  }
-
-  [data-modality="kimono"].block {
-    background-color: lightblue;
-  }
-
-  [data-modality="kids de 4 a 7 años"].block {
-    background-color: lightgreen;
-  }
-
-  [data-modality="kids de 8 a 10 años"].block {
-    background-color: lightpink;
-  }
-
-  [data-modality="kids de 11 a 15 años"].block {
-    background-color: lightsalmon;
-  }
-
-  [data-modality="alfombra abierta"].block {
-    background-color: lightgoldenrodyellow;
-  }
-
+  [data-modality="nogi"].block,
+  [data-modality="kimono"].block,
   [data-modality="nogi/competición"].block,
-  [data-modality="kimono/competición"].block {
-    background-color: lightseagreen;
+  [data-modality="kimono/competición"].block,
+  [data-modality="kimono/Nogi"].block {
+    background-color: rgb(251, 176, 59, 0.5);
+  }
+
+  [data-modality="kids de 4 a 7 años"].block,
+  [data-modality="kids de 8 a 10 años"].block,
+  [data-modality="kids de 11 a 15 años"].block {
+    background-color: rgb(0, 179, 214, 0.5);
+  }
+
+  [data-modality="Open Mat"].block {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: var(--white);
   }
 
   /* MOBILE */

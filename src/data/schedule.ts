@@ -25,12 +25,12 @@ const sameClasses = {
     end: "15:15",
   },
   openSaturday: {
-    modality: "alfombra abierta",
+    modality: "Open Mat",
     start: "12:00",
     end: "13:30",
   },
   openFriday: {
-    modality: "alfombra abierta",
+    modality: "Open Mat",
     start: "19:15",
     end: "21:00",
   },
