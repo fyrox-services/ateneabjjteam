@@ -1,8 +1,9 @@
 ---
 import Chat from "@/components/icons/Chat.astro";
 import WhatsApp from "@/components/icons/WhatsApp.astro";
-import { WHATSAPP_MSG } from "@/vars";
+import { GLOBAL_DATA, WHATSAPP_MSG } from "@/vars";
 import Appointment from "@/components/icons/Appointment.astro";
+import Phone from "./icons/Phone.astro";
 ---
 
 <div id="btn-float-wrap" class="btn-float-mobile wrapper">
@@ -10,6 +11,9 @@ import Appointment from "@/components/icons/Appointment.astro";
     <Chat />
   </button>
   <div id="hidden-btns" class="hidden-btns">
+    <a href={GLOBAL_DATA.CALL_LINK}>
+      <Phone size={25} />
+    </a>
     <a href={WHATSAPP_MSG.GENERAL}>
       <WhatsApp size={25} />
     </a>
@@ -90,6 +94,7 @@ import Appointment from "@/components/icons/Appointment.astro";
       visibility 0.5s ease;
     opacity: 0;
     visibility: hidden;
+    border: 1px solid var(--third);
   }
 
   .hidden-btns > * {
@@ -104,6 +109,12 @@ import Appointment from "@/components/icons/Appointment.astro";
 
   .hidden-btns.active > *:nth-child(2) {
     transform: translateY(-150px);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hidden-btns.active > *:nth-child(3) {
+    transform: translateY(-220px);
     opacity: 1;
     visibility: visible;
   }
