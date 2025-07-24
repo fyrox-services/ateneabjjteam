@@ -3,6 +3,7 @@ import type { Modality } from "@/types";
 
 const cardsServices = document.querySelectorAll(".card");
 const btnMainCta = document.querySelectorAll(".btn-main-cta");
+const bannerFreeClass = document.getElementById("banner-free-class");
 
 function setModality(card: HTMLElement) {
   const cardElement = card as HTMLElement;
@@ -14,6 +15,9 @@ function openModal() {
   isModalActive.set(true);
   document.body.classList.add("not-scrollable");
 }
+
+// Banner de las entradas de blog
+bannerFreeClass?.addEventListener("click", openModal);
 
 // Lógica para los cta generales
 btnMainCta.forEach((btn) => {

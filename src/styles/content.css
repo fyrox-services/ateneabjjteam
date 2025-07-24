@@ -6,6 +6,10 @@ h3 {
   font-size: var(--fs-l);
 }
 
+p:first-of-type {
+  margin-top: 0;
+}
+
 p {
   margin-block: 1lh;
   font-size: var(--fs-md);

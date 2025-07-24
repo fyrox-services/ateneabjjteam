@@ -2,6 +2,8 @@
 import type { CollectionEntry } from "astro:content";
 import "@/styles/content.css";
 import HeaderBlog from "@/components/HeaderBlog.astro";
+import AsideBlog from "@/components/AsideBlog.astro";
+import TOC from "@/components/TOC.astro";
 
 interface Props {
   body: string;
@@ -24,6 +26,7 @@ const { data, slug } = post;
 
       <!-- Imagen por defecto (móvil) -->
       <img
+        class="main-image"
         width="700"
         height="400"
         loading="eager"
@@ -37,8 +40,17 @@ const { data, slug } = post;
     <HeaderBlog post={post} />
   </div>
 
-  <section class="wrapper-max body-content">
-    <slot />
+  <section class="wrap-content">
+    <!-- TOC -->
+    <TOC body={body} />
+
+    <!-- content -->
+    <div class="wrapper-max">
+      <slot />
+    </div>
+
+    <!-- banner -->
+    <AsideBlog />
   </section>
 </article>
 
@@ -59,7 +71,7 @@ const { data, slug } = post;
     z-index: 1;
   }
 
-  img {
+  .main-image {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -81,13 +93,21 @@ const { data, slug } = post;
     padding: 0 1rem;
   }
 
-  .body-content {
+  .wrap-content {
     margin-top: 10rem;
+    max-width: 2000px;
+    width: 98%;
+    margin-inline: auto;
   }
 
   @media (min-width: 1024px) {
     h1 {
       font-size: var(--fs-2xl);
+    }
+
+    .wrap-content {
+      display: grid;
+      grid-template-columns: 1fr 700px 1fr;
     }
   }
 </style>

@@ -1,7 +1,8 @@
 ---
 import { transformDate } from "@/helpers/transformDate";
 import { Image } from "astro:assets";
-import model from "@/assets/authors/model.jpg";
+import aitana from "@/assets/authors/aitana-autor.jpeg";
+import renzo from "@/assets/authors/renzo-autor.jpeg";
 import type { CollectionEntry } from "astro:content";
 import Date from "./icons/Date.astro";
 import Clock from "./icons/Clock.astro";
@@ -16,7 +17,13 @@ const { data } = post;
 
 <header class="data-post">
   <div class="author-wrap">
-    <Image class="photo-profile" src={model} alt="autor" />
+    {
+      data.author.name === "Renzo Martínez" ? (
+        <Image class="photo-profile" src={renzo} alt="autor" />
+      ) : (
+        <Image class="photo-profile" src={aitana} alt="autor" />
+      )
+    }
     <div>
       <span class="author-name">{data.author.name}</span>
       <span class="belt">{data.author.belt}</span>
