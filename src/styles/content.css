@@ -1,0 +1,18 @@
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-l);
+}
+
+p {
+  margin-block: 1lh;
+  font-size: var(--fs-md);
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: var(--fs-base);
+  }
+}

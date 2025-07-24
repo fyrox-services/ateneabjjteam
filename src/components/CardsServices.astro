@@ -226,9 +226,12 @@ const { cards, style = "classes" } = Astro.props;
 
   /* MODIFIERS */
 
-  ul.programs .btn-hours,
-  ul.programs .btn-more-info {
+  ul.programs .btn-hours {
     display: none;
+  }
+
+  ul.programs li:last-of-type img {
+    object-position: top;
   }
 
   /* DESKTOP */

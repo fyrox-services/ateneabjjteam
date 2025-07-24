@@ -1,5 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import "@/styles/content.css";
+import HeaderBlog from "@/components/HeaderBlog.astro";
 
 interface Props {
   body: string;
@@ -11,5 +13,81 @@ const { data, slug } = post;
 ---
 
 <article>
-  <slot />
+  <div class="wrapper-max top-container">
+    <picture class="picture mask">
+      <!-- Imagen para pantallas grandes (escritorio) -->
+      <source
+        type="image/webp"
+        media="(min-width: 1024px)"
+        srcset="/img/blog/que-es-el-jiu-jitsu-desktop.webp"
+      />
+
+      <!-- Imagen por defecto (móvil) -->
+      <img
+        width="700"
+        height="400"
+        loading="eager"
+        decoding="async"
+        src="/img/blog/que-es-el-jiu-jitsu-mobile.webp"
+        alt="TODO"
+      />
+    </picture>
+    <h1>¿A qué edad puede empezar mi hijo en el jiu jitsu?</h1>
+
+    <HeaderBlog post={post} />
+  </div>
+
+  <section class="wrapper-max body-content">
+    <slot />
+  </section>
 </article>
+
+<style>
+  .top-container {
+    position: relative;
+  }
+
+  .picture {
+    height: 50vh;
+    max-height: 30rem;
+    position: relative;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow: hidden;
+  }
+
+  .mask::after {
+    z-index: 1;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    position: absolute;
+    top: 0;
+    color: var(--white);
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    width: fit-content;
+    height: fit-content;
+    font-size: var(--fs-xl);
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .body-content {
+    margin-top: 10rem;
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: var(--fs-2xl);
+    }
+  }
+</style>

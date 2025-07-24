@@ -1,0 +1,121 @@
+---
+import { transformDate } from "@/helpers/transformDate";
+import { Image } from "astro:assets";
+import model from "@/assets/authors/model.jpg";
+import type { CollectionEntry } from "astro:content";
+import Date from "./icons/Date.astro";
+import Clock from "./icons/Clock.astro";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const { data } = post;
+---
+
+<header class="data-post">
+  <div class="author-wrap">
+    <Image class="photo-profile" src={model} alt="autor" />
+    <div>
+      <span class="author-name">{data.author.name}</span>
+      <span class="belt">{data.author.belt}</span>
+    </div>
+  </div>
+
+  <div class="bot-wrap">
+    <time class="date">
+      <Date size={20} />
+      {transformDate(data.datePublished)}
+    </time>
+    <span class="reading-time">
+      <Clock size={20} />
+      {data.readingTime} min de lectura
+    </span>
+  </div>
+</header>
+
+<style>
+  .data-post {
+    background-color: var(--white);
+    min-height: 10rem;
+    width: 90%;
+    margin-inline: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(75%);
+    z-index: 2;
+    border-radius: var(--radius) var(--radius) 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    /* background-color: var(--light); */
+    border-bottom: 1px dashed var(--gray);
+  }
+
+  .reading-time,
+  .date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .author-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .author-wrap div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-name {
+    font-family: var(--ff-base-bold);
+    font-size: var(--fs-md);
+  }
+
+  .belt,
+  .date,
+  .reading-time {
+    font-size: var(--fs-sm);
+    color: var(--dark-500);
+  }
+
+  .photo-profile {
+    max-width: 4.5rem;
+    border-radius: var(--radius-full);
+  }
+
+  .bot-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1024px) {
+    .data-post {
+      align-items: center;
+      flex-direction: row;
+      padding: 2rem;
+    }
+
+    .author-name {
+      font-size: var(--fs-base);
+    }
+
+    .belt {
+      font-size: var(--fs-md);
+    }
+
+    .bot-wrap {
+      gap: 2rem;
+      flex-direction: column;
+    }
+  }
+</style>

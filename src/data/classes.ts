@@ -5,6 +5,7 @@ import competition from "@/assets/classes/competicion.jpg";
 
 import bjjCompanies from "@/assets/classes/bjj-para-empresas.jpg";
 import privateSessions from "@/assets/classes/sesiones-privadas.jpeg";
+import disca from "@/assets/classes/discapacidad.jpg";
 
 import type { Classes } from "@/types";
 import { WHATSAPP_MSG } from "@/vars";
@@ -61,7 +62,7 @@ export const programs: Classes[] = [
   {
     heading: "discapacidad",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
-    img: bjjCompanies,
+    img: disca,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
     wa: WHATSAPP_MSG.DISCA,

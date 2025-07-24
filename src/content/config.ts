@@ -10,9 +10,9 @@ const posts = defineCollection({
     dateModified: z.date(),
     image: z.string(),
     wordCount: z.number(),
-    author: z.enum(["Renzo Martínez"]),
+    author: z.object({ name: z.enum(['Renzo Martínez', 'Aitana Moreno']), belt: z.string() }),
     topPick: z.boolean().optional(),
   }),
 });
 
-export const collections = { posts};
+export const collections = { posts };
