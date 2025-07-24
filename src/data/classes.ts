@@ -13,58 +13,58 @@ import { WHATSAPP_MSG } from "@/vars";
 export const mainClasses: Classes[] = [
   {
     heading: "kimono - gi",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
+    text: "El Gi permite un juego más controlado y estratégico gracias a los agarres.",
     img: gi,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+      "El jiu-jitsu con kimono se enfoca en un juego técnico y estratégico basado en los agarres de la tela. Las clases incluyen prácticas de técnicas básicas y avanzadas, ejercicios específicos y sesiones de sparring.",
   },
   {
     heading: "grappling - nogi",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
+    text: "el No-Gi es más dinámico y explosivo, más orientado al grappling puro.",
     img: nogi,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+      "El NoGi o Grappling es la versión del jiu-jitsu sin kimono, con combates más rápidos y dinámicos por la ausencia de agarres de tela. Las clases incluyen técnicas, ejercicios específicos y sparring.",
   },
   {
     heading: "niños",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
+    text: "Clases impartidas de una forma segura y divertida, desde los 4 hasta los 15 años.",
     img: kids,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+      "El jiu-jitsu infantil se divide por grupos de edad (4-7, 8-10 y 11-15 años) y ayuda a desarrollar concentración, psicomotricidad y confianza. También enseña defensa ante el bullying, junto con valores como disciplina, respeto y compañerismo.",
   },
 ];
 
 export const programs: Classes[] = [
   {
     heading: "competición",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
+    text: "entrenamientos con objetivos específicos.",
     img: competition,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+      "En Atenea somos unos apasionados de la competición y tenemos un objetivo claro: formar campeones. Adaptamos estrategias al estilo de cada alumno y entrenamos según las reglas del torneo para una preparación física y mental óptima.",
     wa: WHATSAPP_MSG.COMPETITION,
   },
   {
     heading: "sesiones privadas",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
+    text: "aprendizaje rápido y personalizado en un entorno exclusivo.",
     img: privateSessions,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+      "Las clases privadas ofrecen un aprendizaje acelerado y personalizado según el nivel y las necesidades del alumno. Se desarrollan en un entorno exclusivo y totalmente adaptado.",
     wa: WHATSAPP_MSG.PRIVATE_SESSIONS,
   },
   {
     heading: "empresas",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
+    text: "Team building, charlas formativas y clases de defensa personal.",
     img: bjjCompanies,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+      "Ofrecemos jiu-jitsu para empresas con actividades de team building, clases de defensa personal mixtas y para mujeres, incluyendo charlas sobre deporte, inclusión y prevención. Ideal para fortalecer y sensibilizar equipos.",
     wa: WHATSAPP_MSG.COMPANIES,
   },
   {
     heading: "discapacidad",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,eligendi.",
+    text: "Clases inclusivas y adaptadas para personas con discapacidad.",
     img: disca,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, consectetur labore. At hic odit maxime maiores culpa reprehenderit molestiae totam repellendus perferendis, blanditiis sapiente iusto amet, tempore voluptas ipsa exercitationem.",
+      "Todas nuestras clases están abiertas y adaptadas para personas con discapacidad, con un enfoque inclusivo que garantiza la participación y progreso de todos los alumnos. En Atenea ya contamos con varios estudiantes con discapacidad.",
     wa: WHATSAPP_MSG.DISCA,
   },
 ];

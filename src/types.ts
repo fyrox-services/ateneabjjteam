@@ -41,6 +41,7 @@ export interface Plan {
   link: string;
   monthly?: boolean;
   tagline?: string;
+  buy: boolean
 }
 
 export interface Step {

@@ -32,7 +32,7 @@ const { cards, style = "classes" } = Astro.props;
               </picture>
               <header>
                 <h3>{heading}</h3>
-                <p>{text}</p>
+                <p class="summary">{text}</p>
                 {style === "classes" ? (
                   <button class="btn btn-free-class">
                     <span>clase de prueba</span>
@@ -140,7 +140,7 @@ const { cards, style = "classes" } = Astro.props;
     color: transparent;
   }
 
-  p {
+  .summary {
     color: var(--white);
     max-width: 30ch;
   }

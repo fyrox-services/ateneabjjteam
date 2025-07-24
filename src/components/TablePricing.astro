@@ -2,6 +2,7 @@
 import { formatearMoneda } from "@/helpers/formatCurrency";
 import Buy from "@/components/icons/Buy.astro";
 import type { Plan } from "@/types";
+import WhatsApp from "./icons/WhatsApp.astro";
 
 interface Props {
   plans: Plan[];
@@ -12,7 +13,7 @@ const { plans } = Astro.props;
 
 <ul>
   {
-    plans.map(({ link, monthly, name, price, tagline }) => {
+    plans.map(({ link, monthly, name, price, tagline, buy }) => {
       return (
         <li>
           <div>
@@ -23,10 +24,17 @@ const { plans } = Astro.props;
             {formatearMoneda(price)}
             <span class="monthly">{monthly && "/mes"}</span>
           </span>
-          <a target="_blank" rel="noopener noreferrer" href={link}>
-            <span>comprar</span>
-            <Buy size={25} />
-          </a>
+          {buy ? (
+            <a target="_blank" rel="noopener noreferrer" href={link}>
+              <span>comprar</span>
+              <Buy size={25} />
+            </a>
+          ) : (
+            <a target="_blank" rel="noopener noreferrer" href={link}>
+              <span>info </span>
+              <WhatsApp size={25} />
+            </a>
+          )}
         </li>
       );
     })

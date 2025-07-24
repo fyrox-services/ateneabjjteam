@@ -26,4 +26,7 @@ export const WHATSAPP_MSG = {
   DISCA: buildMsg(
     "Hola, me gustaría tener más información sobre el jiu jitsu para personas con discapacidad:"
   ),
+  BUY_PRIVATE_SESSION: buildMsg(
+    "Hola, me gustaría tener más información para comprar una clase privada:"
+  ),
 };

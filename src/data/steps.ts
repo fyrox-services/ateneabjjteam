@@ -12,21 +12,21 @@ import type { Step } from "@/types";
 export const howStart : Step[]= [
   {
     icon: proof,
-    name: "ven a probar",
+    name: "rellena el formulario",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+      "Completa nuestro formulario de inscripción con tus datos básicos, el horario que mejor se adapte a ti y la modalidad en la que deseas realizar tu clase de prueba: con kimono (Gi), sin kimono (No-Gi) o clases infantiles. Esto nos permitirá reservar tu plaza y prepararlo todo para tu primer día.",
   },
   {
     icon: chose,
-    name: "elige modalidad",
+    name: "confirma tu clase",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+      "Una vez recibido tu formulario, nos pondremos en contacto contigo para confirmar tu clase de prueba gratuita y resolver cualquier duda que puedas tener antes de tu primer entrenamiento.",
   },
   {
     icon: progress,
-    name: "comienza a entrenar",
+    name: "empieza a entrenar",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+      "El día acordado, solo necesitas presentarte con ropa cómoda y muchas ganas. Si no cuentas con kimono, te facilitaremos uno para tu clase de prueba. A partir de ahí, comenzarás tu camino en el Jiu-Jitsu acompañado por un equipo comprometido con tu proceso deportivo y personal.",
   },
 ];
 
@@ -35,13 +35,13 @@ export const principles : Step[]= [
     icon: wave,
     name: "nuestra ola",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+      "Simboliza nuestra forma de vivir el jiu-jitsu a través de la adaptabilidad, el aprendizaje y la superación. No se trata de resistir, sino de fluir con los retos y superarlos con resiliencia. Más que un arte marcial es un estilo de vida",
   },
   {
     icon: puzzle,
     name: "metodología",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+      "Te ofrecemos un programa especializado garantizando el aprendizaje y la integración de contenidos. Nuestro equipo de profesores estará acompañándote durante todo tu camino para afianzar tu progreso y atender tus necesidades.",
   },
   {
     icon: community,
