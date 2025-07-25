@@ -13,7 +13,7 @@ import { WHATSAPP_MSG } from "@/vars";
 export const mainClasses: Classes[] = [
   {
     heading: "kimono - gi",
-    text: "El Gi permite un juego más controlado y estratégico gracias a los agarres.",
+    text: "El Gi permite un juego más controlado y estratégico gracias a los agarres de tela.",
     img: gi,
     description:
       "El jiu-jitsu con kimono se enfoca en un juego técnico y estratégico basado en los agarres de la tela. Las clases incluyen prácticas de técnicas básicas y avanzadas, ejercicios específicos y sesiones de sparring.",

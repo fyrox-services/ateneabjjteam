@@ -69,6 +69,7 @@
   --fs-4xl: 82px;
 
   --header-height: 55px;
+  scroll-padding-top: 14%;
 }
 
 *,
@@ -89,6 +90,7 @@ html {
   font-family: var(--ff-base); /* Fuente predeterminada */
   -webkit-text-size-adjust: 100%; /* Previene zoom en dispositivos móviles */
   -webkit-font-smoothing: antialiased; /* Suaviza las fuentes */
+  scroll-behavior: smooth;
 }
 
 /* Estilos base para body */
