@@ -7,6 +7,21 @@ interface Props {
 }
 
 const { faqs } = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ heading, text }) => {
+    return {
+      "@type": "Question",
+      name: heading,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text,
+      },
+    };
+  }),
+};
 ---
 
 <ul class="ul-faqs">
@@ -33,6 +48,12 @@ const { faqs } = Astro.props;
     })
   }
 </ul>
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(structuredData)}
+/>
 
 <script src="@/helpers/handleFaqs"></script>
 

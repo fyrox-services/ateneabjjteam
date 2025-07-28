@@ -8,8 +8,11 @@ export const GLOBAL_DATA = {
   PHONE_NUMBER: "634254179",
   CALL_LINK: "tel:634254179",
   PHONE_MASK: "634 254 179",
+  PHONE_DATA: "+34 634 254 179",
   MAIL_TO: "mailto:info@ateneabjjteam.com",
   MAIL_TEXT: "info@ateneabjjteam.com",
+  SITE_NAME: 'Atenea BJJ Team',
+  SITE_DESCRIPTION: 'Academia de jiu jitsu en Madrid, aprende jiu jitsu de calidad de forma estructurada y profesional. Reserva una primera clase de prueba gratis.'
 };
 
 export const WHATSAPP_MSG = {

@@ -15,11 +15,64 @@ import { homeFaqs } from "@/data/faqs";
 import { imagesHome } from "@/data/images";
 import { howStart } from "@/data/steps";
 import Layout from "@/layouts/Layout.astro";
+import { GLOBAL_DATA } from "@/vars";
 
 const metaData = {
   metaTitle: "Academia TODO",
   metaDescription: "TODO",
   ogImage: "TODO",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": Astro.url,
+  url: Astro.url,
+  name: GLOBAL_DATA.SITE_NAME,
+  description: GLOBAL_DATA.SITE_DESCRIPTION,
+  inLanguage: "es",
+  publisher: {
+    "@type": "Organization",
+    name: GLOBAL_DATA.SITE_NAME,
+    logo: {
+      "@type": "ImageObject",
+      url: `${Astro.url.origin}/TODO`,
+    },
+  },
+};
+
+const localData = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  name: GLOBAL_DATA.SITE_NAME,
+  image: `${Astro.url}/TODO`,
+  url: Astro.url,
+  description: GLOBAL_DATA.SITE_DESCRIPTION,
+  telephone: GLOBAL_DATA.PHONE_DATA,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Calle del Canal de Panamá, 3",
+    addressLocality: "Madrid",
+    postalCode: "28027",
+    addressCountry: "ES",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 40.4401567,
+    longitude: -3.6538688,
+  },
+  openingHours: [
+    "Mo 10:30-22:00",
+    "Tu 10:30-22:00",
+    "We 10:30-22:00",
+    "Th 10:30-22:00",
+    "Fr 10:30-21:00",
+    "Sa 12:00-13:30",
+  ],
+  areaServed: {
+    "@type": "Country",
+    name: "España",
+  },
 };
 ---
 
@@ -121,6 +174,18 @@ const metaData = {
       <a class="btn link-page" href="/es/contacto/">Contáctanos</a>
     </div>
   </Section>
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(localData)}
+  />
 </Layout>
 
 <style>
