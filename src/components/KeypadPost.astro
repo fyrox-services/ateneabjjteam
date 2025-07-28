@@ -1,11 +1,11 @@
 <div>
-  <button id="btn-toc-mobile"> tabla de contenido </button>
+  <button id="btn-toc-mobile"> Tabla de contenido </button>
   <a
     class="btn-border"
     target="_blank"
     href={`https://api.whatsapp.com/send?text=${Astro.url}`}
   >
-    compartir en WhatsApp
+    Compartir en WhatsApp
   </a>
 </div>
 
@@ -19,6 +19,7 @@
     border-top: 1px solid var(--gray);
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
     padding: 0.5rem;
     width: 100%;
     gap: 0.5rem;
@@ -34,6 +35,9 @@
     flex: 1;
     text-align: center;
     border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   button {

@@ -1,5 +1,6 @@
 ---
 import { buildHeadings } from "@/helpers/buildHeading";
+import MinimalArrow from "./icons/MinimalArrow.astro";
 
 interface Props {
   body: string;
@@ -18,7 +19,7 @@ console.log(headings);
     </header>
     <ul>
       {
-        headings.map(({ text, type }) => {
+        headings.map(({ text }) => {
           const splitedText = text.split(" ");
 
           const cleanedText = splitedText.map((word) => {
@@ -29,7 +30,10 @@ console.log(headings);
 
           return (
             <li>
-              <a href={`#${createSlug}`}> -> {text}</a>
+              <a href={`#${createSlug}`}>
+                {" "}
+                <MinimalArrow size={15} /> {text}
+              </a>
             </li>
           );
         })
@@ -52,7 +56,7 @@ console.log(headings);
       left: 0;
       width: 100%;
       padding: 1rem;
-      font-size: var(--fs-sm);
+      font-size: var(--fs-s);
       transform: translateY(100%);
       opacity: 0;
       visibility: hidden;
@@ -91,6 +95,13 @@ console.log(headings);
         transparent 100%
       );
       padding-bottom: 2rem;
+    }
+
+    a {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     a:active {
@@ -151,14 +162,17 @@ console.log(headings);
         color 0.3s ease,
         background-color 0.3s ease;
       max-width: 40ch;
-      display: block;
       padding: 0.5rem;
       border-radius: var(--radius) 0 0 var(--radius);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     a.active {
       color: var(--primary);
-      background-color: var(--gray);
+      background-color: var(--light);
     }
 
     a:hover {
