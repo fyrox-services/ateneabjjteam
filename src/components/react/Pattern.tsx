@@ -42,30 +42,4 @@ export function Pattern({ children, type = 1 }: Props) {
       </div>
     );
   }
-
-  if (type === 3) {
-    return (
-      <div className=" w-full relative bg-white">
-        {/* Cool Blue Glow Left */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            background: "#ffffff",
-            backgroundImage: `
-        radial-gradient(
-          circle at top left,
-          rgb(0, 134, 202, 0.5),
-          transparent 70%
-        )
-      `,
-            filter: "blur(80px)",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        {children}
-
-        {/* Your Content/Components */}
-      </div>
-    );
-  }
 }

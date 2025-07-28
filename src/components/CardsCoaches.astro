@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
     coaches.map(({ belt, description, name, photo, head, rol }) => {
       return (
         <li>
-          <Pattern type={3}>
+          <Pattern type={1}>
             <div class="pattern li-wrap">
               <Image src={photo} alt={"TODO"} />
               <div class="text">
@@ -120,7 +120,15 @@ import { Image } from "astro:assets";
 
   img {
     max-width: 15rem;
-    mask-image: radial-gradient(100% 100% at 50% 0%, white 50%, transparent);
+    mask-image: radial-gradient(
+      100% 100% at 50% 0%,
+      white 70%,
+      rgba(255, 255, 255, 0.6) 80%,
+      rgba(255, 255, 255, 0.3) 90%,
+      transparent 100%
+    );
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
   }
 
   .rol {
