@@ -1,5 +1,6 @@
 ---
 layout: "@/layouts/LegalLayout.astro"
+metaTitle: Aviso Legal
 ---
 
 # Aviso legal

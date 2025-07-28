@@ -1,5 +1,6 @@
 ---
 layout: "@/layouts/LegalLayout.astro"
+metaTitle: Política de Cookies
 ---
 
 # Política de cookies

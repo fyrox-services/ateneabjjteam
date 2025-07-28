@@ -2,9 +2,18 @@
 import Section from "@/components/Section.astro";
 import Layout from "./Layout.astro";
 import "@/styles/content.css";
+
+const { metaTitle } = Astro.props.frontmatter;
+
+const metaData = {
+  metaTitle,
+  metaDescription: "",
+  ogImage: "TODO",
+  noIndex: true,
+};
 ---
 
-<Layout typePage="legal">
+<Layout metaData={metaData} typePage="legal">
   <Section class="wrapper-max content-body">
     <slot />
   </Section>
