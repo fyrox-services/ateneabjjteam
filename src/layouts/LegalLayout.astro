@@ -1,0 +1,11 @@
+---
+import Section from "@/components/Section.astro";
+import Layout from "./Layout.astro";
+import "@/styles/content.css";
+---
+
+<Layout typePage="legal">
+  <Section class="wrapper-max content-body">
+    <slot />
+  </Section>
+</Layout>

@@ -20,3 +20,41 @@ p {
     font-size: var(--fs-base);
   }
 }
+
+/* LEGAL PAGE */
+
+body.legal .content-body h1 {
+  font-size: var(--fs-2xl);
+}
+
+body.legal .content-body h2 {
+  margin-block: 1lh;
+}
+
+body.legal .content-body ul,
+body.legal .content-body ol {
+  padding-left: 2rem;
+}
+
+body.legal .content-body ul li {
+  list-style: initial;
+  margin-block: 0.5lh;
+  font-size: var(--fs-md);
+}
+
+body.legal .content-body ol li {
+  list-style: decimal;
+  margin-block: 0.5lh;
+  font-size: var(--fs-md);
+}
+
+body.legal .content-body a {
+  color: var(--link);
+}
+
+@media (min-width: 1024px) {
+  body.legal .content-body ul li,
+  body.legal .content-body ol li {
+    font-size: var(--fs-base);
+  }
+}

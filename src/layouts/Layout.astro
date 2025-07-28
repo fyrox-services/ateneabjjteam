@@ -6,9 +6,10 @@ import "@/styles/utils.css";
 import "@/styles/animations.css";
 import { Modal } from "@/components/react/Modal";
 import BtnFloat from "@/components/BtnFloat.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
-  typePage?: "post";
+  typePage?: "post" | "legal";
 }
 
 const { typePage } = Astro.props;
@@ -44,6 +45,7 @@ const { typePage } = Astro.props;
       type="font/woff2"
       crossorigin="anonymous"
     />
+    <ClientRouter />
   </head>
   <body class={typePage}>
     <Header />
