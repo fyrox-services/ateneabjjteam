@@ -6,10 +6,9 @@ import wave from "@/assets/icons/ola.png";
 import puzzle from "@/assets/icons/puzzle.png";
 import community from "@/assets/icons/comunidad.png";
 
-
 import type { Step } from "@/types";
 
-export const howStart : Step[]= [
+export const howStart: Step[] = [
   {
     icon: proof,
     name: "rellena el formulario",
@@ -30,7 +29,7 @@ export const howStart : Step[]= [
   },
 ];
 
-export const principles : Step[]= [
+export const principles: Step[] = [
   {
     icon: wave,
     name: "nuestra ola",
@@ -47,6 +46,6 @@ export const principles : Step[]= [
     icon: community,
     name: "comunidad",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic modi quisquam nobis, esse, eveniet ipsum consectetur mollitia natus soluta odio aut distinctio repellat voluptatem! Cum quos consequuntur voluptates assumenda aliquam.",
+      "Creemos en el poder del jiu-jitsu para unir a las personas. En Atenea cultivamos un ambiente cercano y familiar, donde cada alumno forma parte de una comunidad que se apoya dentro y fuera del tatami. Crecemos juntos, sin importar el nivel o la experiencia.",
   },
 ];

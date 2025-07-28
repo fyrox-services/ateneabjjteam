@@ -35,8 +35,8 @@ export const coaches: Coach[] = [
     rol: "instructora",
     head: "renzo martínez",
     description: [
-      "Empezó a entrenar jiu-jitsu en 2021 y un año después se dedicó profesionalmente como atleta competidora. En octubre de 2023, hizo historia al ser la primera mujer con discapacidad en España en ganar el campeonato mundial de Abu Dhabi World Para Jiu-Jitsu Championship.",
-      "Aitana se ha destacado en competiciones para personas con y sin discapacidad, ganando títulos notables en la categoría adulto como el tercer lugar en el campeonato Europeo IBJJF 2024.",
+      "Empezó a entrenar jiu-jitsu en 2021 y, tan solo un año después, decidió dedicarse profesionalmente como atleta competidora. En octubre de 2023, hizo historia al convertirse en la primera mujer con discapacidad en España en ganar el campeonato mundial de Abu Dhabi World Para Jiu-Jitsu Championship. En 2024, revalidó su título, proclamándose bicampeona mundial.",
+      "Aitana se ha destacado en competiciones para personas con y sin discapacidad, ganando títulos notables en la categoría adulto como el tercer lugar en el campeonato Europeo IBJJF 2024",
     ],
   },
 
@@ -47,7 +47,7 @@ export const coaches: Coach[] = [
     photo: eibert,
     head: "renzo martínez",
     description: [
-      "Es instructor principal de las clases de la mañana con kimono y sin kimono. Comenzó a practicar jiu-jitsu en el año 2016. En el 2023, se proclamó múltiple medallista de Gi y Nogi, a nivel nacional e internacional.",
+      "Comenzó su camino en el jiu-jitsu en el año 2016, y desde entonces ha construido una gran trayectoria deportiva. Se unió a Atenea en 2022 y, en poco tiempo, logró posicionarse como uno de los competidores más destacados a nivel nacional.",
     ],
   },
   {
@@ -58,6 +58,7 @@ export const coaches: Coach[] = [
     head: "Ruben Kilian",
     description: [
       "Comenzó a entrenar jiu-jitsu en 2017 y, desde entonces, ha mantenido una actividad competitiva constante. Es uno de los atletas más activos del país, con múltiples medallas tanto en Gi como en Nogi. Entre sus logros más destacados se encuentran el título de campeón de España Nogi por la Federación de Lucha, el subcampeonato europeo en el AJP y el tercer puesto en el Grand Slam de Roma.",
+      "Axhel ha sido compañero de entrenamiento de Renzo desde el año 2019, y en el 2025 se unió al equipo de Atenea como instructor de las clases de la mañana."
     ],
   },
 ];

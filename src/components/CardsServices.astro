@@ -78,8 +78,8 @@ const { cards, style = "classes" } = Astro.props;
 
   li {
     border-radius: var(--radius);
-    height: 70vh;
-    max-height: 600px;
+    min-height: 78vh;
+    height: auto;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -243,6 +243,10 @@ const { cards, style = "classes" } = Astro.props;
 
     ul {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    li {
+      max-height: 600px;
     }
   }
 </style>
