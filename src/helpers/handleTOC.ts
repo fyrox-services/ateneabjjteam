@@ -9,18 +9,9 @@ const observer = new IntersectionObserver(
     entries.forEach((entry, i) => {
       const a = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
 
-      const next = headings[i + 1] || null;
+      if (entry.isIntersecting) return a?.classList.add("active");
 
-      // a?.classList.remove("active");
-
-        console.log(`Heading actual: ${entry.target.id}, siguiente: ${next?.id}`);
-
-      if (entry.isIntersecting === entry.isIntersecting.valueOf()) {
-        // a?.classList.add("active");
-        // TODO: HACER QUE NO SE ACTIVE EL SIGUIENTE HASTA QUE APAREZCA Y QUE EL ACTUAL NO SE DESACTIVE
-      }
-
-      // a?.classList.remove("active");
+      a?.classList.remove("active");
     });
   },
   {
