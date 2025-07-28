@@ -6,6 +6,12 @@ import "@/styles/utils.css";
 import "@/styles/animations.css";
 import { Modal } from "@/components/react/Modal";
 import BtnFloat from "@/components/BtnFloat.astro";
+
+interface Props {
+  typePage?: "post";
+}
+
+const { typePage } = Astro.props;
 ---
 
 <!doctype html>
@@ -39,7 +45,7 @@ import BtnFloat from "@/components/BtnFloat.astro";
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class={typePage}>
     <Header />
     <main>
       <slot />

@@ -32,7 +32,7 @@ const { body, data } = post;
 const { Content } = await render(post);
 ---
 
-<Layout>
+<Layout typePage="post">
   <PostLayout body={body} post={post}>
     <Content />
   </PostLayout>

@@ -4,6 +4,7 @@ import "@/styles/content.css";
 import HeaderBlog from "@/components/HeaderBlog.astro";
 import AsideBlog from "@/components/AsideBlog.astro";
 import TOC from "@/components/TOC.astro";
+import KeypadPost from "@/components/KeypadPost.astro";
 
 interface Props {
   body: string;
@@ -52,6 +53,7 @@ const { data, slug } = post;
     <!-- banner -->
     <AsideBlog />
   </section>
+  <KeypadPost />
 </article>
 
 <style>
