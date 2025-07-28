@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { body, post } = Astro.props;
-const { data, slug } = post;
+const { data } = post;
 ---
 
 <article>
@@ -36,7 +36,7 @@ const { data, slug } = post;
         alt="TODO"
       />
     </picture>
-    <h1>¿A qué edad puede empezar mi hijo en el jiu jitsu?</h1>
+    <h1>{data.h1}</h1>
 
     <HeaderBlog post={post} />
   </div>

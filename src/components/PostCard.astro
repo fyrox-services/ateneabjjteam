@@ -2,6 +2,8 @@
 import { transformDate } from "@/helpers/transformDate";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import Date from "./icons/Date.astro";
+import Clock from "./icons/Clock.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -13,6 +15,89 @@ const { data, slug } = post;
 const cleanSlug = slug.split("/")[1];
 ---
 
+<li>
+  <a aria-label={`Ir a la página de ${data.h1}`} href={`${cleanSlug}/`}>
+    <article>
+      <h2>{data.h1}</h2>
+      <picture>
+        <Image
+          loading={first ? "eager" : "lazy"}
+          width={600}
+          height={400}
+          src={`/img/blog/${data.image}`}
+          alt={data.h1}
+        />
+      </picture>
+      <p>{data.metaDescription}</p>
+      <footer>
+        <span>
+          <Date size={20} />
+
+          {transformDate(data.datePublished)}</span
+        >
+        <span>
+          <Clock size={20} />
+
+          {data.readingTime} min de lectura</span
+        >
+      </footer>
+    </article>
+  </a>
+</li>
+
+<style>
+  a {
+    box-shadow: var(--shadow);
+    display: block;
+    border-radius: var(--radius);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+
+  h2 {
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--black);
+    font-size: var(--fs-md);
+    color: var(--white);
+    line-height: 1.5;
+  }
+
+  p {
+    font-size: var(--fs-md);
+    padding: 2rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--gray);
+    margin: 0 2rem;
+    padding: 1rem 0;
+    font-size: var(--fs-sm);
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    a:hover {
+      transform: scale(1.03);
+    }
+
+    h2 {
+      font-size: var(--fs-base);
+    }
+  }
+</style>
+
+<!-- 
 <li>
   <article>
     <a aria-label={`Ir a la página de ${data.h1}`} href={`${cleanSlug}/`}>
@@ -52,7 +137,6 @@ const cleanSlug = slug.split("/")[1];
     height: 100%;
   }
 
-  h3,
   p {
     padding: 1rem 2rem;
   }
@@ -61,12 +145,16 @@ const cleanSlug = slug.split("/")[1];
     position: absolute;
     color: var(--white);
     z-index: 10;
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-md);
     line-height: 1.25;
+    background-color: red;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
   }
 
   p {
-    font-size: var(--fs-sm);
+    font-size: var(--fs-md);
   }
 
   footer {
@@ -86,4 +174,4 @@ const cleanSlug = slug.split("/")[1];
       transform: scale(1.03);
     }
   }
-</style>
+</style> -->

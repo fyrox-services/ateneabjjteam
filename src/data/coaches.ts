@@ -2,6 +2,7 @@ import aitana from "@/assets/coaches/aitana.png";
 import renzo from "@/assets/coaches/renzo.png";
 import jackson from "@/assets/coaches/jackson.png";
 import eibert from "@/assets/coaches/eibert.png";
+import ahxel from "@/assets/coaches/ahxel.png";
 import type { Coach } from "@/types";
 
 export const coaches: Coach[] = [
@@ -50,11 +51,11 @@ export const coaches: Coach[] = [
     ],
   },
   {
-    name: "Axhel Molina",
+    name: "Ahxel Molina",
     belt: "marrón",
     rol: "instructor",
-    photo: eibert,
-    head: "renzo martínez",
+    photo: ahxel,
+    head: "Ruben Kilian",
     description: [
       "Comenzó a entrenar jiu-jitsu en 2017 y, desde entonces, ha mantenido una actividad competitiva constante. Es uno de los atletas más activos del país, con múltiples medallas tanto en Gi como en Nogi. Entre sus logros más destacados se encuentran el título de campeón de España Nogi por la Federación de Lucha, el subcampeonato europeo en el AJP y el tercer puesto en el Grand Slam de Roma.",
     ],

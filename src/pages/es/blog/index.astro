@@ -6,12 +6,10 @@ import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts");
-
-console.log(posts);
 ---
 
 <Layout>
-  <Hero h1="blog" tagline="sumérgete en la ola" />
+  <Hero h1="blog" tagline="artículos sobre el jiu jitsu" />
   <Section class="wrapper no-space">
     <WrapperPosts posts={posts} />
   </Section>
