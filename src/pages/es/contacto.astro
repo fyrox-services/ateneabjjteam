@@ -8,9 +8,16 @@ import { ContactForm } from "@/components/react/ContactForm";
 import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
 import { GLOBAL_DATA, WHATSAPP_MSG } from "@/vars";
+
+const metaData = {
+  metaTitle: "Contáctanos",
+  metaDescription:
+    "Si tienes preguntas sobre nuestras clases, programas o simplemente quieres saber más sobre el Jiu-Jitsu, estamos aquí para ayudarte.",
+  ogImage: "TODO",
+};
 ---
 
-<Layout>
+<Layout metaData={metaData}>
   <Hero
     h1="contáctanos"
     tagline="Si tienes preguntas sobre nuestras clases, programas o simplemente quieres saber más sobre el Jiu-Jitsu, estamos aquí para ayudarte."

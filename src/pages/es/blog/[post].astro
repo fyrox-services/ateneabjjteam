@@ -30,9 +30,15 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { body, data } = post;
 const { Content } = await render(post);
+
+const metaData = {
+  metaTitle: data.metaTitle,
+  metaDescription: data.metaDescription,
+  ogImage: "TODO",
+};
 ---
 
-<Layout typePage="post">
+<Layout metaData={metaData} typePage="post">
   <PostLayout body={body} post={post}>
     <Content />
   </PostLayout>

@@ -15,9 +15,15 @@ import { homeFaqs } from "@/data/faqs";
 import { imagesHome } from "@/data/images";
 import { howStart } from "@/data/steps";
 import Layout from "@/layouts/Layout.astro";
+
+const metaData = {
+  metaTitle: "Academia TODO",
+  metaDescription: "TODO",
+  ogImage: "TODO",
+};
 ---
 
-<Layout>
+<Layout metaData={metaData}>
   <Above />
   <!-- clases principales -->
   <Section class="first">

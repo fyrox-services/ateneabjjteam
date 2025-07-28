@@ -7,9 +7,16 @@ import Section from "@/components/Section.astro";
 import TablePricing from "@/components/TablePricing.astro";
 import { kids, mainClasses, oneTime, privateSessions } from "@/data/pricing";
 import Layout from "@/layouts/Layout.astro";
+
+const metaData = {
+  metaTitle: "Precios",
+  metaDescription:
+    "Consulta nuestras tarifas para clases mensuales y puntuales.",
+  ogImage: "TODO",
+};
 ---
 
-<Layout>
+<Layout metaData={metaData}>
   <Hero
     h1="precios"
     tagline="nuestras tarifas para clases mensuales y puntuales"

@@ -6,9 +6,15 @@ import Section from "@/components/Section.astro";
 import { newMembers, suscribtions, classes_programs } from "@/data/faqs";
 import Layout from "@/layouts/Layout.astro";
 import BtnFloatDesktop from "@/components/BtnFloatDesktop.astro";
+
+const metaData = {
+  metaTitle: "Preguntas frecuentes",
+  metaDescription: "Las preguntas más comúnes",
+  ogImage: "TODO",
+};
 ---
 
-<Layout>
+<Layout metaData={metaData}>
   <Hero
     h1="preguntas frecuentes"
     tagline="si tienes más preguntas contáctanos"

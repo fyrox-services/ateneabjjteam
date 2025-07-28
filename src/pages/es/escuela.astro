@@ -10,9 +10,16 @@ import BtnMainCta from "@/components/BtnMainCta.astro";
 import CardsStep from "@/components/CardsStep.astro";
 import { principles } from "@/data/steps";
 import { imagesSchool } from "@/data/images";
+
+const metaData = {
+  metaTitle: "Escuela",
+  metaDescription:
+    "Información sobre nuestra escuela, historia, principios, profesores y espacio.",
+  ogImage: "TODO",
+};
 ---
 
-<Layout>
+<Layout metaData={metaData}>
   <Hero h1="escuela" tagline="sumérgete en la ola" />
 
   <Section class="wrapper">

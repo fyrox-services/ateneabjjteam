@@ -10,9 +10,18 @@ import BtnFloat from "@/components/BtnFloat.astro";
 
 interface Props {
   typePage?: "post" | "legal";
+  metaData: {
+    metaTitle: string;
+    metaDescription: string;
+    noIndex?: boolean;
+    ogImage: string;
+  };
 }
 
-const { typePage } = Astro.props;
+const {
+  typePage,
+  metaData: { noIndex = false, metaDescription, metaTitle, ogImage = "" },
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -20,7 +29,7 @@ const { typePage } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Astro Basics</title>
+    <title>{metaTitle}</title>
 
     <!-- FONTS -->
     <link
@@ -50,6 +59,27 @@ const { typePage } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph (Facebook, LinkedIn...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={`${Astro.url.origin}/${ogImage}`} />
+    <meta property="og:url" content={Astro.url} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={`${Astro.url.origin}/${ogImage}`} />
+
+    <!-- seo -->
+    <link rel="canonical" href={Astro.url} />
+    <meta name="description" content={metaDescription} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- INDEX -->
+    {noIndex && <meta name="robots" content="noindex" />}
 
     <!-- <ClientRouter /> -->
   </head>

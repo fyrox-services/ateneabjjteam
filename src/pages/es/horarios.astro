@@ -5,9 +5,15 @@ import Section from "@/components/Section.astro";
 import TableSchedule from "@/components/TableSchedule.astro";
 import TableScheduleDesktop from "@/components/TableScheduleDesktop.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const metaData = {
+  metaTitle: "Horarios",
+  metaDescription: "Consulta todas las clases de la semana de un vistazo.",
+  ogImage: "TODO",
+};
 ---
 
-<Layout>
+<Layout metaData={metaData}>
   <Hero h1="horarios" tagline="Todas las clases de la semana" />
 
   <Section class="wrapper">
