@@ -7,9 +7,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 import mdx from "@astrojs/mdx";
 
+import sitemap from "@astrojs/sitemap";
+
+const site = "https://ateneabjjteam.com";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ateneabjjteam.com",
+  site,
   server: {
     host: true,
     allowedHosts: true,
@@ -22,7 +26,21 @@ export default defineConfig({
     },
   },
 
-  integrations: [react(), mdx()],
+  integrations: [
+    react(),
+    mdx(),
+    sitemap({
+      filter: (page) => {
+        const excludedPages = [
+          `${site}/contacto/`,
+          `${site}/legal/aviso-legal/`,
+          `${site}/legal/politica-cookies/`,
+          `${site}/legal/politica-privacidad/`,
+        ];
+        return !excludedPages.includes(page);
+      },
+    }),
+  ],
 
   vite: {
     plugins: [tailwindcss()],
