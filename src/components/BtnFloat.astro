@@ -4,6 +4,13 @@ import WhatsApp from "@/components/icons/WhatsApp.astro";
 import { GLOBAL_DATA, WHATSAPP_MSG } from "@/vars";
 import Appointment from "@/components/icons/Appointment.astro";
 import Phone from "./icons/Phone.astro";
+import Share from "./icons/Share.astro";
+
+interface Props {
+  typePage?: "post" | "legal";
+}
+
+const { typePage } = Astro.props;
 ---
 
 <div id="btn-float-wrap" class="btn-float-mobile wrapper">
@@ -17,9 +24,20 @@ import Phone from "./icons/Phone.astro";
     <a href={WHATSAPP_MSG.GENERAL}>
       <WhatsApp size={25} />
     </a>
-    <button id="btn-free-class">
-      <Appointment />
-    </button>
+    {
+      typePage === "post" ? (
+        <a
+          target="_blank"
+          href={`https://api.whatsapp.com/send?text=${Astro.url}`}
+        >
+          <Share size={25} />
+        </a>
+      ) : (
+        <button id="btn-free-class">
+          <Appointment />
+        </button>
+      )
+    }
   </div>
 </div>
 
@@ -44,6 +62,7 @@ import Phone from "./icons/Phone.astro";
     visibility: hidden;
   }
 
+  /* modifier */
   body.post .btn-float-mobile {
     bottom: 15%;
   }

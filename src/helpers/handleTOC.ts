@@ -19,7 +19,6 @@ btnTocMobile?.addEventListener("click", (event) => {
 // Desactivar cuando se clica un enlace
 links?.forEach((a) => {
   a.addEventListener("click", () => {
-    console.log("click");
     btnTocMobile?.classList.remove("active");
     toc?.classList.remove("active");
   });

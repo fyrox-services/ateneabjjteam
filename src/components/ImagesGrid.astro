@@ -2,7 +2,10 @@
 import { Image } from "astro:assets";
 
 interface Props {
-  images: ImageMetadata[];
+  images: {
+    img: ImageMetadata;
+    alt: string;
+  }[];
 }
 
 const { images } = Astro.props;
@@ -10,11 +13,18 @@ const { images } = Astro.props;
 
 <ul>
   {
-    images.map((img) => {
+    images.map(({ img, alt }) => {
       return (
         <li>
           <picture>
-            <Image src={img} alt="TODO" />
+            <Image
+              loading="lazy"
+              src={img}
+              widths={[540, 840]}
+              sizes={`(max-width: 1024px) 540px, 840px`}
+              alt={alt}
+              format="webp"
+            />
           </picture>
         </li>
       );

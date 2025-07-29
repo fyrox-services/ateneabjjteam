@@ -5,6 +5,7 @@ import HeaderBlog from "@/components/HeaderBlog.astro";
 import AsideBlog from "@/components/AsideBlog.astro";
 import TOC from "@/components/TOC.astro";
 import KeypadPost from "@/components/KeypadPost.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   body: string;
@@ -19,21 +20,29 @@ const { data } = post;
   <div class="wrapper-max top-container">
     <picture class="picture mask">
       <!-- Imagen para pantallas grandes (escritorio) -->
-      <source
+      <!-- <source
         type="image/webp"
         media="(min-width: 1024px)"
         srcset="/img/blog/que-es-el-jiu-jitsu-desktop.webp"
-      />
+      /> -->
 
       <!-- Imagen por defecto (móvil) -->
-      <img
+      <!-- <img
+      width="700"
+      height="400"
+      loading="eager"
+      decoding="async"
+      src="/img/blog/que-es-el-jiu-jitsu-mobile.webp"
+      alt="TODO"
+      /> -->
+      <Image
         class="main-image"
-        width="700"
-        height="400"
+        inferSize
+        width={700}
+        height={300}
         loading="eager"
-        decoding="async"
-        src="/img/blog/que-es-el-jiu-jitsu-mobile.webp"
-        alt="TODO"
+        src={`/img/blog/${data.image}`}
+        alt={data.h1}
       />
     </picture>
     <h1>{data.h1}</h1>
@@ -46,7 +55,7 @@ const { data } = post;
     <TOC body={body} />
 
     <!-- content -->
-    <div class="wrapper-max">
+    <div class="wrapper-max content-body">
       <slot />
     </div>
 

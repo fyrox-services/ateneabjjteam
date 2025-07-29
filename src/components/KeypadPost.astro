@@ -1,12 +1,8 @@
 <div>
   <button id="btn-toc-mobile"> Tabla de contenido </button>
-  <a
-    class="btn-border"
-    target="_blank"
-    href={`https://api.whatsapp.com/send?text=${Astro.url}`}
-  >
-    Compartir en WhatsApp
-  </a>
+  <button class="btn-free-class" id="btn-free-class">
+    Reservar clase de prueba gratis
+  </button>
 </div>
 
 <script src="@/helpers/handleTOC.ts"></script>
@@ -19,7 +15,6 @@
     border-top: 1px solid var(--gray);
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     padding: 0.5rem;
     width: 100%;
     gap: 0.5rem;
@@ -27,8 +22,7 @@
     z-index: 119;
   }
 
-  button,
-  a {
+  button {
     background-color: var(--white);
     font-size: var(--fs-sm);
     padding: 0.5rem;
@@ -53,9 +47,10 @@
     color: var(--white);
   }
 
-  a {
-    border: 1px solid var(--wa);
-    color: var(--wa);
+  .btn-free-class {
+    border: 1px solid transparent;
+    color: var(--white);
+    background-color: var(--third);
   }
 
   @media (min-width: 1024px) {

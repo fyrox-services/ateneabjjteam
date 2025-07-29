@@ -28,7 +28,14 @@ const { cards, style = "classes" } = Astro.props;
           <div class="card-inner">
             <div class="card-front">
               <picture class="mask">
-                <Image src={img} alt={heading} />
+                <Image
+                  loading="lazy"
+                  src={img}
+                  widths={[310, 400]}
+                  sizes={`(max-width: 1024px) 310px,  400px`}
+                  alt={heading}
+                  format="webp"
+                />
               </picture>
               <header>
                 <h3>{heading}</h3>
@@ -39,7 +46,6 @@ const { cards, style = "classes" } = Astro.props;
                     <Gift size={20} />
                   </button>
                 ) : (
-                  // TODO: Poner enlaces a wa
                   <BtnWhatsApp link={wa} />
                 )}
               </header>
@@ -78,8 +84,7 @@ const { cards, style = "classes" } = Astro.props;
 
   li {
     border-radius: var(--radius);
-    min-height: 78vh;
-    height: auto;
+    height: 78vh;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;

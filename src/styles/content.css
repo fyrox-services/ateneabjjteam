@@ -1,22 +1,22 @@
-h2 {
+.content-body h2 {
   font-size: var(--fs-xl);
 }
 
-h3 {
+.content-body h3 {
   font-size: var(--fs-l);
 }
 
-p:first-of-type {
+.content-body p:first-of-type {
   margin-top: 0;
 }
 
-p {
+.content-body p {
   margin-block: 1lh;
   font-size: var(--fs-md);
 }
 
 @media (min-width: 1024px) {
-  p {
+  .content-body p {
     font-size: var(--fs-base);
   }
 }

@@ -11,7 +11,12 @@ import { Image } from "astro:assets";
         <li>
           <Pattern type={1}>
             <div class="pattern li-wrap">
-              <Image src={photo} alt={"TODO"} />
+              <Image
+                src={photo}
+                widths={[240, 320]}
+                sizes={`(max-width: 1024px) 240px, 320px`}
+                alt={"TODO"}
+              />
               <div class="text">
                 <header>
                   <h3>{name}</h3>
@@ -22,9 +27,9 @@ import { Image } from "astro:assets";
                   </h4>
                 </header>
                 <div>
-                  {description.map((p) => {
-                    return <p>{p}</p>;
-                  })}
+                  {description.map((p) => (
+                    <p>{p}</p>
+                  ))}
                   <span class="rol">{rol}</span>
                 </div>
               </div>

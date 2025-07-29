@@ -9,7 +9,6 @@ interface Props {
 const { body } = Astro.props;
 
 const headings = buildHeadings(body);
-console.log(headings);
 ---
 
 <nav id="toc" class="toc">
@@ -49,8 +48,8 @@ console.log(headings);
   @media (max-width: 1024px) {
     .toc {
       --distance-bot: 78px;
-      background: linear-gradient(45deg, var(--white), var(--gray));
-
+      background: linear-gradient(45deg, var(--white), var(--light));
+      border-top: 1px dashed var(--gray);
       position: fixed;
       bottom: var(--distance-bot);
       left: 0;

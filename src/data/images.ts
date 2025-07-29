@@ -14,18 +14,64 @@ import ola from "@/assets/space/ola.jpg";
 import ropa from "@/assets/space/ropa.jpg";
 import trofeos from "@/assets/space/trofeos.jpg";
 
-export const imagesHome = [graduation, rotulo, girls, black_belt, faqs, 
-abudhabi
-
+export const imagesHome = [
+  {
+    img: graduation,
+    alt: "",
+  },
+  {
+    img: rotulo,
+    alt: "",
+  },
+  {
+    img: girls,
+    alt: "",
+  },
+  {
+    img: black_belt,
+    alt: "",
+  },
+  {
+    img: faqs,
+    alt: "",
+  },
+  {
+    img: abudhabi,
+    alt: "",
+  },
 ];
 
 export const imagesSchool = [
-  tatami,
-  escritorio,
-  explain,
-  kids,
-  medallas,
-  ola,
-  ropa,
-  trofeos,
+  {
+    img: tatami,
+    alt: "",
+  },
+  {
+    img: escritorio,
+    alt: "",
+  },
+  {
+    img: explain,
+    alt: "",
+  },
+  {
+    img: kids,
+    alt: "",
+  },
+  {
+    img: medallas,
+    alt: "",
+  },
+  {
+    img: ola,
+    alt: "",
+  },
+  {
+    img: ropa,
+    alt: "",
+  },
+  {
+    img: trofeos,
+    alt: "",
+  },
 ];

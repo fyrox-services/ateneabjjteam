@@ -21,9 +21,10 @@ const cleanSlug = slug.split("/")[1];
       <h2>{data.h1}</h2>
       <picture>
         <Image
-          loading={first ? "eager" : "lazy"}
+          inferSize
           width={600}
           height={400}
+          loading={first ? "eager" : "lazy"}
           src={`/img/blog/${data.image}`}
           alt={data.h1}
         />
