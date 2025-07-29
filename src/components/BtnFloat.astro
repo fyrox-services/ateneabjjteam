@@ -14,26 +14,35 @@ const { typePage } = Astro.props;
 ---
 
 <div id="btn-float-wrap" class="btn-float-mobile wrapper">
-  <button id="btn-float-mobile" class="btn-chat">
+  <button
+    aria-label="botón para las opciones de contacto"
+    id="btn-float-mobile"
+    class="btn-chat"
+  >
     <Chat />
   </button>
   <div id="hidden-btns" class="hidden-btns">
-    <a href={GLOBAL_DATA.CALL_LINK}>
+    <a aria-label="botón para llamar por teléfono" href={GLOBAL_DATA.CALL_LINK}>
       <Phone size={25} />
     </a>
-    <a href={WHATSAPP_MSG.GENERAL}>
+    <a
+      target="_blank"
+      aria-label="botón para enviar un whatsapp"
+      href={WHATSAPP_MSG.GENERAL}
+    >
       <WhatsApp size={25} />
     </a>
     {
       typePage === "post" ? (
         <a
+          aria-label="botón para compartir"
           target="_blank"
           href={`https://api.whatsapp.com/send?text=${Astro.url}`}
         >
           <Share size={25} />
         </a>
       ) : (
-        <button id="btn-free-class">
+        <button aria-label="botón para reservar una clase" id="btn-free-class">
           <Appointment />
         </button>
       )

@@ -1,14 +1,15 @@
-import black_belt from "@/assets/school/black_belt.png";
-import faqs from "@/assets/school/faqs.jpg";
-import girls from "@/assets/school/girls.jpg";
-import graduation from "@/assets/school/graduation.jpeg";
+// Home
+import blackBelt from "@/assets/school/cinturones-negro.png";
+import faqs from "@/assets/school/kids-preguntando.jpg";
+import girls from "@/assets/school/equipo-chicas.jpg";
+import graduation from "@/assets/school/graduacion.jpeg";
 import tatami from "@/assets/school/tatami.jpg";
 import rotulo from "@/assets/school/rotulo.jpeg";
-
+// Space
 import abudhabi from "@/assets/space/abudhabi.jpg";
 import escritorio from "@/assets/space/escritorio.jpg";
-import explain from "@/assets/space/explain.jpg";
-import kids from "@/assets/space/kids.jpeg";
+import explain from "@/assets/space/explicacion.jpg";
+import kids from "@/assets/space/graduacion-kids.jpeg";
 import medallas from "@/assets/space/medallas.jpg";
 import ola from "@/assets/space/ola.jpg";
 import ropa from "@/assets/space/ropa.jpg";
@@ -17,61 +18,61 @@ import trofeos from "@/assets/space/trofeos.jpg";
 export const imagesHome = [
   {
     img: graduation,
-    alt: "",
+    alt: "Día de la graduación",
   },
   {
     img: rotulo,
-    alt: "",
+    alt: "Rótulo de la academia",
   },
   {
     img: girls,
-    alt: "",
+    alt: "Equipo de chicas de Atenea BJJ Team Madrid",
   },
   {
-    img: black_belt,
-    alt: "",
+    img: blackBelt,
+    alt: "Cinturones negro",
   },
   {
     img: faqs,
-    alt: "",
+    alt: "Niños preguntando",
   },
   {
     img: abudhabi,
-    alt: "",
+    alt: "Trofeo en abudhabi",
   },
 ];
 
 export const imagesSchool = [
   {
     img: tatami,
-    alt: "",
+    alt: "El tatami de Atenea BJJ Team Madrid",
   },
   {
     img: escritorio,
-    alt: "",
+    alt: "Área de atención",
   },
   {
     img: explain,
-    alt: "",
+    alt: "Explicación a niños",
   },
   {
     img: kids,
-    alt: "",
+    alt: "Graduación de los niños",
   },
   {
     img: medallas,
-    alt: "",
+    alt: "Medallas de la academia",
   },
   {
     img: ola,
-    alt: "",
+    alt: "rashguard de la marca de Atenea BJJ Team Madrid",
   },
   {
     img: ropa,
-    alt: "",
+    alt: "Ropa de patrocinadores",
   },
   {
     img: trofeos,
-    alt: "",
+    alt: "Trofeos de Atenea BJJ Team Madrid",
   },
 ];

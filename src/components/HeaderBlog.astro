@@ -13,17 +13,19 @@ interface Props {
 
 const { post } = Astro.props;
 const { data } = post;
+const srcImg = data.author.name === "Renzo Martínez" ? renzo : aitana;
 ---
 
 <header class="data-post">
   <div class="author-wrap">
-    {
-      data.author.name === "Renzo Martínez" ? (
-        <Image class="photo-profile" src={renzo} alt="autor" />
-      ) : (
-        <Image class="photo-profile" src={aitana} alt="autor" />
-      )
-    }
+    <Image
+      width={112}
+      loading="eager"
+      class="photo-profile"
+      src={srcImg}
+      alt="autor"
+      format="webp"
+    />
     <div>
       <span class="author-name">{data.author.name}</span>
       <span class="belt">{data.author.belt}</span>
