@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import bgAbove from "@/assets/deco/bg-above.jpg";
 import BtnMainCta from "@/components/BtnMainCta.astro";
+import { GLOBAL_DATA } from "@/vars";
 ---
 
 <section class="mask-1">
@@ -19,7 +20,11 @@ import BtnMainCta from "@/components/BtnMainCta.astro";
       <BtnMainCta />
     </div>
   </div>
-  <Image priority src={bgAbove} alt="TODO" />
+  <Image
+    priority
+    src={bgAbove}
+    alt={`Academia ${GLOBAL_DATA.SITE_NAME} con alumnos luchando`}
+  />
 </section>
 
 <style>
