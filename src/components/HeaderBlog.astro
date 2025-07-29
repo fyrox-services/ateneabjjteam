@@ -6,6 +6,7 @@ import renzo from "@/assets/authors/renzo-autor.jpeg";
 import type { CollectionEntry } from "astro:content";
 import Date from "./icons/Date.astro";
 import Clock from "./icons/Clock.astro";
+import Arrow from "./icons/Arrow.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -14,9 +15,47 @@ interface Props {
 const { post } = Astro.props;
 const { data } = post;
 const srcImg = data.author.name === "Renzo Martínez" ? renzo : aitana;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://ateneabjjteam.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: "https://ateneabjjteam.com/es/blog",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: data.h1,
+      // TODO: revisar esto en pro
+      item: Astro.url,
+    },
+  ],
+};
 ---
 
 <header class="data-post">
+  <nav class="bread-crumbs">
+    <a href="/">
+      Inicio
+      <Arrow class="right" size={20} />
+    </a>
+    <a href="/es/blog/">
+      Blog
+      <Arrow class="right" size={20} />
+    </a>
+
+    <span>{data.h1}</span>
+  </nav>
   <div class="author-wrap">
     <Image
       width={112}
@@ -44,6 +83,12 @@ const srcImg = data.author.name === "Renzo Martínez" ? renzo : aitana;
   </div>
 </header>
 
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(structuredData)}
+/>
+
 <style>
   .data-post {
     background-color: var(--white);
@@ -54,14 +99,13 @@ const srcImg = data.author.name === "Renzo Martínez" ? renzo : aitana;
     bottom: 0;
     right: 0;
     left: 0;
-    transform: translateY(75%);
+    transform: translateY(90%);
     z-index: 2;
-    border-radius: var(--radius) var(--radius) 0 0;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    padding: 2rem 1rem 1rem;
     border-bottom: 1px dashed var(--gray);
   }
 
@@ -106,6 +150,36 @@ const srcImg = data.author.name === "Renzo Martínez" ? renzo : aitana;
     justify-content: space-between;
   }
 
+  .bread-crumbs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background-color: var(--black);
+    font-size: var(--fs-sm);
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .bread-crumbs a {
+    color: var(--primary);
+    min-width: 48px;
+    min-height: 48px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+  }
+
+  .bread-crumbs span {
+    color: var(--white);
+  }
+
+  /* DESKTOP */
+
   @media (min-width: 1024px) {
     .data-post {
       align-items: center;
@@ -124,6 +198,11 @@ const srcImg = data.author.name === "Renzo Martínez" ? renzo : aitana;
     .bot-wrap {
       gap: 2rem;
       flex-direction: column;
+    }
+
+    .bread-crumbs {
+      font-size: var(--fs-md);
+      justify-content: center;
     }
   }
 </style>
