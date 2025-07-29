@@ -1,5 +1,6 @@
 import { Check } from "@/components/icons/Check";
 import { Warning } from "@/components/icons/Warning";
+import { Loader } from "@/components/react/Loader";
 import { FEEDBACK_MESSAGES } from "@/data/feedbackMessages";
 import { MODE, PUBLIC_API_URL } from "@/env";
 import { analysisData } from "@/helpers/analysisData";
@@ -27,7 +28,7 @@ export function useHandleForm<T>(defaultValues: T, route: string) {
         </>
       );
     }
-    if (loading === "sending") return <span>Enviando...</span>;
+    if (loading === "sending") return <Loader />;
 
     return "Enviar";
   }
@@ -58,6 +59,7 @@ export function useHandleForm<T>(defaultValues: T, route: string) {
       if (!result.ok) throw new Error(FEEDBACK_MESSAGES.ERROR.GENERAL);
 
       setLoading("success");
+      console.log(values);
     } catch (error) {
       console.log(`el error al enviar el formulario es: ${error}`);
       setLoading("error");

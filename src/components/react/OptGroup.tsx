@@ -11,7 +11,7 @@ export function OptGroup({ options }: Props) {
       <optgroup key={i} label={label}>
         {hours.map((value, i) => {
           return (
-            <option key={i} value={value}>
+            <option key={i} value={`${label} | ${value}`}>
               {value}
             </option>
           );

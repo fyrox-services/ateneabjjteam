@@ -1,3 +1,5 @@
+@import url("@/styles/components/Loader.module.css");
+
 .Form {
   background-color: var(--white);
   padding: 8rem 1rem 1rem;
@@ -11,6 +13,7 @@
   width: 100%;
   align-self: flex-start;
   margin-top: 4rem;
+  max-width: 95%;
 }
 
 .Form::-webkit-scrollbar {
@@ -30,7 +33,7 @@
 }
 
 .Form h2,
-.Form p {
+.Form .Tagline {
   text-align: center;
 }
 
@@ -38,7 +41,7 @@
   font-size: var(--fs-base);
 }
 
-.Form p {
+.Form .Tagline {
   font-size: var(--fs-sm);
   text-transform: uppercase;
 }
@@ -96,6 +99,33 @@
   grid-column: 1/-1;
   font-size: var(--fs-md);
   height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  min-height: 50px;
+  background-color: var(--primary);
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: var(--radius-l);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.Submit:disabled {
+  cursor: not-allowed;
+}
+
+.Submit.sending {
+  background-color: var(--black);
+}
+
+.Submit.error {
+  background-color: darkred;
+}
+
+.Submit.success {
+  background-color: darkgreen;
 }
 
 /* MODFIERS */

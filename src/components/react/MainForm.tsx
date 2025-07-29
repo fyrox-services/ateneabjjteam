@@ -6,6 +6,7 @@ import { useHandleForm } from "@/hooks/useHandleForm";
 import type { AllFormFields, Modality } from "@/types";
 import { FEEDBACK_MESSAGES } from "@/data/feedbackMessages";
 import { OptGroup } from "./OptGroup";
+import { FeedbackMessage } from "./FeedbackMessage";
 
 interface Props {
   style?: string;
@@ -27,7 +28,7 @@ export function MainForm({ style = "" }: Props) {
         msg: "",
         legal: false,
       },
-      "/forms/meeting-2-form"
+      "/forms/main-form"
     );
 
   const {
@@ -50,7 +51,9 @@ export function MainForm({ style = "" }: Props) {
     >
       <header>
         <h2>rellena los campos</h2>
-        <p>nos pondremos en contacto contigo para acordar el día</p>
+        <p className={css.Tagline}>
+          nos pondremos en contacto contigo para acordar el día
+        </p>
       </header>
 
       {/*  nombre */}
@@ -64,20 +67,43 @@ export function MainForm({ style = "" }: Props) {
             required: FEEDBACK_MESSAGES.ERROR.NAME,
           })}
         />
+        <FeedbackMessage>{errors.name?.message}</FeedbackMessage>
       </div>
 
       {/*  email */}
 
       <div className={css.Field}>
         <label htmlFor="email">email</label>
-        <input id="email" type="email" />
+        <input
+          id="email"
+          type="email"
+          {...register("email", {
+            required: FEEDBACK_MESSAGES.ERROR.EMAIL,
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: FEEDBACK_MESSAGES.ERROR.EMAIL_NOT_VALID,
+            },
+          })}
+        />
+        <FeedbackMessage>{errors.email?.message}</FeedbackMessage>
       </div>
 
       {/*  teléfono */}
 
       <div className={css.Field}>
         <label htmlFor="phone">teléfono</label>
-        <input id="phone" type="tel" />
+        <input
+          id="phone"
+          type="tel"
+          {...register("phone", {
+            required: FEEDBACK_MESSAGES.ERROR.PHONE,
+            pattern: {
+              value: /^[\d\s()+\-]{7,}$/,
+              message: FEEDBACK_MESSAGES.ERROR.PHONE_NOT_VALID,
+            },
+          })}
+        />
+        <FeedbackMessage>{errors.phone?.message}</FeedbackMessage>
       </div>
 
       {/*  modalidad */}
@@ -107,6 +133,7 @@ export function MainForm({ style = "" }: Props) {
             );
           })}
         </select>
+        <FeedbackMessage>{errors.modality?.message}</FeedbackMessage>
       </div>
 
       {/*  horario */}
@@ -118,7 +145,7 @@ export function MainForm({ style = "" }: Props) {
         <select
           id="hours"
           {...register("hours", {
-            required: FEEDBACK_MESSAGES.ERROR.MODALITY,
+            required: FEEDBACK_MESSAGES.ERROR.MOMENT_NOT_VALID,
           })}
         >
           <option defaultValue="" disabled value="">
@@ -127,31 +154,55 @@ export function MainForm({ style = "" }: Props) {
 
           {renderOptionsHours()}
         </select>
+        <FeedbackMessage>{errors.hours?.message}</FeedbackMessage>
       </div>
 
       {/*  mensaje */}
 
       <div className={`${css.Field} ${css.Msg}`}>
         <label htmlFor="msg">mensaje</label>
-        <textarea id="msg"></textarea>
+        <textarea
+          id="msg"
+          {...register("msg", {
+            minLength: {
+              message: FEEDBACK_MESSAGES.ERROR.MSG_TOO_SHORT,
+              value: 5,
+            },
+            required: FEEDBACK_MESSAGES.ERROR.MSG,
+          })}
+        ></textarea>
+        <FeedbackMessage>{errors.msg?.message}</FeedbackMessage>
       </div>
 
       {/* política de privacidad  */}
 
       <div className={`${css.Field} ${css.Legal}`}>
         <label htmlFor="legal">
-          <input id="legal" type="checkbox" />
+          <input
+            id="legal"
+            type="checkbox"
+            {...register("legal", {
+              required: FEEDBACK_MESSAGES.ERROR.LEGAL,
+            })}
+          />
           <span>
-            Acepto la
-            <a href="/legal/politica-privacidad/"> política de privacidad</a>
+            Acepto la{" "}
+            <a target="_blank" href="/es/legal/politica-privacidad/">
+              política de privacidad
+            </a>
           </span>
         </label>
+        <FeedbackMessage>{errors.legal?.message}</FeedbackMessage>
       </div>
 
       {/* submit */}
 
-      <button className={`btn ${css.Submit}`} type="submit">
-        enviar
+      <button
+        disabled={loading !== "off"}
+        className={`${css.Submit} ${css[loading]}`}
+        type="submit"
+      >
+        {submitStateContent()}
       </button>
     </form>
   );
