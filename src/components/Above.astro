@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import bgAbove from "@/assets/deco/bg-above.jpg";
+import bgAbove from "@/assets/deco/clase-de-nogi.jpg";
 import BtnMainCta from "@/components/BtnMainCta.astro";
 import { GLOBAL_DATA } from "@/vars";
 ---
@@ -23,7 +23,10 @@ import { GLOBAL_DATA } from "@/vars";
   <Image
     priority
     src={bgAbove}
+    widths={[410, 1400]}
+    sizes={`(max-width: 1024px) 410px,  1400px`}
     alt={`Academia ${GLOBAL_DATA.SITE_NAME} con alumnos luchando`}
+    format="webp"
   />
 </section>
 
