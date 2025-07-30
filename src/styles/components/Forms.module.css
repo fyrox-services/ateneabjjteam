@@ -80,6 +80,11 @@
   resize: none;
 }
 
+.Field textarea:placeholder-shown {
+  font-size: var(--fs-s);
+  padding: 1rem;
+}
+
 .Field.Legal {
   grid-column: 1/-1;
 }
@@ -125,7 +130,7 @@
 }
 
 .Submit.success {
-  background-color: darkgreen;
+  background-color: var(--wa);
 }
 
 /* MODFIERS */

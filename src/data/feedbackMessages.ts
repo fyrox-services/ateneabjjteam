@@ -15,6 +15,7 @@ export const FEEDBACK_MESSAGES = {
       LEGAL: "acepta la política de privacidad"
     },
     SUCCESS:  {
-      SUCCESS_SENDING: 'reserva realizada'
+      SUCCESS_SENDING: 'mensaje enviado',
+      FREE_CLASS: "reserva realizada"
     }
   };

@@ -8,7 +8,13 @@ import { useState } from "react";
 
 type SendState = "off" | "sending" | "error" | "success";
 
-export function useHandleForm<T>(defaultValues: T, route: string) {
+interface Options {
+  route: string;
+  successMsg: string;
+  action?: () => void;
+}
+
+export function useHandleForm<T>(defaultValues: T, options: Options) {
   const [loading, setLoading] = useState<SendState>("off");
 
   function submitStateContent() {
@@ -23,7 +29,7 @@ export function useHandleForm<T>(defaultValues: T, route: string) {
     if (loading === "success") {
       return (
         <>
-          <span>{FEEDBACK_MESSAGES.SUCCESS.SUCCESS_SENDING}</span>
+          <span>{options.successMsg}</span>
           <Check size={25} />
         </>
       );
@@ -36,7 +42,7 @@ export function useHandleForm<T>(defaultValues: T, route: string) {
   async function onSubmit(values: T) {
     try {
       setLoading("sending");
-      const url = `${PUBLIC_API_URL}${route}`;
+      const url = `${PUBLIC_API_URL}${options.route}`;
 
       const dataToSend = {
         ...values,
@@ -58,8 +64,11 @@ export function useHandleForm<T>(defaultValues: T, route: string) {
       if (data.details) throw new Error(FEEDBACK_MESSAGES.ERROR.FIELDS_INVALID);
       if (!result.ok) throw new Error(FEEDBACK_MESSAGES.ERROR.GENERAL);
 
+      // Acciones adicionales
+
+      if (options.action) options.action();
+
       setLoading("success");
-      console.log(values);
     } catch (error) {
       console.log(`el error al enviar el formulario es: ${error}`);
       setLoading("error");

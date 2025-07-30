@@ -1,6 +1,6 @@
 import css from "@/styles/components/Forms.module.css";
 import { useStore } from "@nanostores/react";
-import { modality } from "@/stores";
+import { isModalActive, modality } from "@/stores";
 import { useForm } from "react-hook-form";
 import { useHandleForm } from "@/hooks/useHandleForm";
 import type { AllFormFields, Modality } from "@/types";
@@ -28,7 +28,15 @@ export function MainForm({ style = "" }: Props) {
         msg: "",
         legal: false,
       },
-      "/forms/main-form"
+      {
+        route: "/forms/main-form",
+        successMsg: FEEDBACK_MESSAGES.SUCCESS.FREE_CLASS,
+        action: () => {
+          setTimeout(() => {
+            isModalActive.set(false);
+          }, 3000);
+        },
+      }
     );
 
   const {
@@ -162,6 +170,7 @@ export function MainForm({ style = "" }: Props) {
       <div className={`${css.Field} ${css.Msg}`}>
         <label htmlFor="msg">mensaje</label>
         <textarea
+          placeholder="Me viene bien este día... ¿es posible?"
           id="msg"
           {...register("msg", {
             minLength: {
