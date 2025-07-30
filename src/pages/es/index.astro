@@ -22,6 +22,9 @@ const metaData = {
   metaDescription: GLOBAL_DATA.SITE_DESCRIPTION,
 };
 
+const logoPath = "logo-atenea-bjj-team.png";
+const tatamiPath = "img/academia-atenea-bjj-team.jpg";
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -35,7 +38,7 @@ const structuredData = {
     name: GLOBAL_DATA.SITE_NAME,
     logo: {
       "@type": "ImageObject",
-      url: `${Astro.url.origin}/TODO`,
+      url: `${Astro.url.origin}${logoPath}`,
     },
   },
 };
@@ -44,7 +47,7 @@ const localData = {
   "@context": "https://schema.org",
   "@type": "SportsActivityLocation",
   name: GLOBAL_DATA.SITE_NAME,
-  image: `${Astro.url}/TODO`,
+  image: `${Astro.url}/${tatamiPath}`,
   url: Astro.url,
   description: GLOBAL_DATA.SITE_DESCRIPTION,
   telephone: GLOBAL_DATA.PHONE_DATA,
