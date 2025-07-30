@@ -38,7 +38,9 @@ export function ContactForm({ style = "" }: Props) {
     >
       <header>
         <h2>rellena los campos</h2>
-        <p>nos pondremos en contacto contigo para acordar el día</p>
+        <p className={css.Tagline}>
+          nos pondremos en contacto contigo para acordar el día
+        </p>
       </header>
 
       {/*  nombre */}
