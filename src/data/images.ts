@@ -4,7 +4,7 @@ import faqs from "@/assets/school/kids-preguntando.jpg";
 import girls from "@/assets/school/equipo-chicas.jpg";
 import graduation from "@/assets/school/graduacion.jpeg";
 import tatami from "@/assets/school/tatami.jpg";
-import rotulo from "@/assets/school/rotulo.jpeg";
+import rotulo from "@/assets/school/rotulo.jpg";
 // Space
 import abudhabi from "@/assets/space/abudhabi.jpg";
 import escritorio from "@/assets/space/escritorio.jpg";
