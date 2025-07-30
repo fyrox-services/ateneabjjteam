@@ -2,14 +2,14 @@
 import blackBelt from "@/assets/school/cinturones-negro.png";
 import faqs from "@/assets/school/kids-preguntando.jpg";
 import girls from "@/assets/school/equipo-chicas.jpg";
-import graduation from "@/assets/school/graduacion.jpeg";
+import graduation from "@/assets/school/graduacion.jpg";
 import tatami from "@/assets/school/tatami.jpg";
 import rotulo from "@/assets/school/rotulo.jpg";
 // Space
 import abudhabi from "@/assets/space/abudhabi.jpg";
 import escritorio from "@/assets/space/escritorio.jpg";
 import explain from "@/assets/space/explicacion.jpg";
-import kids from "@/assets/space/graduacion-kids.jpeg";
+import kids from "@/assets/space/graduacion-kids.jpg";
 import medallas from "@/assets/space/medallas.jpg";
 import ola from "@/assets/space/ola.jpg";
 import ropa from "@/assets/space/ropa.jpg";

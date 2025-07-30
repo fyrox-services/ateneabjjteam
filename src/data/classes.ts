@@ -4,7 +4,7 @@ import kids from "@/assets/classes/niños.jpg";
 import competition from "@/assets/classes/competicion.jpg";
 
 import bjjCompanies from "@/assets/classes/bjj-para-empresas.jpg";
-import privateSessions from "@/assets/classes/sesiones-privadas.jpeg";
+import privateSessions from "@/assets/classes/sesiones-privadas.jpg";
 import disca from "@/assets/classes/discapacidad.jpg";
 
 import type { Classes } from "@/types";
