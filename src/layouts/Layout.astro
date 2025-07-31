@@ -6,7 +6,8 @@ import "@/styles/utils.css";
 import "@/styles/animations.css";
 import { Modal } from "@/components/react/Modal";
 import BtnFloat from "@/components/BtnFloat.astro";
-// import { ClientRouter } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
+import ogImageDefault from "@/assets/deco/academia-atenea-bjj-team.jpg";
 
 interface Props {
   typePage?: "post" | "legal";
@@ -24,7 +25,7 @@ const {
     noIndex = true,
     metaDescription,
     metaTitle,
-    ogImage = "/img/academia-atenea-bjj-team.jpg",
+    ogImage = ogImageDefault.src,
   },
 } = Astro.props;
 ---
@@ -86,7 +87,7 @@ const {
     <!-- INDEX -->
     {noIndex && <meta name="robots" content="noindex" />}
 
-    <!-- <ClientRouter /> -->
+    <ClientRouter />
   </head>
   <body class={typePage}>
     <Header />

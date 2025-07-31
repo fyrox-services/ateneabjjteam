@@ -9,7 +9,7 @@ import mdx from "@astrojs/mdx";
 
 import sitemap from "@astrojs/sitemap";
 
-const site = "https://ateneabjjteam.netlify.app";
+const site = "https://ateneabjjteam.com";
 
 // https://astro.build/config
 export default defineConfig({
