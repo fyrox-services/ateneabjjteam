@@ -21,12 +21,12 @@ const cleanSlug = slug.split("/")[1];
       <h2>{data.h1}</h2>
       <picture>
         <Image
-          inferSize
-          width={600}
-          height={400}
+          widths={[410, 600]}
+          sizes={`(max-width: 1024px) 410px,  600px`}
           loading={first ? "eager" : "lazy"}
-          src={`/img/blog/${data.image}`}
+          src={post.data.image}
           alt={data.h1}
+          format="webp"
         />
       </picture>
       <p>{data.metaDescription}</p>

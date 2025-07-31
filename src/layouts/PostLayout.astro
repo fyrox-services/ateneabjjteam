@@ -22,11 +22,10 @@ const { data } = post;
       <Image
         priority
         class="main-image"
-        inferSize
-        width={700}
-        height={300}
+        widths={[410, 700]}
+        sizes={`(max-width: 1024px) 410px,  700px`}
         loading="eager"
-        src={`/img/blog/${data.image}`}
+        src={post.data.image}
         alt={data.h1}
       />
     </picture>

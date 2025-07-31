@@ -1,7 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import PostLayout from "@/layouts/PostLayout.astro";
-// import PostLayout from "@/layouts/PostLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -34,7 +33,7 @@ const { Content } = await render(post);
 const metaData = {
   metaTitle: data.metaTitle,
   metaDescription: data.metaDescription,
-  ogImage: `/img/blog/${data.image}`,
+  ogImage: data.image.src,
 };
 
 const structuredData = {
