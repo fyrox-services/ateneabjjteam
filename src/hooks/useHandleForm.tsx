@@ -59,7 +59,8 @@ export function useHandleForm<T>(defaultValues: T, options: Options) {
 
       const data = await result.json();
 
-      if (MODE === "development") console.log(data);
+      // if (MODE === "development")
+      console.log(data);
 
       if (data.details) throw new Error(FEEDBACK_MESSAGES.ERROR.FIELDS_INVALID);
       if (!result.ok) throw new Error(FEEDBACK_MESSAGES.ERROR.GENERAL);
