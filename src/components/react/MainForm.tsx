@@ -34,6 +34,7 @@ export function MainForm({ style = "" }: Props) {
         action: () => {
           setTimeout(() => {
             isModalActive.set(false);
+            document.body.classList.remove("not-scrollable");
           }, 3000);
         },
       }
