@@ -58,7 +58,7 @@ export const coaches: Coach[] = [
     head: "Ruben Kilian",
     description: [
       "Comenzó a entrenar jiu-jitsu en 2017 y, desde entonces, ha mantenido una actividad competitiva constante. Es uno de los atletas más activos del país, con múltiples medallas tanto en Gi como en Nogi. Entre sus logros más destacados se encuentran el título de campeón de España Nogi por la Federación de Lucha, el subcampeonato europeo en el AJP y el tercer puesto en el Grand Slam de Roma.",
-      "Axhel ha sido compañero de entrenamiento de Renzo desde el año 2019, y en el 2025 se unió al equipo de Atenea como instructor de las clases de la mañana."
+      "Ahxel ha sido compañero de entrenamiento de Renzo desde el año 2019, y en el 2025 se unió al equipo de Atenea como instructor de las clases de la mañana."
     ],
   },
 ];

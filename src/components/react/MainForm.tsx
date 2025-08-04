@@ -132,7 +132,7 @@ export function MainForm({ style = "" }: Props) {
           })}
         >
           <option value="" disabled>
-            -- Selccione --
+            -- Seleccione --
           </option>
           {slectModality.map((modality, i) => {
             return (
@@ -158,7 +158,7 @@ export function MainForm({ style = "" }: Props) {
           })}
         >
           <option defaultValue="" disabled value="">
-            -- Selccione --
+            -- Seleccione --
           </option>
 
           {renderOptionsHours()}
