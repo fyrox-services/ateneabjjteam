@@ -29,10 +29,10 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const excludedPages = [
-          `${site}/contacto/`,
-          `${site}/legal/aviso-legal/`,
-          `${site}/legal/politica-cookies/`,
-          `${site}/legal/politica-privacidad/`,
+          `${site}/es/contacto/`,
+          `${site}/es/legal/aviso-legal/`,
+          `${site}/es/legal/politica-cookies/`,
+          `${site}/es/legal/politica-privacidad/`,
         ];
         return !excludedPages.includes(page);
       },
