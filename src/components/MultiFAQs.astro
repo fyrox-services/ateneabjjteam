@@ -1,0 +1,140 @@
+---
+import ArrowLong from "@/components/icons/ArrowLong.astro";
+import type { FAQ } from "@/types";
+
+interface Props {
+  block: {
+    group: string;
+    faqs: FAQ[];
+  }[];
+}
+
+const { block } = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: block.flatMap(({ faqs }) =>
+    (faqs ?? []).map(({ heading, text }) => ({
+      "@type": "Question",
+      name: heading,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: Array.isArray(text)
+          ? text.join(" ").trim()
+          : String(text ?? "").trim(),
+      },
+    }))
+  ),
+};
+---
+
+<div>
+  {
+    block.map(({ faqs, group }) => {
+      return (
+        <>
+          <h2 class="heading">{group}</h2>
+          <ul class="ul-faqs">
+            {faqs.map(({ heading, text }, i) => {
+              return (
+                <li
+                  class:list={{
+                    active: i === 0,
+                  }}
+                >
+                  <header>
+                    <h2>{heading}</h2>
+
+                    <div>
+                      <ArrowLong size={20} />
+                    </div>
+                  </header>
+                  {text.map((p) => (
+                    <p>{p}</p>
+                  ))}
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      );
+    })
+  }
+</div>
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(structuredData)}
+/>
+
+<script src="@/helpers/handleFaqs"></script>
+
+<style>
+  .heading {
+    font-family: var(--ff-heading);
+    text-align: center;
+    color: var(--black);
+    font-size: var(--fs-3xl);
+  }
+
+  .heading:not(:first-of-type) {
+    margin-block: 5rem;
+  }
+
+  ul {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  li {
+    display: grid;
+    gap: 1rem;
+  }
+
+  header {
+    display: flex;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding) 0;
+    cursor: pointer;
+  }
+
+  div {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+  }
+
+  p {
+    padding: var(--padding) 0;
+    transition: all 0.6s ease;
+  }
+
+  li.active div {
+    transform: rotate(90deg);
+  }
+
+  footer {
+    padding: var(--padding) 0;
+  }
+
+  h2 {
+    font-size: var(--fs-xl);
+    color: var(--primary);
+    font-family: var(--ff-base-bold);
+    line-height: 1.25;
+  }
+
+  a {
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--link);
+  }
+</style>

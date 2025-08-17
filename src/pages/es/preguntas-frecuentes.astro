@@ -3,9 +3,15 @@ import Faqs from "@/components/Faqs.astro";
 import HeadingH2 from "@/components/HeadingH2.astro";
 import Hero from "@/components/Hero.astro";
 import Section from "@/components/Section.astro";
-import { newMembers, suscribtions, classes_programs } from "@/data/faqs";
+import {
+  newMembers,
+  suscribtions,
+  classes_programs,
+  AllFAQs,
+} from "@/data/faqs";
 import Layout from "@/layouts/Layout.astro";
 import BtnFloatDesktop from "@/components/BtnFloatDesktop.astro";
+import MultiFAQs from "@/components/MultiFAQs.astro";
 
 const metaData = {
   metaTitle: "Preguntas frecuentes",
@@ -19,18 +25,8 @@ const metaData = {
     tagline="si tienes más preguntas contáctanos"
   />
   <Section class="wrapper-max auto">
-    <HeadingH2>inscripciones</HeadingH2>
-    <Faqs faqs={suscribtions} />
+    <MultiFAQs block={AllFAQs} />
   </Section>
 
-  <Section class="wrapper-max">
-    <HeadingH2>nuevos miembros</HeadingH2>
-    <Faqs faqs={newMembers} />
-  </Section>
-
-  <Section class="wrapper-max">
-    <HeadingH2>clases y programas</HeadingH2>
-    <Faqs faqs={classes_programs} />
-  </Section>
   <BtnFloatDesktop />
 </Layout>

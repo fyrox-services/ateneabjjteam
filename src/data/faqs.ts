@@ -71,39 +71,40 @@ export const newMembers: FAQ[] = [
     ],
   },
   {
-    heading: "Nunca antes he practicado jiu jitsu. ¿Es necesario tener experiencia para poder entrenar con vosotros?",
+    heading:
+      "Nunca antes he practicado jiu jitsu. ¿Es necesario tener experiencia para poder entrenar con vosotros?",
     text: [
-     "No es necesario tener experiencia previa, todos hemos tenido un primer día. En Atenea todas las clases están adaptadas para todos los niveles y tendrás una persona avanzada acompañándote para orientarte y ayudarte en lo que necesites."
+      "No es necesario tener experiencia previa, todos hemos tenido un primer día. En Atenea todas las clases están adaptadas para todos los niveles y tendrás una persona avanzada acompañándote para orientarte y ayudarte en lo que necesites.",
     ],
   },
   {
     heading: "¿Puedo entrenar en las clases de competición si soy nuevo?",
     text: [
-     "Sí, puedes participar en las clases de competición aunque seas cinturón blanco. Lo único que no está permitido es realizar la clase de prueba durante el horario de competición."
+      "Sí, puedes participar en las clases de competición aunque seas cinturón blanco. Lo único que no está permitido es realizar la clase de prueba durante el horario de competición.",
     ],
   },
   {
     heading: "¿Necesito estar en buena forma física para practicar jiu jitsu?",
     text: [
-     "Evidentemente, si eres una persona deportista y con buena forma física, influirá en tu rendimiento en el tatami. Sin embargo, no es necesario, ya que el propio jiu jitsu poco a poco irá mejorando tus capacidades físicas. Además, contamos con un preparador físico especializado, que ha diseñado un programa de entrenamiento adaptado al jiu jitsu para ayudarte a alcanzar tus objetivos de forma más eficaz. Si estas interesado en este programa, ponte en contacto con nosotros."
+      "Evidentemente, si eres una persona deportista y con buena forma física, influirá en tu rendimiento en el tatami. Sin embargo, no es necesario, ya que el propio jiu jitsu poco a poco irá mejorando tus capacidades físicas. Además, contamos con un preparador físico especializado, que ha diseñado un programa de entrenamiento adaptado al jiu jitsu para ayudarte a alcanzar tus objetivos de forma más eficaz. Si estas interesado en este programa, ponte en contacto con nosotros.",
     ],
   },
   {
     heading: "Tengo X años, ¿es demasiado tarde para empezar?",
     text: [
-     "Nunca es tarde para empezar. Tenemos alumnos de todas las edades así que no te preocupes, has llegado en el momento adecuado."
+      "Nunca es tarde para empezar. Tenemos alumnos de todas las edades así que no te preocupes, has llegado en el momento adecuado.",
     ],
   },
   {
     heading: "Tengo una lesión X, y me da miedo hacerme daño.",
     text: [
-     "En Atenea nos encargamos de que te sientas en un entorno seguro. En tu clase de prueba gratuita estarás acompañad@ de una persona avanzada que te ayudará a adaptar el jiu jitsu según tu lesión, así como también contamos con un servicio de preparación física en casa de que necesites hacer un rehabilitación y quieras prevenir lesiones dentro del tatami."
+      "En Atenea nos encargamos de que te sientas en un entorno seguro. En tu clase de prueba gratuita estarás acompañad@ de una persona avanzada que te ayudará a adaptar el jiu jitsu según tu lesión, así como también contamos con un servicio de preparación física en casa de que necesites hacer un rehabilitación y quieras prevenir lesiones dentro del tatami.",
     ],
   },
   {
     heading: "¿Cuál de las dos disciplinas es mejor? ¿Puedo practicar las dos?",
     text: [
-     "Nosotros recomendamos poder practicar ambas disciplinas ya que son totalmente complementarias, y entrenar una te ayuda a desarrollar ciertas habilidades para la otra y viceversa."
+      "Nosotros recomendamos poder practicar ambas disciplinas ya que son totalmente complementarias, y entrenar una te ayuda a desarrollar ciertas habilidades para la otra y viceversa.",
     ],
   },
 ];
@@ -130,17 +131,30 @@ export const classes_programs: FAQ[] = [
     ],
   },
   {
-    heading:
-      "¿Tenéis clase para principiantes?",
+    heading: "¿Tenéis clase para principiantes?",
     text: [
       "No tenemos clases exclusivamente para principiantes, todos los alumnos pueden asistir a todas las clases ya que están orientadas para todos los niveles.",
     ],
   },
   {
-    heading:
-      "¿Tenéis clases privadas?",
+    heading: "¿Tenéis clases privadas?",
     text: [
       "Sí. Tenemos un programa de clases privadas donde podrás elegir la tarifa que mejor se ajuste a tus intereses, el instructor, y los horarios según disponibilidad. Garantizamos un entorno de aprendizaje totalmente exclusivo y personalizado.",
     ],
+  },
+];
+
+export const AllFAQs = [
+  {
+    group: "inscripciones",
+    faqs: suscribtions,
+  },
+  {
+    group: "nuevos miembros",
+    faqs: newMembers,
+  },
+  {
+    group: "clases y programas",
+    faqs: classes_programs,
   },
 ];
