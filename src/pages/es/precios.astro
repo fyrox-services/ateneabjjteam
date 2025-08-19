@@ -10,6 +10,12 @@ import { preciosFaqs } from "@/data/faqs";
 import { kids, mainClasses, oneTime, privateSessions } from "@/data/pricing";
 import Layout from "@/layouts/Layout.astro";
 import { GLOBAL_DATA } from "@/vars";
+import imgNogi_Kimono from "@/assets/classes/bjj-para-empresas.jpg";
+import imgKids from "@/assets/classes/niños.jpg";
+import imgOnclasses from "@/assets/classes/competicion.jpg";
+import imgPrivateSession from "@/assets/classes/sesiones-privadas.jpg";
+import imgKimono from "@/assets/classes/kimono.jpg";
+import imgNogi from "@/assets/classes/nogi.jpg";
 
 const metaData = {
   metaTitle: "➤ Precio de Clases de Jiu Jitsu | Atenea BJJ Team",
@@ -25,6 +31,7 @@ const structuredData = {
   itemListElement: [
     // ADULTOS
     {
+      image: `${Astro.url.origin}${imgNogi_Kimono.src}`,
       "@type": "Product",
       name: "Adultos - Gi y NoGi (mensual)",
       category: "Adultos",
@@ -37,6 +44,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgKimono.src}`,
       "@type": "Product",
       name: "Adultos - Solo Gi (mensual)",
       category: "Adultos",
@@ -49,6 +57,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgNogi.src}`,
       "@type": "Product",
       name: "Adultos - Solo NoGi (mensual)",
       category: "Adultos",
@@ -63,6 +72,7 @@ const structuredData = {
     // NIÑOS
 
     {
+      image: `${Astro.url.origin}${imgKids.src}`,
       "@type": "Product",
       name: "Niños 4-7 años (mensual)",
       category: "Niños",
@@ -75,6 +85,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgKids.src}`,
       "@type": "Product",
       name: "Niños 8-10 años (mensual)",
       category: "Niños",
@@ -87,6 +98,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgKids.src}`,
       "@type": "Product",
       name: "Niños 11-15 años (3 días/semana, mensual)",
       category: "Niños",
@@ -99,6 +111,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgKids.src}`,
       "@type": "Product",
       name: "Niños 11-15 años (5 días/semana, mensual)",
       category: "Niños",
@@ -113,6 +126,7 @@ const structuredData = {
     // ABONOS PUNTUALES
 
     {
+      image: `${Astro.url.origin}${imgOnclasses.src}`,
       "@type": "Product",
       name: "Clase suelta",
       category: "Abonos puntuales",
@@ -125,6 +139,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgOnclasses.src}`,
       "@type": "Product",
       name: "Pase de día",
       category: "Abonos puntuales",
@@ -137,6 +152,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgOnclasses.src}`,
       "@type": "Product",
       name: "Pase semanal",
       category: "Abonos puntuales",
@@ -156,6 +172,7 @@ const structuredData = {
     // SESIONES PRIVADAS
 
     {
+      image: `${Astro.url.origin}${imgPrivateSession.src}`,
       "@type": "Product",
       name: "Sesión privada - Cinturón marrón (1 clase)",
       category: "Sesiones privadas",
@@ -168,6 +185,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgPrivateSession.src}`,
       "@type": "Product",
       name: "Sesión privada - Profesor Renzo Martínez (1 clase)",
       category: "Sesiones privadas",
@@ -180,6 +198,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgPrivateSession.src}`,
       "@type": "Product",
       name: "Sesiones privadas - Cinturón marrón (8 clases)",
       category: "Sesiones privadas",
@@ -192,6 +211,7 @@ const structuredData = {
       },
     },
     {
+      image: `${Astro.url.origin}${imgPrivateSession.src}`,
       "@type": "Product",
       name: "Sesiones privadas - Profesor Renzo Martínez (8 clases)",
       category: "Sesiones privadas",
