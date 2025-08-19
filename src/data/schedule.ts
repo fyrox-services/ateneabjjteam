@@ -1,4 +1,9 @@
 const sameClasses = {
+  nogi7_8: {
+    modality: "nogi",
+    start: "7:00",
+    end: "8:00",
+  },
   nogiMorning: {
     modality: "nogi",
     start: "10:30",
@@ -8,6 +13,11 @@ const sameClasses = {
     modality: "nogi",
     start: "14:00",
     end: "15:15",
+  },
+  kimono7_8: {
+    modality: "kimono",
+    start: "7:00",
+    end: "8:00",
   },
   kimonoMorning: {
     modality: "kimono",
@@ -80,6 +90,7 @@ export const days = [
   {
     day: "lunes",
     classes: [
+      sameClasses.kimono7_8,
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
       sameClasses.kimonoMid,
@@ -92,6 +103,7 @@ export const days = [
   {
     day: "martes",
     classes: [
+      sameClasses.nogi7_8,
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
       sameClasses.nogiMid,
@@ -104,6 +116,7 @@ export const days = [
   {
     day: "miércoles",
     classes: [
+      sameClasses.kimono7_8,
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
       sameClasses.kimonoMid,
@@ -116,6 +129,7 @@ export const days = [
   {
     day: "jueves",
     classes: [
+      sameClasses.nogi7_8,
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
       sameClasses.nogiMid,
@@ -128,13 +142,14 @@ export const days = [
   {
     day: "viernes",
     classes: [
+      sameClasses.free,
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
       sameClasses.kimono_nogi,
       sameClasses.kids4_7,
       sameClasses.kids11_15,
       sameClasses.openFriday,
-      sameClasses.free
+      sameClasses.free,
     ],
   },
   {

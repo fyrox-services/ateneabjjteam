@@ -5,6 +5,8 @@ import Section from "@/components/Section.astro";
 import TableSchedule from "@/components/TableSchedule.astro";
 import TableScheduleDesktop from "@/components/TableScheduleDesktop.astro";
 import Layout from "@/layouts/Layout.astro";
+import horarioImg from "@/assets/mark/atenea-bjj-team-horario.jpg";
+import Calendar from "@/components/icons/Calendar.astro";
 
 const metaData = {
   metaTitle: "Horarios",
@@ -16,8 +18,40 @@ const metaData = {
   <Hero h1="horarios" tagline="Todas las clases de la semana" />
 
   <Section class="wrapper">
+    <div class="box-download">
+      <a
+        href={horarioImg.src}
+        download="atenea-bjj-team-horario.jpg"
+        class="btn"
+      >
+        Descargar horario <Calendar size={20} />
+      </a>
+      <p>Descarga el horario y tenlo a mano siempre.</p>
+    </div>
     <TableSchedule />
     <TableScheduleDesktop />
   </Section>
   <BtnFloatDesktop />
 </Layout>
+
+<style>
+  .box-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    font-size: var(--fs-md);
+  }
+
+  .box-download a {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .box-download p {
+    text-align: center;
+  }
+</style>
