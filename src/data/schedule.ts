@@ -49,6 +49,11 @@ const sameClasses = {
     start: "17:15",
     end: "18:00",
   },
+  kids3_7: {
+    modality: "kids de 3 a 7 años",
+    start: "17:15",
+    end: "18:00",
+  },
   kids8_10: {
     modality: "kids de 8 a 10 años",
     start: "17:15",
@@ -145,8 +150,8 @@ export const days = [
       sameClasses.free,
       sameClasses.nogiMorning,
       sameClasses.kimonoMorning,
-      sameClasses.kimono_nogi,
-      sameClasses.kids4_7,
+      sameClasses.free,
+      sameClasses.kids3_7,
       sameClasses.kids11_15,
       sameClasses.openFriday,
       sameClasses.free,
