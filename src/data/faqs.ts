@@ -158,3 +158,20 @@ export const AllFAQs = [
     faqs: classes_programs,
   },
 ];
+
+
+export const preciosFaqs: FAQ[] = [
+  {
+    heading: "¿Cuánto tiempo se tarda en aprender jiu-jitsu?",
+    text: [
+      "El aprendizaje del jiu-jitsu es un proceso progresivo que depende de la constancia y los objetivos de cada persona. Con unos meses de práctica regular ya notarás mejoras en tu defensa personal, condición física y confianza. Sin embargo, alcanzar un nivel avanzado suele requerir varios años de entrenamiento constante.",
+    ],
+  },
+  {
+    heading: "¿Cuántos días entrenar jiu-jitsu?",
+    text: [
+      "Lo ideal es empezar con 2 o 3 entrenamientos por semana para asimilar las técnicas y adaptarte físicamente. Con el tiempo, muchos alumnos entrenan 4 o más días por semana, según sus objetivos y disponibilidad. Lo más importante es mantener la regularidad y escuchar a tu cuerpo para evitar lesiones.",
+    ],
+  },
+
+];

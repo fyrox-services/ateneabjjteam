@@ -1,23 +1,215 @@
 ---
 import BtnMainCta from "@/components/BtnMainCta.astro";
+import Faqs from "@/components/Faqs.astro";
 import HeadingDescription from "@/components/HeadingDescription.astro";
 import HeadingH2 from "@/components/HeadingH2.astro";
 import Hero from "@/components/Hero.astro";
 import Section from "@/components/Section.astro";
 import TablePricing from "@/components/TablePricing.astro";
+import { preciosFaqs } from "@/data/faqs";
 import { kids, mainClasses, oneTime, privateSessions } from "@/data/pricing";
 import Layout from "@/layouts/Layout.astro";
+import { GLOBAL_DATA } from "@/vars";
 
 const metaData = {
-  metaTitle: "Precios",
+  metaTitle: "➤ Precio de Clases de Jiu Jitsu | Atenea BJJ Team",
   metaDescription:
-    "Consulta nuestras tarifas para clases mensuales y puntuales.",
+    "Consulta nuestras tarifas para clases mensuales y puntuales. Además, puedes solicitar una clase gratuita para que nos conozcas.",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Precio de Clases de Jiu Jitsu | Atenea BJJ Team",
+  url: "https://ateneabjjteam.com/es/precios/",
+  itemListElement: [
+    // ADULTOS
+    {
+      "@type": "Product",
+      name: "Adultos - Gi y NoGi (mensual)",
+      category: "Adultos",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "110",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Adultos - Solo Gi (mensual)",
+      category: "Adultos",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "90",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Adultos - Solo NoGi (mensual)",
+      category: "Adultos",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "90",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    // NIÑOS
+
+    {
+      "@type": "Product",
+      name: "Niños 4-7 años (mensual)",
+      category: "Niños",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "75",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Niños 8-10 años (mensual)",
+      category: "Niños",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "75",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Niños 11-15 años (3 días/semana, mensual)",
+      category: "Niños",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "75",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Niños 11-15 años (5 días/semana, mensual)",
+      category: "Niños",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "80",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    // ABONOS PUNTUALES
+
+    {
+      "@type": "Product",
+      name: "Clase suelta",
+      category: "Abonos puntuales",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "15",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Pase de día",
+      category: "Abonos puntuales",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "20",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Pase semanal",
+      category: "Abonos puntuales",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "50",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          unitText: "WEEK",
+        },
+      },
+    },
+
+    // SESIONES PRIVADAS
+
+    {
+      "@type": "Product",
+      name: "Sesión privada - Cinturón marrón (1 clase)",
+      category: "Sesiones privadas",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "70",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Sesión privada - Profesor Renzo Martínez (1 clase)",
+      category: "Sesiones privadas",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "80",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Sesiones privadas - Cinturón marrón (8 clases)",
+      category: "Sesiones privadas",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "220",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "Product",
+      name: "Sesiones privadas - Profesor Renzo Martínez (8 clases)",
+      category: "Sesiones privadas",
+      brand: { "@type": "Organization", name: GLOBAL_DATA.SITE_NAME },
+      offers: {
+        "@type": "Offer",
+        price: "250",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+  ],
 };
 ---
 
 <Layout metaData={metaData}>
   <Hero
-    h1="precios"
+    h1="jiu jitsu en madrid precios"
     tagline="nuestras tarifas para clases mensuales y puntuales"
   />
 
@@ -25,9 +217,10 @@ const metaData = {
     <HeadingH2>solicita tu clase de prueba</HeadingH2>
 
     <HeadingDescription>
-      Descubre todas nuestras opciones de abonos: desde planes mensuales
-      ilimitados hasta clases sueltas, para que elijas la opción que mejor se
-      adapte a ti. Sin matrícula ni compromiso de permanencia.
+      Descubre todas nuestras opciones de jiu jitsu precio en abonos: desde
+      planes mensuales ilimitados hasta clases sueltas, para que elijas la
+      opción de que mejor se adapte a ti. Sin matrícula ni compromiso de
+      permanencia.
     </HeadingDescription>
 
     <div class="center-content mt-3">
@@ -50,5 +243,17 @@ const metaData = {
       <HeadingH2>sesiones privadas</HeadingH2>
       <TablePricing plans={privateSessions} />
     </div>
+
+    <div class="wrapper-max mt-6">
+      <HeadingH2>preguntas frecuentes</HeadingH2>
+
+      <Faqs faqs={preciosFaqs} />
+    </div>
   </Section>
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
 </Layout>
