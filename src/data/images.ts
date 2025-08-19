@@ -18,11 +18,11 @@ import trofeos from "@/assets/space/trofeos.jpg";
 export const imagesHome = [
   {
     img: graduation,
-    alt: "Día de la graduación",
+    alt: "Día de la graduación de jitsu jiu jitsu",
   },
   {
     img: rotulo,
-    alt: "Rótulo de la academia",
+    alt: "Rótulo de la academia de bjj jiu jitsu",
   },
   {
     img: girls,
@@ -30,15 +30,15 @@ export const imagesHome = [
   },
   {
     img: blackBelt,
-    alt: "Cinturones negro",
+    alt: "Cinturones negro en jiu jitsu brasileno",
   },
   {
     img: faqs,
-    alt: "Niños preguntando",
+    alt: "Niños preguntando sobre brasilian jiu jitsu",
   },
   {
     img: abudhabi,
-    alt: "Trofeo en abudhabi",
+    alt: "Trofeo en abudhabi de jiu jitsu brazilian",
   },
 ];
 
