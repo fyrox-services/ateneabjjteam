@@ -6,19 +6,27 @@
   font-size: var(--fs-l);
 }
 
+.content-body > h2,
+.content-body > h3 {
+  margin-block: 1lh;
+}
+
 .content-body p:first-of-type {
   margin-top: 0;
 }
 
-.content-body p {
+.content-body > p {
   margin-block: 1lh;
   font-size: var(--fs-md);
 }
 
-@media (min-width: 1024px) {
-  .content-body p {
-    font-size: var(--fs-base);
-  }
+.content-body a {
+  color: var(--link);
+}
+
+.content-body img {
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow);
 }
 
 /* LEGAL PAGE */
@@ -48,11 +56,13 @@ body.legal .content-body ol li {
   font-size: var(--fs-md);
 }
 
-body.legal .content-body a {
-  color: var(--link);
-}
+/* DESKTOP */
 
 @media (min-width: 1024px) {
+  .content-body p {
+    font-size: var(--fs-base);
+  }
+
   body.legal .content-body ul li,
   body.legal .content-body ol li {
     font-size: var(--fs-base);

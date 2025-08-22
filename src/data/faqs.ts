@@ -159,7 +159,6 @@ export const AllFAQs = [
   },
 ];
 
-
 export const preciosFaqs: FAQ[] = [
   {
     heading: "¿Cuánto tiempo se tarda en aprender jiu-jitsu?",
@@ -173,5 +172,25 @@ export const preciosFaqs: FAQ[] = [
       "Lo ideal es empezar con 2 o 3 entrenamientos por semana para asimilar las técnicas y adaptarte físicamente. Con el tiempo, muchos alumnos entrenan 4 o más días por semana, según sus objetivos y disponibilidad. Lo más importante es mantener la regularidad y escuchar a tu cuerpo para evitar lesiones.",
     ],
   },
+];
 
+export const FAQS_BENEFICIOS_MUJERES: FAQ[] = [
+  {
+    heading: "¿Qué partes del cuerpo trabaja el Jiu Jitsu?",
+    text: [
+      "El Jiu Jitsu es un entrenamiento muy completo: trabaja brazos, piernas, abdomen y espalda. Además, mejora la resistencia cardiovascular, la coordinación y la movilidad.",
+    ],
+  },
+  {
+    heading: "¿Qué arte marcial es mejor para las mujeres?",
+    text: [
+      "No existe un “mejor” arte marcial universal, depende de lo que busques. El Jiu Jitsu destaca por su defensa personal real y efectiva, especialmente contra oponentes más grandes. Otras buenas opciones son el Judo (proyecciones) o el Muay Thai (golpes y resistencia).",
+    ],
+  },
+  {
+    heading: "¿Es suficiente practicar Jiu Jitsu tres veces por semana?",
+    text: [
+      "Sí, con tres entrenamientos semanales notarás grandes mejoras en técnica, condición física y confianza. Lo importante es la constancia: mejor tres veces fijas a la semana que entrenar mucho unos días y luego parar.",
+    ],
+  },
 ];

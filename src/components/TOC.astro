@@ -22,7 +22,7 @@ const headings = buildHeadings(body);
           const splitedText = text.split(" ");
 
           const cleanedText = splitedText.map((word) => {
-            return word.toLocaleLowerCase().replaceAll(/[¿?!:]/g, "");
+            return word.toLocaleLowerCase().replaceAll(/[¿?!:.]/g, "");
           });
 
           const createSlug = cleanedText.join("-");
