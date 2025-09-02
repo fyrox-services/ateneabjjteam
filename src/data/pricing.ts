@@ -31,6 +31,7 @@ export const kids: Plan[] = [
     price: 75,
     link: "https://checkout.joinmaat.com/?gymId=atenea_bjj_team&priceId=price_1RdZqUKuXaFCDXDnaW0THNHo",
     monthly: true,
+    tagline: "3 días por semana",
     buy: true,
   },
   {
@@ -38,6 +39,7 @@ export const kids: Plan[] = [
     price: 75,
     link: "https://checkout.joinmaat.com/?gymId=atenea_bjj_team&priceId=price_1RdZppKuXaFCDXDnTrsBmC2F",
     monthly: true,
+    tagline: "3 días por semana",
     buy: true,
   },
   {

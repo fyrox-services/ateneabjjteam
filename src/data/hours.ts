@@ -81,7 +81,7 @@ export const allHours: AllHours = {
       hours: ["10:30 - 11:30"],
     },
     {
-      label: "martes, jueves y viernes",
+      label: "martes y jueves",
       hours: ["14:00 - 15:15"],
     },
     {
