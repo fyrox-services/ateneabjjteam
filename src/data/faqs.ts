@@ -194,3 +194,25 @@ export const FAQS_BENEFICIOS_MUJERES: FAQ[] = [
     ],
   },
 ];
+
+
+export const FAQS_DIFERENCIAS_GRAPPLING_Y_BJJ: FAQ[] = [
+  {
+    heading: "¿Qué arte marcial es el grappling?",
+    text: [
+      "El grappling no es un arte marcial en sí mismo, sino un término que se usa para agrupar a todas las disciplinas de combate basadas en agarres, derribos, controles y sumisiones. Dentro de este grupo entran estilos como el judo, la lucha olímpica, el sambo o el propio jiu jitsu brasileño.",
+    ],
+  },
+  {
+    heading: "¿Cuál es la diferencia entre el grappling y el BJJ NoGi?",
+    text: [
+      "Aquí es donde suele haber confusión. Técnicamente, grappling puede abarcar muchos estilos, pero en la jerga de los gimnasios lo más habitual es que se use como sinónimo de BJJ NoGi, es decir, jiu jitsu brasileño sin kimono. Por eso, cuando alguien dice “hago grappling”, normalmente se refiere al jiu jitsu sin kimono.",
+    ],
+  },
+  {
+    heading: "¿El BJJ es solo grappling?",
+    text: [
+      "El BJJ forma parte del grappling, pero no es lo único. El grappling engloba más artes marciales de agarre, mientras que el Jiu Jitsu brasileño es una disciplina concreta dentro de ese grupo. Y a su vez, el BJJ tiene dos modalidades: con kimono (Gi) y sin kimono (NoGi).",
+    ],
+  },
+];
