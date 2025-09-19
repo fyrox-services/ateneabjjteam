@@ -40,11 +40,16 @@ body.legal .content-body h2 {
 }
 
 body.legal .content-body ul,
-body.legal .content-body ol {
+body.legal .content-body ol,
+.content-body > ul:not([class]),
+.content-body > ol {
   padding-left: 2rem;
 }
 
-body.legal .content-body ul li {
+body.legal .content-body ul li,
+body.legal .content-body ol li,
+.content-body ul:not([class]) li,
+.content-body ol:not([class]) li {
   list-style: initial;
   margin-block: 0.5lh;
   font-size: var(--fs-md);
@@ -52,8 +57,6 @@ body.legal .content-body ul li {
 
 body.legal .content-body ol li {
   list-style: decimal;
-  margin-block: 0.5lh;
-  font-size: var(--fs-md);
 }
 
 /* DESKTOP */

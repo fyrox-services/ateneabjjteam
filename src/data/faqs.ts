@@ -216,3 +216,20 @@ export const FAQS_DIFERENCIAS_GRAPPLING_Y_BJJ: FAQ[] = [
     ],
   },
 ];
+
+
+export const FAQS_CINTURONES_BJJ: FAQ[] = [
+  {
+    heading: "¿Cuál es el orden de los cinturones de Jiu Jitsu?",
+    text: [
+      "En adultos, el orden es: blanco → azul → morado → marrón → negro. Después del negro existen grados y niveles más avanzados (rojo y coral), pero esos ya son niveles honoríficos que requieren décadas de práctica.",
+    ],
+  },
+  {
+    heading: "¿Cuántos grados hay por cinturón en Jiu Jitsu?",
+    text: [
+      "Cada cinturón suele dividirse en 4 grados (las rayas que ves en un extremo del cinturón). Esas rayas marcan la progresión dentro de un mismo color hasta que el profesor considera que estás listo para subir al siguiente cinturón.",
+    ],
+  },
+
+];
