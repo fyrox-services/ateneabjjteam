@@ -33,6 +33,10 @@
   --wa: #25d366;
   --wa-dark: #0a6f2f;
 
+  --primary-rgb: rgb(0, 179, 214, 0.5);
+  --secondary-rgb: rgb(251, 176, 59, 0.5);
+  --black-rgb: rgba(0, 0, 0, 0.8);
+
   --black: #000;
   --gray: #ccc;
   --light: #f8f7f7;

@@ -57,8 +57,6 @@ export const kidsHours: Hours[] = [
   },
 ];
 
-
-
 // para el select del formulario de reservar una clase
 export const allHours: AllHours = {
   gi: [
@@ -77,9 +75,14 @@ export const allHours: AllHours = {
   ],
   nogi: [
     {
+      label: "martes y jueves",
+      hours: ["7:00 - 8:00"],
+    },
+    {
       label: "de lunes a viernes",
       hours: ["10:30 - 11:30"],
     },
+
     {
       label: "martes y jueves",
       hours: ["14:00 - 15:15"],
@@ -92,7 +95,11 @@ export const allHours: AllHours = {
   kids: [
     {
       label: "de 4 a 7 años",
-      hours: ["lunes, 17:15 - 18:00", "miércoles, 17:15 - 18:00", "viernes, 17:15 - 18:00"],
+      hours: [
+        "lunes, 17:15 - 18:00",
+        "miércoles, 17:15 - 18:00",
+        "viernes, 17:15 - 18:00",
+      ],
     },
     {
       label: "de 8 a 10 años",
@@ -101,13 +108,58 @@ export const allHours: AllHours = {
     {
       label: "de 11 a 15 años",
       hours: [
-        "lunes, 18:00 - 19:15", 
-        "martes, 18:00 - 19:15", 
-        "miércoles, 18:00 - 19:15", 
+        "lunes, 18:00 - 19:15",
+        "martes, 18:00 - 19:15",
+        "miércoles, 18:00 - 19:15",
         "jueves, 18:00 - 19:15",
-        "viernes, 18:00 - 19:15"
+        "viernes, 18:00 - 19:15",
       ],
     },
   ],
-
 };
+
+// Para los horarios de cada página individual
+
+export const grapplingHours = [
+  {
+    day: "lunes",
+    color: "var(--primary-rgb)",
+    classes: ["10:30 - 11:30", "19:15 - 20:30"],
+  },
+  {
+    day: "martes",
+    color: "var(--secondary-rgb)",
+    classes: [
+      "7:00 - 8:00",
+      "10:30 - 11:30",
+      "14:00 - 15:15",
+      "19:15 - 20:30 | Competición*",
+    ],
+  },
+  {
+    day: "miércoles",
+    color: "var(--primary-rgb)",
+
+    classes: ["10:30 - 11:30", "19:15 - 20:30"],
+  },
+  {
+    day: "jueves",
+    color: "var(--secondary-rgb)",
+    classes: [
+      "7:00 - 8:00",
+      "10:30 - 11:30",
+      "14:00 - 15:15",
+      "19:15 - 20:30 | Competición*",
+    ],
+  },
+  {
+    day: "viernes",
+    color: "var(--black-rgb)",
+    classes: ["10:30 - 11:30", "19:15 - 21:00 | Open Mat*"],
+  },
+  {
+    day: "sábado",
+    color: "var(--black-rgb)",
+    classes: ["12:00 - 13:30 | Open Mat*"],
+  },
+];

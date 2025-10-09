@@ -1,13 +1,17 @@
 export type ModalContent = "form" | "hours";
-export type Modality = "" | "kimono - gi" | "grappling - nogi" | "niños" 
-export type Programs = "competición" | "sesiones privadas" | "empresas" | 'discapacidad';
+export type Modality = "" | "kimono - gi" | "grappling - nogi" | "niños";
+export type Programs =
+  | "competición"
+  | "sesiones privadas"
+  | "empresas"
+  | "discapacidad";
 
 export interface Classes {
   heading: Modality | Programs;
   text: string;
   img: ImageMetadata;
   description: string;
-  wa?: string 
+  wa?: string;
 }
 
 export interface Hours {
@@ -41,7 +45,7 @@ export interface Plan {
   link: string;
   monthly?: boolean;
   tagline?: string;
-  buy: boolean
+  buy: boolean;
 }
 
 export interface Step {
@@ -70,4 +74,9 @@ export interface AllFormFields {
 export type ContactForm = Pick<
   AllFormFields,
   "name" | "email" | "phone" | "msg" | "legal"
+>;
+
+export type OneClasstForm = Pick<
+  AllFormFields,
+  "name" | "email" | "phone" | "msg" | "legal" | "hours"
 >;

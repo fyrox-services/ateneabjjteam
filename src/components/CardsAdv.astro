@@ -1,42 +1,25 @@
 ---
-import selfConfidence from "@/assets/svg/autoconfianza.svg";
-import mentalControl from "@/assets/svg/fortaleza-mental.svg";
-import personalDefense from "@/assets/svg/defensa-personal.svg";
-import balance from "@/assets/svg/psicomotricidad.svg";
-
 import { Image } from "astro:assets";
 
-const advs = [
-  {
-    icon: selfConfidence,
-    title: "autoconfianza",
-    description:
-      "Mejora la seguridad en uno mismo al superar retos y aprender nuevas habilidades. Refuerza la autoestima a través de la práctica constante y la superación personal.",
-  },
-  {
-    icon: mentalControl,
-    title: "fortaleza mental",
-    description:
-      "Fomenta la concentración, la paciencia y la resiliencia ante la adversidad. Ayuda a mantener la calma, pensar con claridad y afrontar situaciones de presión.",
-  },
-  {
-    icon: personalDefense,
-    title: "defensa personal",
-    description:
-      "Enseña técnicas efectivas para reaccionar y protegerse en escenarios reales. Aporta herramientas prácticas para desenvolverse con seguridad y autocontrol.",
-  },
-  {
-    icon: balance,
-    title: "psicomotricidad",
-    description:
-      "Desarrolla coordinación, equilibrio y control corporal a través del movimiento. Mejora la agilidad, el tiempo de reacción y la conciencia física en cada acción.",
-  },
-];
+interface Props {
+  cards: {
+    description: string;
+    title: string;
+    icon: ImageMetadata;
+  }[];
+  grid?: 3;
+}
+
+const { cards, grid } = Astro.props;
 ---
 
-<ul>
+<ul
+  class:list={{
+    "grid-3": grid === 3,
+  }}
+>
   {
-    advs.map(({ description, title, icon }, i) => {
+    cards.map(({ description, title, icon }, i) => {
       return (
         <li>
           <header>
@@ -83,6 +66,7 @@ const advs = [
 
   img {
     min-width: 5rem;
+    max-width: 5rem;
   }
 
   p {
@@ -95,6 +79,10 @@ const advs = [
   @media (min-width: 1024px) {
     ul {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul.grid-3 {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

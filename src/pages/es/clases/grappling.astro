@@ -1,0 +1,155 @@
+---
+import { FormOneClass } from "@/components/react/FormOneClass";
+import HeadingH2 from "@/components/HeadingH2.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardsHours from "@/components/CardsHours.astro";
+import HeadingDescription from "@/components/HeadingDescription.astro";
+import CardsAdv from "@/components/CardsAdv.astro";
+import { advsGrappling } from "@/data/advs";
+import Faqs from "@/components/Faqs.astro";
+import { noGiPage } from "@/data/faqs";
+import { GLOBAL_DATA } from "@/vars";
+
+const metaData = {
+  metaTitle: "➤ Clases de Grappling en Madrid | Atenea BJJ",
+  metaDescription:
+    "Prueba una clase de Grappling (NoGi) y descubre un entrenamiento explosivo, dinámico y versátil. Mejora tu fuerza, reflejos y control en el tatami. ¡Reserva tu primera clase hoy!",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Clases de Grappling (NoGi)",
+  provider: {
+    "@type": "SportsActivityLocation",
+    name: GLOBAL_DATA.SITE_NAME,
+    url: "https://ateneabjjteam.com/",
+  },
+  areaServed: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Calle del Canal de Panamá, 3",
+      addressLocality: "Madrid",
+      postalCode: "28027",
+      addressCountry: "ES",
+    },
+  },
+  description:
+    "Prueba una clase gratuita de Grappling en Madrid y descubre el entrenamiento más dinámico y explosivo del jiu-jitsu sin kimono.",
+  offers: {
+    "@type": "Offer",
+    name: "Clase de prueba gratuita de Grappling",
+    price: "0",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url: Astro.url,
+  },
+};
+---
+
+<Layout metaData={metaData}>
+  <section class="wrapper above">
+    <div class="box-content">
+      <h1>clases de grappling <span>en madrid</span></h1>
+      <p class="tagline">
+        También conocido como NoGi, esta es la disciplina del jiu jitsu donde se
+        lucha sin el kimono.
+      </p>
+      <p class="tagline">
+        Es un juego mucho más dinámico, explosivo y fuerte, cada vez más popular
+        hoy en día y además muy útil para la defensa personal. <strong
+          >Reserva una primera clase gratuita y ven a probarlo.</strong
+        >
+      </p>
+    </div>
+
+    <div class="box-form">
+      <FormOneClass
+        client:visible
+        style="OneClass"
+        header={{
+          h2: "Reserva tu clase de prueba gratis",
+          tagline: "te contactaremos para acordar el día y resolver dudas ",
+        }}
+      />
+    </div>
+  </section>
+
+  <section class="wrapper mt-6">
+    <HeadingH2 color="blue">horarios</HeadingH2>
+    <HeadingDescription
+      >Aquí están todas las clases de NoGi ordenadas por día, incluyendo las de
+      competición y las sesiones de Open Mat.</HeadingDescription
+    >
+    <CardsHours />
+  </section>
+  <section class="wrapper mt-6">
+    <HeadingH2 color="blue">beneficios</HeadingH2>
+    <HeadingDescription
+      >Estos son los principales beneficios y los puntos en donde el NoGi o
+      Grappling destacan en comparación con la versión Gi, en la cual si se usa
+      el kimono.</HeadingDescription
+    >
+    <CardsAdv grid={3} cards={advsGrappling} />
+  </section>
+  <section class="wrapper-max mt-6">
+    <HeadingH2 color="blue">preguntas frecuentas sobre el Grappling</HeadingH2>
+    <Faqs faqs={noGiPage} />
+  </section>
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
+</Layout>
+
+<style>
+  .above {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box-content {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-family: var(--ff-heading);
+    line-height: 1;
+    font-size: var(--fs-3xl);
+  }
+
+  h1 span {
+    display: block;
+  }
+
+  @media (min-width: 1024px) {
+    .box-form {
+      flex: 0 0 40%;
+    }
+
+    .box-content {
+      margin-top: 8rem;
+    }
+
+    h1 {
+      font-family: var(--ff-heading);
+      font-size: var(--fs-4xl);
+    }
+
+    .tagline {
+      font-size: var(--fs-l);
+    }
+
+    .above {
+      flex-direction: row;
+      gap: 3rem;
+      justify-content: space-between;
+    }
+  }
+</style>

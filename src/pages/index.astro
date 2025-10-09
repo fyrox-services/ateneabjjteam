@@ -10,6 +10,7 @@ import ImagesGrid from "@/components/ImagesGrid.astro";
 import { MainForm } from "@/components/react/MainForm";
 import { Pattern } from "@/components/react/Pattern";
 import Section from "@/components/Section.astro";
+import { advsBjj } from "@/data/advs";
 import { mainClasses, programs } from "@/data/classes";
 import { homeFaqs } from "@/data/faqs";
 import { imagesHome } from "@/data/images";
@@ -118,7 +119,7 @@ const localData = {
           un deporte, es una disciplina que promueve el desarrollo personal, la
           confianza y la capacidad de defensa en un entorno seguro y respetuoso.
         </HeadingDescription>
-        <CardsAdv />
+        <CardsAdv cards={advsBjj} />
 
         <div class="how-star">
           <HeadingH2>cómo empezar en jiu-jitsu brasileño</HeadingH2>

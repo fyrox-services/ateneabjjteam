@@ -1,4 +1,12 @@
-<h2>
+---
+interface Props {
+  color?: "blue";
+}
+
+const { color } = Astro.props;
+---
+
+<h2 class={color}>
   <slot />
 </h2>
 
@@ -6,6 +14,10 @@
   h2 {
     font-size: var(--fs-3xl);
     font-family: var(--ff-heading);
+  }
+
+  h2.blue {
+    color: var(--primary);
   }
 
   @media (min-width: 1024px) {

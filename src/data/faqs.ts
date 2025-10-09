@@ -41,6 +41,33 @@ export const homeFaqs: FAQ[] = [
   },
 ];
 
+export const noGiPage: FAQ[] = [
+  {
+    heading: "¿Cómo es una clase de grappling?",
+    text: [
+      "Primero hay un calentamiento, luego ejercicios para ir asimilando una técnica específica, después pasamos a profundizar en la técnica de la semana y por último lo ponemos en práctica en los combates.",
+    ],
+  },
+  {
+    heading: "¿Qué ropa se usa en grappling?",
+    text: [
+      "En grappling o NoGi se suele usar rashguard (camiseta elástica de compresión) y pantalones cortos o mallas sin bolsillos ni cremalleras. Este tipo de ropa evita enganches, permite moverse con libertad y ayuda a mantener la higiene en el tatami.",
+    ],
+  },
+    {
+    heading: "¿Mejor NoGi o Gi (con kimono)?",
+    text: [
+      "Ninguna es mejor que la otra, solo son diferentes y con un planteamiento de combate distinto. De hecho son complementarias y en muchas ocasiones se pueden extrapolar técnicas de una disciplina a otra. Puedes venir a probar las dos.",
+    ],
+  },
+  {
+    heading: "¿Qué diferencia hay entre grappling y jiu jitsu?",
+    text: [
+      "El grappling engloba todas las disciplinas de agarre sin golpes, como el jiu-jitsu, el wrestling o el sambo. El jiu-jitsu brasileño es una de ellas, centrada en las proyecciones, los controles y las sumisiones. Como el jiu-jitsu es la más popular, muchas veces se usa el término grappling para referirse al NoGi, es decir, jiu-jitsu sin kimono.",
+    ],
+  },
+];
+
 export const suscribtions: FAQ[] = [
   {
     heading: "¿Tengo una clase de prueba gratuita para cada disciplina?",
@@ -195,7 +222,6 @@ export const FAQS_BENEFICIOS_MUJERES: FAQ[] = [
   },
 ];
 
-
 export const FAQS_DIFERENCIAS_GRAPPLING_Y_BJJ: FAQ[] = [
   {
     heading: "¿Qué arte marcial es el grappling?",
@@ -217,7 +243,6 @@ export const FAQS_DIFERENCIAS_GRAPPLING_Y_BJJ: FAQ[] = [
   },
 ];
 
-
 export const FAQS_CINTURONES_BJJ: FAQ[] = [
   {
     heading: "¿Cuál es el orden de los cinturones de Jiu Jitsu?",
@@ -231,5 +256,4 @@ export const FAQS_CINTURONES_BJJ: FAQ[] = [
       "Cada cinturón suele dividirse en 4 grados (las rayas que ves en un extremo del cinturón). Esas rayas marcan la progresión dentro de un mismo color hasta que el profesor considera que estás listo para subir al siguiente cinturón.",
     ],
   },
-
 ];

@@ -1,0 +1,101 @@
+---
+import { grapplingHours } from "@/data/hours";
+import ArrowLong from "./icons/ArrowLong.astro";
+---
+
+<ul>
+  {
+    grapplingHours.map(({ classes, day, color }) => {
+      return (
+        <li data-day={day} style={`background-color: ${color}`}>
+          <h3>{day}</h3>
+          {classes.map((item) => {
+            return (
+              <div class="one-class">
+                <ArrowLong size={15} />
+                {item}
+              </div>
+            );
+          })}
+        </li>
+      );
+    })
+  }
+</ul>
+
+<div class="details">
+  <p>
+    <span> Competición*: </span>
+    Clases con formato más adaptado a la técnica y la estrategia, tu primera clase
+    no puede ser en estas sesiones, pero una vez inscrito es como otra clase más
+    para ti.
+  </p>
+  <p>
+    <span> Open Mat*: </span>
+    Sesión de combates libres, puedes venir a luchar libremente con el resto de compañeros.
+  </p>
+</div>
+<a href="#reservar" class="btn">Reservar clase gratuita</a>
+
+<style>
+  ul {
+    display: grid;
+    gap: 2rem;
+    margin-block: 2rem;
+  }
+
+  li {
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    border-radius: var(--radius);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  li[data-day="viernes"],
+  li[data-day="sábado"] {
+    color: var(--white);
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    font-size: var(--fs-2xl);
+    font-family: var(--ff-heading);
+  }
+
+  .one-class {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: var(--fs-md);
+    margin-block: 1rem;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 50ch;
+  }
+
+  .details span {
+    font-family: var(--ff-base-bold);
+  }
+
+  .btn {
+    margin-top: 2rem;
+    display: block;
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn {
+      width: fit-content;
+    }
+  }
+</style>

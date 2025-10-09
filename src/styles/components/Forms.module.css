@@ -143,6 +143,16 @@
   height: auto;
 }
 
+.Form.OneClass {
+  box-shadow: var(--shadow);
+  margin-inline: auto;
+  max-height: none;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10rem 1rem 1rem;
+}
+
 .Form.Contact {
   box-shadow: var(--shadow);
   height: fit-content;
@@ -178,5 +188,9 @@
 
   .Field.Msg {
     grid-column: 1/-1;
+  }
+
+  .Form.OneClass {
+    padding: 8rem 2rem 2rem;
   }
 }
