@@ -2,6 +2,10 @@ import type { AllHours, Hours } from "@/types";
 
 export const giHours: Hours[] = [
   {
+    day: "lunes y miércoles",
+    hour: "7:00 - 8:00",
+  },
+  {
     day: "de lunes a viernes",
     hour: "11:30 - 12:30",
   },
@@ -17,11 +21,15 @@ export const giHours: Hours[] = [
 
 export const nogiHours: Hours[] = [
   {
+    day: "martes y jueves",
+    hour: "7:00 - 8:00",
+  },
+  {
     day: "de lunes a viernes",
     hour: "10:30 - 11:30",
   },
   {
-    day: "martes, jueves y viernes",
+    day: "martes y jueves",
     hour: "14:00 - 15:15",
   },
   {
@@ -60,6 +68,10 @@ export const kidsHours: Hours[] = [
 // para el select del formulario de reservar una clase
 export const allHours: AllHours = {
   gi: [
+       {
+      label: "lunes y miércoles",
+      hours: ["7:00 - 8:00"],
+    },
     {
       label: "de lunes a viernes",
       hours: ["11:30 - 12:30"],
