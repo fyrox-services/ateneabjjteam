@@ -7,6 +7,7 @@ import Email from "./icons/Email.astro";
 import { GLOBAL_DATA, WHATSAPP_MSG } from "@/vars";
 import Phone from "./icons/Phone.astro";
 import mikecodeLogo from "@/assets/mark/mikecode-logo.png";
+import Star from "./icons/Star.astro";
 ---
 
 <footer>
@@ -74,6 +75,16 @@ import mikecodeLogo from "@/assets/mark/mikecode-logo.png";
             <a href={GLOBAL_DATA.MAIL_TO} target="_blank">
               <Email size={25} />
               {GLOBAL_DATA.MAIL_TEXT}
+            </a>
+          </li>
+          <li>
+            <a
+              href={GLOBAL_DATA.REVIEW}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Star size={25} />
+              ¡Déjanos una reseña!
             </a>
           </li>
         </ul>

@@ -12,6 +12,7 @@ export const GLOBAL_DATA = {
   MAIL_TO: "mailto:info@ateneabjjteam.com",
   MAIL_TEXT: "info@ateneabjjteam.com",
   SITE_NAME: 'Atenea BJJ Team Madrid',
+  REVIEW: 'https://g.page/r/CUP9yqy2hBukEBM/review',
   SITE_DESCRIPTION: 'Academia de jiu jitsu en Madrid, aprende jiu jitsu de calidad de forma estructurada y profesional. Reserva una primera clase de prueba gratis.'
 };
 
