@@ -3,3 +3,7 @@
   color: darkred;
   text-transform: lowercase;
 }
+
+.Msg.light {
+  color: coral;
+}

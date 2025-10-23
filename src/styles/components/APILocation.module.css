@@ -1,0 +1,125 @@
+.Container {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.H2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-3xl);
+  text-align: center;
+}
+
+.Text {
+  text-align: center;
+  max-width: 40ch;
+  color: var(--white);
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.Field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Input {
+  background-color: var(--white);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.Input::placeholder {
+  font-size: var(--fs-md);
+}
+
+button.Submit {
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: var(--fs-md);
+}
+
+button.Submit:disabled {
+  cursor: not-allowed;
+}
+
+button.Submit.error {
+  background-color: var(--danger);
+}
+
+button.Submit.success {
+  background-color: var(--success);
+}
+
+.Result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.From {
+  font-size: var(--fs-md);
+  color: var(--gray);
+}
+
+.Place {
+  color: var(--white);
+  text-align: center;
+}
+
+.Modes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.Modes li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--fs-md);
+  color: var(--secondary);
+}
+
+button.Cita {
+  font-size: var(--fs-md);
+  margin-top: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .Form {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  button.Submit {
+    width: fit-content;
+  }
+
+  .Modes {
+    justify-content: space-around;
+  }
+}

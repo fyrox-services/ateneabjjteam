@@ -59,6 +59,10 @@ export interface FAQ {
   text: string[];
 }
 
+export type DataToLocation = {
+  address: string;
+};
+
 // Forms
 
 export interface AllFormFields {
