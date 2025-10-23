@@ -8,16 +8,18 @@ import { Walk } from "../icons/Walk";
 import { useLoader } from "@/hooks/useLoader";
 import { FeedbackMessage } from "./FeedbackMessage";
 import { isModalActive } from "@/stores";
+import { Reset } from "../icons/Reset";
 
 export function APILocation() {
-  const { submitStateContent, setLoading, loading } = useLoader();
-  const [error, setError] = useState("");
-  const [place, setPlace] = useState({
+  const initialPlace = {
     origin: "",
     car: "",
     walk: "",
     bike: "",
-  });
+  };
+  const { submitStateContent, setLoading, loading } = useLoader();
+  const [error, setError] = useState("");
+  const [place, setPlace] = useState(initialPlace);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -41,6 +43,12 @@ export function APILocation() {
         setLoading("error");
         setError(error.message);
       });
+  }
+
+  function reset() {
+    setPlace(initialPlace);
+    setLoading("off");
+    setError("");
   }
 
   return (
@@ -71,6 +79,9 @@ export function APILocation() {
           type="submit"
         >
           {submitStateContent()}
+        </button>
+        <button type="reset" onClick={reset} className={css.Reset}>
+          <Reset />
         </button>
       </form>
       {place.origin && (
