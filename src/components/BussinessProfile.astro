@@ -1,0 +1,93 @@
+---
+import { GLOBAL_DATA } from "@/vars";
+import Local from "./icons/Local.astro";
+import Location from "./icons/Location.astro";
+import Phone from "./icons/Phone.astro";
+---
+
+<div class="wrapper container">
+  <ul class="NAP">
+    <li>
+      <Local size={25} />
+      <h3>Atenea BJJ Team - Jiu Jitsu Brasileño</h3>
+    </li>
+    <li>
+      <a
+        href="https://share.google/YuOBtzMU4CTpmBKmQ"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Location size={25} />
+        <h3>C/ del Canal de Panamá, 3, 28027, Madrid</h3>
+      </a>
+    </li>
+    <li>
+      <a href={GLOBAL_DATA.CALL_LINK}>
+        <Phone size={25} />
+        <h3>
+          {GLOBAL_DATA.PHONE_MASK}
+        </h3>
+      </a>
+    </li>
+  </ul>
+
+  <div class="box-iframe">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.586389552634!2d-3.653868825559942!3d40.440156654215656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422fcdc5489e4b%3A0xa41b84b6accafd43!2sAtenea%20BJJ%20Team%20-%20Jiu%20Jitsu%20Brasile%C3%B1o!5e0!3m2!1ses!2ses!4v1761296100894!5m2!1ses!2ses"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<style>
+  .container {
+    margin-top: 5rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  .NAP {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  li,
+  a {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    font-size: var(--fs-md);
+    color: var(--primary);
+  }
+
+  iframe {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    li,
+    a {
+      font-size: var(--fs-l);
+    }
+
+    .box-iframe {
+      flex: 0 0 50%;
+    }
+  }
+</style>

@@ -1,5 +1,7 @@
 ---
 import Above from "@/components/Above.astro";
+import BtnMainCta from "@/components/BtnMainCta.astro";
+import BussinessProfile from "@/components/BussinessProfile.astro";
 import CardsAdv from "@/components/CardsAdv.astro";
 import CardsServices from "@/components/CardsServices.astro";
 import CardsStep from "@/components/CardsStep.astro";
@@ -20,7 +22,7 @@ import Layout from "@/layouts/Layout.astro";
 import { GLOBAL_DATA } from "@/vars";
 
 const metaData = {
-  metaTitle: "➤ Atenea BJJ | Academia de Jiu Jitsu en Madrid",
+  metaTitle: "➤ Atenea BJJ Team - Jiu Jitsu Brasileño",
   metaDescription: GLOBAL_DATA.SITE_DESCRIPTION,
 };
 
@@ -107,9 +109,7 @@ const localData = {
       </HeadingDescription>
       <CardsServices cards={programs} style="programs" />
     </div>
-  </Section>
-
-  <Section>
+    <!-- API Location-->
     <APILocation client:visible />
   </Section>
 
@@ -182,6 +182,27 @@ const localData = {
         puedes contactarnos directamente.
       </HeadingDescription>
       <a class="btn link-page" href="/es/contacto/">Contáctanos</a>
+    </div>
+  </Section>
+
+  <!-- dónde estamos -->
+
+  <Section>
+    <div class="wrapper">
+      <HeadingH2>dónde estamos</HeadingH2>
+      <HeadingDescription>
+        somos una escuela de jiu jitsu en Madrid ubicada en el distrito de
+        Ciudad Lineal. Impartimos clases de jiu jitsu brasileño con kimono, sin
+        kimono (mejor conocido como NoGi o Grappling), clases de jiu jitsu para
+        niños y clases particulares de jiu jitsu. Ven a entrenar con nosotros,
+        te regalamos una clase de prueba.
+      </HeadingDescription>
+    </div>
+
+    <BussinessProfile />
+
+    <div class="wrapper center-content mt-6">
+      <BtnMainCta />
     </div>
   </Section>
 
