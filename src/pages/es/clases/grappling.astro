@@ -9,9 +9,15 @@ import { advsGrappling } from "@/data/advs";
 import Faqs from "@/components/Faqs.astro";
 import { noGiPage } from "@/data/faqs";
 import { GLOBAL_DATA } from "@/vars";
+import { getEntry } from "astro:content";
+import { render } from "astro:content";
+import "@/styles/content.css";
+
+const text = await getEntry("seo-texts", "es/clases-de-grappling")!;
+const { Content } = await render(text);
 
 const metaData = {
-  metaTitle: "➤ Clases de Grappling en Madrid | Atenea BJJ",
+  metaTitle: "➤ Clases de Grappling | Atenea BJJ Team",
   metaDescription:
     "Prueba una clase de Grappling (NoGi) y descubre un entrenamiento explosivo, dinámico y versátil. Mejora tu fuerza, reflejos y control en el tatami. ¡Reserva tu primera clase hoy!",
 };
@@ -93,6 +99,15 @@ const structuredData = {
     >
     <CardsAdv grid={3} cards={advsGrappling} />
   </section>
+
+  <section class="wrapper-max content-body mt-6">
+    <Content />
+  </section>
+
+  <div class="wrapper-max mt-3">
+    <a href="#reservar" class="btn">Reservar clase gratuita</a>
+  </div>
+
   <section class="wrapper-max mt-6">
     <HeadingH2 color="blue">preguntas frecuentas sobre el Grappling</HeadingH2>
     <Faqs faqs={noGiPage} />
