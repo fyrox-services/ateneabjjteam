@@ -7,6 +7,10 @@ import explosivo from "@/assets/svg/explosivo.png"
 import dinamico from "@/assets/svg/dinamico.png"
 import versatil from "@/assets/svg/versatil.png"
 
+import focus from "@/assets/svg/concentrado.png"
+import security from "@/assets/svg/seguridad.png"
+import funny from "@/assets/svg/divertido.png"
+
 export const advsBjj = [
   {
     icon: selfConfidence,
@@ -52,5 +56,26 @@ export const advsGrappling = [
     title: "versátil",
     description:
       "Adáptate a cualquier estilo y situación. La ausencia del kimono te enseña a ser creativo encontrando otros agarres, a ajustar tus técnicas y a encontrar soluciones en pleno intercambio.",
+  },
+];
+
+export const advsKids = [
+  {
+    icon: focus,
+    title: "concentración",
+    description:
+      "El Jiu-Jitsu enseña a los niños a mantener la calma bajo presión, mejorar su atención y resolver problemas con inteligencia, no con fuerza.",
+  },
+  {
+    icon: security,
+    title: "seguridad",
+    description:
+      "Cada progreso en el tatami refuerza la autoestima y la confianza del niño, ayudándole a afrontar los retos con seguridad y respeto.",
+  },
+  {
+    icon: funny,
+    title: "diversión",
+    description:
+      "Entrenar Jiu-Jitsu es una forma divertida de canalizar energía, mejorar la coordinación y hacer amigos en un entorno positivo.",
   },
 ];

@@ -68,6 +68,33 @@ export const noGiPage: FAQ[] = [
   },
 ];
 
+export const kidsPage: FAQ[] = [
+  {
+    heading: "¿Cuál es la mejor edad para empezar Jiu-Jitsu?",
+    text: [
+      "No hay una edad “perfecta”, pero entre los 4 y 6 años suele ser ideal. A esa edad los niños ya pueden seguir instrucciones sencillas, tienen curiosidad por aprender y disfrutan moviéndose. Lo importante no es la edad exacta, sino que se diviertan y se sientan cómodos en el tatami.",
+    ],
+  },
+  {
+    heading: "¿Es bueno el Jiu-Jitsu para niños?",
+    text: [
+      "Muchísimo. El Jiu-Jitsu les enseña disciplina, respeto y autocontrol, pero de una forma divertida. Mejora su coordinación, su fuerza y su concentración, y al mismo tiempo aprenden a trabajar en equipo y a resolver conflictos sin usar la fuerza. Es una herramienta increíble para su desarrollo físico y emocional.",
+    ],
+  },
+  {
+    heading: "¿Mi hijo de 4 años debería practicar Jiu-Jitsu?",
+    text: [
+      "Sí, siempre que sea en un entorno adaptado a su edad. En nuestras clases para peques usamos juegos, ejercicios sencillos y dinámicas que desarrollan habilidades básicas: equilibrio, agilidad, atención y confianza. No se trata de competir, sino de aprender jugando.",
+    ],
+  },
+  {
+    heading: "¿Qué te enseña el Jiu-Jitsu?",
+    text: [
+      "El Jiu-Jitsu enseña mucho más que técnicas de defensa personal. Enseña a mantener la calma, a pensar antes de actuar y a levantarse cada vez que uno cae. Son lecciones que los niños se llevan del tatami a su día a día: en el cole, en casa y en cualquier situación.",
+    ],
+  },
+];
+
 export const suscribtions: FAQ[] = [
   {
     heading: "¿Tengo una clase de prueba gratuita para cada disciplina?",

@@ -68,7 +68,7 @@ export const kidsHours: Hours[] = [
 // para el select del formulario de reservar una clase
 export const allHours: AllHours = {
   gi: [
-       {
+    {
       label: "lunes y miércoles",
       hours: ["7:00 - 8:00"],
     },
@@ -168,6 +168,43 @@ export const grapplingHours = [
     day: "viernes",
     color: "var(--black-rgb)",
     classes: ["10:30 - 11:30", "19:15 - 21:00 | Open Mat*"],
+  },
+  {
+    day: "sábado",
+    color: "var(--black-rgb)",
+    classes: ["12:00 - 13:30 | Open Mat*"],
+  },
+];
+
+export const infantilHours = [
+  {
+    day: "lunes",
+    color: "var(--primary-rgb)",
+    classes: ["4 a 7 años | 17:15 - 18:00", "11 a 15 años | 18:00 - 19:15"],
+  },
+  {
+    day: "martes",
+    color: "var(--secondary-rgb)",
+    classes: ["8 a 10 años | 17:15 - 18:00", "11 a 15 años | 18:00 - 19:15"],
+  },
+  {
+    day: "miércoles",
+    color: "var(--primary-rgb)",
+    classes: ["4 a 7 años | 17:15 - 18:00", "11 a 15 años | 18:00 - 19:15"],
+  },
+  {
+    day: "jueves",
+    color: "var(--secondary-rgb)",
+    classes: ["8 a 10 años | 17:15 - 18:00", "11 a 15 años | 18:00 - 19:15"],
+  },
+  {
+    day: "viernes",
+    color: "var(--black-rgb)",
+    classes: [
+      "3 a 7 años | 17:15 - 18:00",
+      "11 a 15 años | 18:00 - 19:15",
+      "19:15 - 21:00 | Open Mat*",
+    ],
   },
   {
     day: "sábado",

@@ -5,16 +5,18 @@ import type { OneClasstForm } from "@/types";
 import { FEEDBACK_MESSAGES } from "@/data/feedbackMessages";
 import { OptGroup } from "./OptGroup";
 import { FeedbackMessage } from "./FeedbackMessage";
+import type { AllHours } from "@/types";
 
 interface Props {
   style?: string;
+  hours: keyof AllHours;
   header: {
     h2: string;
     tagline: string;
   };
 }
 
-export function FormOneClass({ style = "", header }: Props) {
+export function FormOneClass({ style = "", header, hours }: Props) {
   const { defaultValues, loading, onSubmit, submitStateContent } =
     useHandleForm<OneClasstForm>(
       {
@@ -114,7 +116,7 @@ export function FormOneClass({ style = "", header }: Props) {
             -- Seleccione --
           </option>
 
-          <OptGroup options={"nogi"} />
+          <OptGroup options={hours} />
         </select>
         <FeedbackMessage>{errors.hours?.message}</FeedbackMessage>
       </div>
