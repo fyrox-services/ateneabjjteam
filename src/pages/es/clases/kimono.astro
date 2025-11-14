@@ -1,32 +1,32 @@
 ---
-import { grapplingHours } from "@/data/hours";
+import { kimonoHours } from "@/data/hours";
 import { FormOneClass } from "@/components/react/FormOneClass";
 import HeadingH2 from "@/components/HeadingH2.astro";
 import Layout from "@/layouts/Layout.astro";
 import CardsHours from "@/components/CardsHours.astro";
 import HeadingDescription from "@/components/HeadingDescription.astro";
 import CardsAdv from "@/components/CardsAdv.astro";
-import { advsGrappling } from "@/data/advs";
+import { advsGi } from "@/data/advs";
 import Faqs from "@/components/Faqs.astro";
-import { noGiPage } from "@/data/faqs";
+import { giPage } from "@/data/faqs";
 import { GLOBAL_DATA } from "@/vars";
 import { getEntry } from "astro:content";
 import { render } from "astro:content";
 import "@/styles/content.css";
 
-const text = await getEntry("seo-texts", "es/clases-de-grappling")!;
+const text = await getEntry("seo-texts", "es/clases-de-gi")!;
 const { Content } = await render(text);
 
 const metaData = {
-  metaTitle: "➤ Clases de Grappling | Atenea BJJ Team",
+  metaTitle: "➤ Clases de Jiu Jitsu con Kimono | Atenea BJJ Team",
   metaDescription:
-    "Prueba una clase de Grappling (NoGi) y descubre un entrenamiento explosivo, dinámico y versátil. Mejora tu fuerza, reflejos y control en el tatami. ¡Reserva tu primera clase hoy!",
+    "Entrena Jiu-Jitsu con kimono y mejora tu forma física, tu técnica y tu confianza. Clases para todos los niveles y ambiente motivador. Prueba una clase gratuita.",
 };
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "Clases de Grappling (NoGi)",
+  serviceType: "Clases de Jiu Jitsu (Gi)",
   provider: {
     "@type": "SportsActivityLocation",
     name: GLOBAL_DATA.SITE_NAME,
@@ -43,10 +43,10 @@ const structuredData = {
     },
   },
   description:
-    "Prueba una clase gratuita de Grappling en Madrid y descubre el entrenamiento más dinámico y explosivo del jiu-jitsu sin kimono.",
+    "Entrena Jiu-Jitsu con kimono y mejora tu forma física, tu técnica y tu confianza. Clases para todos los niveles y ambiente motivador. Prueba una clase gratuita.",
   offers: {
     "@type": "Offer",
-    name: "Clase de prueba gratuita de Grappling",
+    name: "Clase de prueba gratuita de Jiu Jitsu con kimono",
     price: "0",
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
@@ -58,22 +58,22 @@ const structuredData = {
 <Layout metaData={metaData}>
   <section class="wrapper above">
     <div class="box-content">
-      <h1>clases de grappling <span>en madrid</span></h1>
+      <h1>clases de jiu jitsu con kimono</h1>
       <p class="tagline">
-        También conocido como NoGi, esta es la disciplina del jiu jitsu donde se
-        lucha sin el kimono.
+        Aprende jiu jitsu brasileño paso a paso, de una forma amena y práctica.
       </p>
       <p class="tagline">
-        Es un juego mucho más dinámico, explosivo y fuerte, cada vez más popular
-        hoy en día y además muy útil para la defensa personal. <strong
-          >Reserva una primera clase gratuita y ven a probarlo.</strong
+        Si buscas un deporte que te ayude a estar en forma y también que te
+        ofrezca herramientas para tu defensa personal, es posible que te
+        interesa venir a nuestras clases, <strong
+          >reserva un primer entrenamiento de prueba gratis.</strong
         >
       </p>
     </div>
 
     <div class="box-form">
       <FormOneClass
-        hours="nogi"
+        hours="gi"
         client:visible
         style="OneClass"
         header={{
@@ -85,21 +85,20 @@ const structuredData = {
   </section>
 
   <section class="wrapper mt-6">
-    <HeadingH2 color="blue">horarios de Grappling</HeadingH2>
+    <HeadingH2 color="blue">horarios de Gi (kimono)</HeadingH2>
     <HeadingDescription
-      >Aquí están todas las clases de grappling ordenadas por día, incluyendo
-      las de competición y las sesiones de Open Mat.</HeadingDescription
+      >Aquí están todas las clases de kimono ordenadas por día, incluyendo las
+      de competición y las sesiones de Open Mat.</HeadingDescription
     >
-    <CardsHours kind="adult" hours={grapplingHours} />
+    <CardsHours kind="adult" hours={kimonoHours} />
   </section>
   <section class="wrapper mt-6">
-    <HeadingH2 color="blue">beneficios del NoGi</HeadingH2>
+    <HeadingH2 color="blue">beneficios del Gi</HeadingH2>
     <HeadingDescription
-      >Estos son los principales beneficios y los puntos en donde el NoGi o
-      Grappling destacan en comparación con la versión Gi, en la cual si se usa
-      el kimono.</HeadingDescription
+      >El jiu jitsu tiene 2 modalidades, Gi (con kimono) y NoGi (sin kimono),
+      estas son las ventajas del Gi.</HeadingDescription
     >
-    <CardsAdv grid={3} cards={advsGrappling} />
+    <CardsAdv grid={3} cards={advsGi} />
   </section>
 
   <section class="wrapper-max content-body mt-6">
@@ -111,8 +110,10 @@ const structuredData = {
   </div>
 
   <section class="wrapper-max mt-6">
-    <HeadingH2 color="blue">preguntas frecuentas sobre el Grappling</HeadingH2>
-    <Faqs faqs={noGiPage} />
+    <HeadingH2 color="blue"
+      >preguntas frecuentas sobre el jiu jitsu con kimono</HeadingH2
+    >
+    <Faqs faqs={giPage} />
   </section>
 
   <script

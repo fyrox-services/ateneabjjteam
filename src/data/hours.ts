@@ -10,7 +10,7 @@ export const giHours: Hours[] = [
     hour: "11:30 - 12:30",
   },
   {
-    day: "lunes, miércoles y viernes",
+    day: "lunes y miércoles",
     hour: "14:00 - 15:15",
   },
   {
@@ -77,7 +77,7 @@ export const allHours: AllHours = {
       hours: ["11:30 - 12:30"],
     },
     {
-      label: "lunes, miércoles y viernes",
+      label: "lunes y miércoles",
       hours: ["14:00 - 15:15"],
     },
     {
@@ -168,6 +168,49 @@ export const grapplingHours = [
     day: "viernes",
     color: "var(--black-rgb)",
     classes: ["10:30 - 11:30", "19:15 - 21:00 | Open Mat*"],
+  },
+  {
+    day: "sábado",
+    color: "var(--black-rgb)",
+    classes: ["12:00 - 13:30 | Open Mat*"],
+  },
+];
+
+export const kimonoHours = [
+  {
+    day: "lunes",
+    color: "var(--primary-rgb)",
+    classes: [
+      "7:00 - 8:00",
+      "11:30 - 12:30",
+      "14:00 - 15:15",
+      "20:30 - 22:00 | Competición*",
+    ],
+  },
+  {
+    day: "martes",
+    color: "var(--secondary-rgb)",
+    classes: ["11:30 - 12:30", "20:30 - 22:00"],
+  },
+  {
+    day: "miércoles",
+    color: "var(--primary-rgb)",
+    classes: [
+      "7:00 - 8:00",
+      "11:30 - 12:30",
+      "14:00 - 15:15",
+      "20:30 - 22:00 | Competición*",
+    ],
+  },
+  {
+    day: "jueves",
+    color: "var(--secondary-rgb)",
+    classes: ["11:30 - 12:30", "20:30 - 22:00"],
+  },
+  {
+    day: "viernes",
+    color: "var(--black-rgb)",
+    classes: ["11:30 - 12:30", "19:15 - 21:00 | Open Mat*"],
   },
   {
     day: "sábado",

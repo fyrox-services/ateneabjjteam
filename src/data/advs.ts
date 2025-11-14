@@ -11,6 +11,10 @@ import focus from "@/assets/svg/concentrado.png"
 import security from "@/assets/svg/seguridad.png"
 import funny from "@/assets/svg/divertido.png"
 
+import tecnic from "@/assets/svg/tecnico.png"
+import control from "@/assets/svg/controlado.png"
+import chess from "@/assets/svg/estrategico.png"
+
 export const advsBjj = [
   {
     icon: selfConfidence,
@@ -56,6 +60,27 @@ export const advsGrappling = [
     title: "versátil",
     description:
       "Adáptate a cualquier estilo y situación. La ausencia del kimono te enseña a ser creativo encontrando otros agarres, a ajustar tus técnicas y a encontrar soluciones en pleno intercambio.",
+  },
+];
+
+export const advsGi = [
+  {
+    icon: tecnic,
+    title: "Técnico",
+    description:
+      "El kimono permite agarrar, controlar y aplicar técnicas con mayor precisión. Cada movimiento exige detalle, paciencia y estrategia, desarrollando un estilo más técnico y calculado.",
+  },
+  {
+    icon: control,
+    title: "Controlado",
+    description:
+      "En Jiu-Jitsu con kimono, el ritmo es más pausado y táctico. Aprendes a dominar al oponente con control, usando la técnica y la posición antes que la fuerza.",
+  },
+  {
+    icon: chess,
+    title: "Estratégico",
+    description:
+      "El kimono abre un abanico enorme de posibilidades que te obliga a pensar varios pasos por delante y a planificar tus movimientos como una partida de ajedrez.",
   },
 ];
 

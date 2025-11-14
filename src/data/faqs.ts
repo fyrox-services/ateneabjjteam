@@ -41,6 +41,27 @@ export const homeFaqs: FAQ[] = [
   },
 ];
 
+export const giPage: FAQ[] = [
+  {
+    heading: "¿Cuánto cuesta una clase de Jiu-Jitsu?",
+    text: [
+      "Depende del programa que elijas, consulta nuestra sección de precios, recuerda que con nosotros tienes una clase de prueba gratis, tanto para kimono como para grappling.",
+    ],
+  },
+  {
+    heading: "¿Cuánto tiempo tardas en aprender Jiu-Jitsu?",
+    text: [
+      "El Jiu-Jitsu es un camino a largo plazo. En unos 3 a 6 meses ya empiezas a sentirte más seguro, entender posiciones y defenderte mejor. A partir del primer año notas un cambio real en técnica, forma física y confianza. Y lo bueno es que siempre hay algo nuevo que aprender, tengas la edad que tengas.",
+    ],
+  },
+  {
+    heading: "¿Qué es el Jiu-Jitsu y para qué sirve?",
+    text: [
+      "El Jiu-Jitsu es un arte marcial centrado en la técnica, el apalancamiento y el control del oponente. Sirve para defensa personal, para ponerte en forma, para aumentar tu resistencia mental y para mejorar la concentración. Además, es un entrenamiento completo que combina fuerza, estrategia y autocontrol.",
+    ],
+  },
+
+];
 export const noGiPage: FAQ[] = [
   {
     heading: "¿Cómo es una clase de grappling?",
