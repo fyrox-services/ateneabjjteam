@@ -11,13 +11,46 @@ import { render } from "astro:content";
 import "@/styles/content.css";
 import Faqs from "@/components/Faqs.astro";
 import { FAQS_PRIVATE_CLASSES } from "@/data/faqs";
+import { GLOBAL_DATA } from "@/vars";
 
 const text = await getEntry("seo-texts", "es/clases-privadas")!;
 const { Content } = await render(text);
 
 const metaData = {
-  metaTitle: "➤ Clases Particulares de Jiu Jitsu",
-  metaDescription: "Todas nuestras clases y programas",
+  metaTitle: "➤ Clases Particulares de Jiu Jitsu | Atenea BJJ Team",
+  metaDescription:
+    "Clases particulares de Jiu-Jitsu para todos los niveles. Mejora tu técnica, gana confianza y entrena a tu ritmo con atención personalizada. Reserva tu clase privada.",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Clases particulares de Jiu Jitsu",
+  provider: {
+    "@type": "SportsActivityLocation",
+    name: GLOBAL_DATA.SITE_NAME,
+    url: "https://ateneabjjteam.com/",
+  },
+  areaServed: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Calle del Canal de Panamá, 3",
+      addressLocality: "Madrid",
+      postalCode: "28027",
+      addressCountry: "ES",
+    },
+  },
+  description:
+    "Clases particulares de Jiu-Jitsu para todos los niveles. Mejora tu técnica, gana confianza y entrena a tu ritmo con atención personalizada. Reserva tu clase privada.",
+  offers: {
+    "@type": "Offer",
+    name: "Clase privada de jiu jitsu",
+    price: "0",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url: Astro.url,
+  },
 };
 ---
 
@@ -88,6 +121,12 @@ const metaData = {
     >
     <Faqs faqs={FAQS_PRIVATE_CLASSES} />
   </section>
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
 </Layout>
 
 <style>
