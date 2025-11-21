@@ -12,6 +12,7 @@ export const FEEDBACK_MESSAGES = {
       MSG: "el mensaje es obligatorio",
       MSG_TOO_SHORT: "el mensaje es demasiado corto",
       MOMENT_NOT_VALID: "selecciona una hora correcta",
+      LEVEL_NOT_VALID: "selecciona un nivel correcto",
       LEGAL: "acepta la política de privacidad"
     },
     SUCCESS:  {

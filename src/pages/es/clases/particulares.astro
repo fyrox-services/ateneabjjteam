@@ -1,0 +1,140 @@
+---
+import CardsAdv from "@/components/CardsAdv.astro";
+import CardsCoaches from "@/components/CardsCoaches.astro";
+import HeadingDescription from "@/components/HeadingDescription.astro";
+import HeadingH2 from "@/components/HeadingH2.astro";
+import { FormPrivateClass } from "@/components/react/FormPrivateClass";
+import { advsPrivateClass } from "@/data/advs";
+import Layout from "@/layouts/Layout.astro";
+import { getEntry } from "astro:content";
+import { render } from "astro:content";
+import "@/styles/content.css";
+import Faqs from "@/components/Faqs.astro";
+import { FAQS_PRIVATE_CLASSES } from "@/data/faqs";
+
+const text = await getEntry("seo-texts", "es/clases-privadas")!;
+const { Content } = await render(text);
+
+const metaData = {
+  metaTitle: "➤ Clases Particulares de Jiu Jitsu",
+  metaDescription: "Todas nuestras clases y programas",
+};
+---
+
+<Layout metaData={metaData}>
+  <section class="wrapper above">
+    <div class="box-content">
+      <h1>clases particulares de jiu jitsu</h1>
+      <p class="tagline">
+        Entrena a tu ritmo, con atención 100% personalizada.
+      </p>
+      <p class="tagline">
+        Tanto si quieres empezar con una base sólida antes de unirte al grupo,
+        como si ya entrenas y buscas pulir tu técnica, las clases particulares
+        te permiten avanzar más rápido y con más seguridad. Aquí cada minuto
+        está enfocado en ti: tus objetivos, tu nivel y lo que realmente
+        necesitas para mejorar.
+      </p>
+    </div>
+
+    <div class="box-form">
+      <FormPrivateClass
+        hours="kids"
+        client:visible
+        style="OneClass"
+        header={{
+          h2: "Reserva tu clase",
+          tagline:
+            "te contactaremos para acordar el día y la hora exacta de la clase",
+        }}
+      />
+    </div>
+  </section>
+
+  <section class="wrapper mt-6">
+    <HeadingH2 color="blue"
+      >cómo te puede ayudar una clase particular de BJJ</HeadingH2
+    >
+    <HeadingDescription
+      >Es una clase 100% personalizada, enfocada en ti, adaptada a tu nivel, tus
+      dudas y tus objetivos, tanto si ya tienes experiencia en el deporte como
+      si nunca lo has practicado significarán un antes y un después muy notorio.</HeadingDescription
+    >
+    <CardsAdv grid={3} cards={advsPrivateClass} />
+  </section>
+  <section class="wrapper mt-6">
+    <HeadingH2 color="blue">tus profesores</HeadingH2>
+    <HeadingDescription
+      >Cualquiera de tus profesores, es un competidor activo con años de
+      experiencia en el tatami y cientos de horas dedicadas a la enseñanza.
+      Conoce el deporte desde dentro y sabe cómo adaptarlo a tu nivel, tu ritmo
+      y tu estilo de juego. Estará contigo en cada paso para ayudarte a mejorar,
+      corregir detalles y desarrollar un Jiu-Jitsu sólido y eficaz.</HeadingDescription
+    >
+    <CardsCoaches />
+  </section>
+
+  <section class="wrapper-max content-body mt-6">
+    <Content />
+  </section>
+
+  <div class="wrapper-max mt-3">
+    <a href="#reservar" class="btn">Reservar clase gratuita</a>
+  </div>
+
+  <section class="wrapper-max mt-6">
+    <HeadingH2 color="blue"
+      >preguntas frecuentas sobre las clases privadas de jiu jitsu</HeadingH2
+    >
+    <Faqs faqs={FAQS_PRIVATE_CLASSES} />
+  </section>
+</Layout>
+
+<style>
+  .above {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box-content {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-family: var(--ff-heading);
+    line-height: 1;
+    font-size: var(--fs-3xl);
+  }
+
+  h1 span {
+    display: block;
+  }
+
+  @media (min-width: 1024px) {
+    .box-form {
+      flex: 0 0 40%;
+    }
+
+    .box-content {
+      margin-top: 8rem;
+    }
+
+    h1 {
+      font-family: var(--ff-heading);
+      font-size: var(--fs-4xl);
+    }
+
+    .tagline {
+      font-size: var(--fs-l);
+    }
+
+    .above {
+      flex-direction: row;
+      gap: 3rem;
+      justify-content: space-between;
+    }
+  }
+</style>

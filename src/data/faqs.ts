@@ -305,3 +305,30 @@ export const FAQS_CINTURONES_BJJ: FAQ[] = [
     ],
   },
 ];
+
+export const FAQS_PRIVATE_CLASSES: FAQ[] = [
+  {
+    heading: "¿Se puede un grupo pequeño?",
+    text: [
+      "Sí, las clases particulares pueden ser desde una sola persona hasta un grupo de 3.",
+    ],
+  },
+  {
+    heading: "¿Tengo que tener conocimientos previos?",
+    text: [
+      "No, de hecho es muy común que alguien sin experiencia prefiera empezar con una clase particular para luego estar más seguro en las clases semanales con el grupo.",
+    ],
+  },
+  {
+    heading: "¿Es suficiente practicar Jiu-Jitsu 3 veces por semana?",
+    text: [
+      "Sí, es suficiente para progresar muy bien. Con 3 entrenamientos por semana tu cuerpo asimila la técnica, ganas resistencia y mejoras tu ritmo sin quemarte ni sobreentrenarte. Y si combinas esas clases con una sesión particular, el avance es todavía más rápido porque corriges fallos antes de que se conviertan en hábitos.",
+    ],
+  },
+  {
+    heading: "¿Cuál es el arte marcial más efectivo para la defensa personal?",
+    text: [
+      "No existe un arte marcial “perfecto”, pero el Jiu-Jitsu es de los más efectivos en situaciones reales porque se centra en controlar, inmovilizar y neutralizar a un oponente usando técnica en lugar de fuerza. Es especialmente útil si la otra persona es más grande o fuerte, porque te enseña a usar el apalancamiento, las posiciones y el movimiento para convertir una desventaja en control.",
+    ],
+  },
+];

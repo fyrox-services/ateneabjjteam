@@ -73,6 +73,7 @@ export interface AllFormFields {
   hours: string;
   msg: string;
   legal: boolean;
+  level: string
 }
 
 export type ContactForm = Pick<
@@ -83,4 +84,9 @@ export type ContactForm = Pick<
 export type OneClasstForm = Pick<
   AllFormFields,
   "name" | "email" | "phone" | "msg" | "legal" | "hours"
+>;
+
+export type FormPrivateClassForm = Pick<
+  AllFormFields,
+  "name" | "email" | "phone" | "msg" | "legal" | "level"
 >;

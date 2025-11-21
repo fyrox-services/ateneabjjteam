@@ -18,16 +18,16 @@ export const coaches: Coach[] = [
       "Renzo es el Head Coach de la academia y responsable de las clases de competición.",
     ],
   },
-  {
-    name: "Jackson Cariaco",
-    belt: "negro",
-    rol: "instructor",
-    photo: jackson,
-    head: "renzo martínez",
-    description: [
-      "Comenzó a entrenar jiu-jitsu en 2010 en Caracas, Venezuela. En junio de 2024, se unió al equipo Atenea BJJ, donde continúa su formación como cinturón negro, profesor y atleta bajo Renzo Martínez. Ese mismo año, recibió sus primeros grados como instructor. Actualmente, está a cargo de las clases infantiles de entre 4 y 10 años.",
-    ],
-  },
+  // {
+  //   name: "Jackson Cariaco",
+  //   belt: "negro",
+  //   rol: "instructor",
+  //   photo: jackson,
+  //   head: "renzo martínez",
+  //   description: [
+  //     "Comenzó a entrenar jiu-jitsu en 2010 en Caracas, Venezuela. En junio de 2024, se unió al equipo Atenea BJJ, donde continúa su formación como cinturón negro, profesor y atleta bajo Renzo Martínez. Ese mismo año, recibió sus primeros grados como instructor. Actualmente, está a cargo de las clases infantiles de entre 4 y 10 años.",
+  //   ],
+  // },
   {
     name: "aitana moreno",
     belt: "marrón",

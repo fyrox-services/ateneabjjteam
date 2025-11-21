@@ -68,10 +68,6 @@
   font-family: var(--ff-base);
 }
 
-.Field select {
-  text-transform: capitalize;
-}
-
 .Field option {
   width: 100%;
 }

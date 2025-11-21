@@ -3,17 +3,21 @@ import mentalControl from "@/assets/svg/fortaleza-mental.svg";
 import personalDefense from "@/assets/svg/defensa-personal.svg";
 import balance from "@/assets/svg/psicomotricidad.svg";
 
-import explosivo from "@/assets/svg/explosivo.png"
-import dinamico from "@/assets/svg/dinamico.png"
-import versatil from "@/assets/svg/versatil.png"
+import explosivo from "@/assets/svg/explosivo.png";
+import dinamico from "@/assets/svg/dinamico.png";
+import versatil from "@/assets/svg/versatil.png";
 
-import focus from "@/assets/svg/concentrado.png"
-import security from "@/assets/svg/seguridad.png"
-import funny from "@/assets/svg/divertido.png"
+import focus from "@/assets/svg/concentrado.png";
+import security from "@/assets/svg/seguridad.png";
+import funny from "@/assets/svg/divertido.png";
 
-import tecnic from "@/assets/svg/tecnico.png"
-import control from "@/assets/svg/controlado.png"
-import chess from "@/assets/svg/estrategico.png"
+import tecnic from "@/assets/svg/tecnico.png";
+import control from "@/assets/svg/controlado.png";
+import chess from "@/assets/svg/estrategico.png";
+
+import ask from "@/assets/svg/dudas.png";
+import goals from "@/assets/svg/objetivos.png";
+import details from "@/assets/svg/detalles.png";
 
 export const advsBjj = [
   {
@@ -102,5 +106,26 @@ export const advsKids = [
     title: "diversión",
     description:
       "Entrenar Jiu-Jitsu es una forma divertida de canalizar energía, mejorar la coordinación y hacer amigos en un entorno positivo.",
+  },
+];
+
+export const advsPrivateClass = [
+  {
+    icon: ask,
+    title: "dudas",
+    description:
+      "Podrás preguntar lo que quieras y así resolver esas situaciones específicas, algo que lógicamente no da tiempo en una clase normal.",
+  },
+  {
+    icon: goals,
+    title: "objetivos",
+    description:
+      "El enfoque será aumentar tu nivel, puliendo cada vez más tu estilo, potenciando lo que se te da bien y fortaleciendo tus puntos débiles.",
+  },
+  {
+    icon: details,
+    title: "detalles",
+    description:
+      "Las técnicas se explicarán con lujo de detalles, cosas que a primera vista no se notan, pero que marcan la diferencia a la hora de usar los movimientos.",
   },
 ];
