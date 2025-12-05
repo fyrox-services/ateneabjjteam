@@ -24,7 +24,7 @@ const headings = buildHeadings(body);
           const cleanedText = splitedText.map((word) => {
             return word
               .toLocaleLowerCase()
-              .replaceAll(/[¿?!:.]/g, "")
+              .replaceAll(/[¿?!:.,;]/g, "")
               .replace(
                 /[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,
                 ""

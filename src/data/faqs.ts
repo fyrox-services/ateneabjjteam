@@ -60,7 +60,6 @@ export const giPage: FAQ[] = [
       "El Jiu-Jitsu es un arte marcial centrado en la técnica, el apalancamiento y el control del oponente. Sirve para defensa personal, para ponerte en forma, para aumentar tu resistencia mental y para mejorar la concentración. Además, es un entrenamiento completo que combina fuerza, estrategia y autocontrol.",
     ],
   },
-
 ];
 export const noGiPage: FAQ[] = [
   {
@@ -75,7 +74,7 @@ export const noGiPage: FAQ[] = [
       "En grappling o NoGi se suele usar rashguard (camiseta elástica de compresión) y pantalones cortos o mallas sin bolsillos ni cremalleras. Este tipo de ropa evita enganches, permite moverse con libertad y ayuda a mantener la higiene en el tatami.",
     ],
   },
-    {
+  {
     heading: "¿Mejor NoGi o Gi (con kimono)?",
     text: [
       "Ninguna es mejor que la otra, solo son diferentes y con un planteamiento de combate distinto. De hecho son complementarias y en muchas ocasiones se pueden extrapolar técnicas de una disciplina a otra. Puedes venir a probar las dos.",
@@ -302,6 +301,34 @@ export const FAQS_CINTURONES_BJJ: FAQ[] = [
     heading: "¿Cuántos grados hay por cinturón en Jiu Jitsu?",
     text: [
       "Cada cinturón suele dividirse en 4 grados (las rayas que ves en un extremo del cinturón). Esas rayas marcan la progresión dentro de un mismo color hasta que el profesor considera que estás listo para subir al siguiente cinturón.",
+    ],
+  },
+];
+
+export const FAQS_JUDO_VS_BJJ: FAQ[] = [
+  {
+    heading: "¿Qué es mejor, judo o jiu-jitsu?",
+    text: [
+      "Depende del objetivo, pero si hablamos de defensa personal y efectividad en situaciones reales, el jiu-jitsu ofrece una ventaja clara: te enseña a controlar, neutralizar y someter a alguien incluso si es más fuerte o más grande, algo que resulta decisivo cuando una pelea termina en el suelo, que es lo más habitual. El judo es espectacular y muy útil para proyecciones, pero el jiu-jitsu te da herramientas completas para resolver el conflicto del principio al final.",
+    ],
+  },
+  {
+    heading: "¿Qué arte marcial supera al judo?",
+    text: [
+      "En términos de control real, combate prolongado y capacidad de defenderse sin depender de la fuerza, el jiu-jitsu suele considerarse más completo. Mientras que el judo se basa en derribos rápidos y trabajo explosivo, el jiu-jitsu te permite seguir luchando de forma técnica si el derribo no decide la pelea, utilizando posiciones de control, sumisiones y estrategias que funcionan incluso contra oponentes mayores o más fuertes.",
+    ],
+  },
+  {
+    heading: "¿Quién gana, un boxeador o un jiu-jitsu?",
+    text: [
+      "Si el combate se mantiene de pie, un boxeador tiene ventaja por el alcance, el timing y la precisión del golpeo; pero si el jiu-jitsu logra cerrar la distancia y llevar la pelea al suelo, la balanza cambia por completo. En ese escenario, el practicante de jiu-jitsu puede controlar, inmovilizar o someter al rival con enorme eficacia, y por eso el BJJ es imprescindible en MMA y en cualquier sistema de defensa personal moderno.",
+    ],
+  },
+  {
+    heading:
+      "¿Cuál es la diferencia entre el kimono de judo y el de jiu-jitsu?",
+    text: [
+      "El kimono de judo es más grueso, rígido y pesado, diseñado para soportar tirones fuertes y proyecciones explosivas. En cambio, el kimono de jiu-jitsu es más ligero, más ajustado y permite mayor movilidad, ya que el BJJ se basa en transiciones rápidas, trabajo en el suelo y agarres más variados. Además, en jiu-jitsu existe una personalización mucho mayor: parches, colores y diseños que representan la cultura de cada equipo.",
     ],
   },
 ];
