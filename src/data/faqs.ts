@@ -333,6 +333,34 @@ export const FAQS_JUDO_VS_BJJ: FAQ[] = [
   },
 ];
 
+export const FAQS_TIEMPO_APRENDER_BJJ: FAQ[] = [
+  {
+    heading: "¿Cuánto tiempo lleva aprender jiu-jitsu?",
+    text: [
+      "Aprender jiu-jitsu es un proceso progresivo: en pocos meses empiezas a entenderlo y a disfrutarlo, pero dominarlo es un camino de años. Con constancia, en menos de un año ya notarás cambios claros en tu técnica, tu confianza y tu forma de moverte en el tatami.",
+    ],
+  },
+  {
+    heading:
+      "¿Cuánto tiempo se tarda en aprender los conceptos básicos del jiu-jitsu?",
+    text: [
+      "Los conceptos básicos suelen adquirirse entre los 3 y 6 primeros meses de entrenamiento regular. En ese tiempo aprendes posiciones fundamentales, escapes y principios clave como el control, el equilibrio y el uso de la técnica frente a la fuerza.",
+    ],
+  },
+  {
+    heading: "¿Cuántos días a la semana entrenar jiu-jitsu?",
+    text: [
+      "Lo ideal es entrenar entre 2 y 4 días por semana. Con dos días progresas, con tres el avance es constante y con cuatro o más la mejora se acelera notablemente, siempre que respetes el descanso y la recuperación.",
+    ],
+  },
+  {
+    heading: "¿Es difícil aprender jiu jitsu?",
+    text: [
+      "No es difícil, pero sí exigente. Al principio puede resultar abrumador porque todo es nuevo, pero es un deporte muy accesible: se aprende paso a paso y cualquiera, independientemente de su edad o forma física, puede progresar si es constante.",
+    ],
+  },
+];
+
 export const FAQS_PRIVATE_CLASSES: FAQ[] = [
   {
     heading: "¿Se puede un grupo pequeño?",
