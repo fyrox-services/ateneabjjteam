@@ -6,7 +6,7 @@ const sameClasses = {
   },
   nogiMorning: {
     modality: "nogi",
-    start: "10:30",
+    start: "10:00",
     end: "11:30",
   },
   nogiMid: {
@@ -70,7 +70,7 @@ const sameClasses = {
     end: "20:30",
   },
   nogiCompetition: {
-    modality: "nogi/competición",
+    modality: "nogi",
     start: "19:15",
     end: "20:30",
   },
@@ -80,7 +80,7 @@ const sameClasses = {
     end: "22:00",
   },
   kimonoCompetition: {
-    modality: "kimono/competición",
+    modality: "kimono",
     start: "20:30",
     end: "22:00",
   },

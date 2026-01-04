@@ -136,38 +136,28 @@ export const grapplingHours = [
   {
     day: "lunes",
     color: "var(--primary-rgb)",
-    classes: ["10:30 - 11:30", "19:15 - 20:30"],
+    classes: ["10:00 - 11:30", "19:15 - 20:30"],
   },
   {
     day: "martes",
     color: "var(--secondary-rgb)",
-    classes: [
-      "7:00 - 8:00",
-      "10:30 - 11:30",
-      "14:00 - 15:15",
-      "19:15 - 20:30 | Competición*",
-    ],
+    classes: ["7:00 - 8:00", "10:00 - 11:30", "14:00 - 15:15", "19:15 - 20:30"],
   },
   {
     day: "miércoles",
     color: "var(--primary-rgb)",
 
-    classes: ["10:30 - 11:30", "19:15 - 20:30"],
+    classes: ["10:00 - 11:30", "19:15 - 20:30"],
   },
   {
     day: "jueves",
     color: "var(--secondary-rgb)",
-    classes: [
-      "7:00 - 8:00",
-      "10:30 - 11:30",
-      "14:00 - 15:15",
-      "19:15 - 20:30 | Competición*",
-    ],
+    classes: ["7:00 - 8:00", "10:00 - 11:30", "14:00 - 15:15", "19:15 - 20:30"],
   },
   {
     day: "viernes",
     color: "var(--black-rgb)",
-    classes: ["10:30 - 11:30", "19:15 - 21:00 | Open Mat*"],
+    classes: ["10:00 - 11:30", "19:15 - 21:00 | Open Mat*"],
   },
   {
     day: "sábado",
@@ -180,12 +170,7 @@ export const kimonoHours = [
   {
     day: "lunes",
     color: "var(--primary-rgb)",
-    classes: [
-      "7:00 - 8:00",
-      "11:30 - 12:30",
-      "14:00 - 15:15",
-      "20:30 - 22:00 | Competición*",
-    ],
+    classes: ["7:00 - 8:00", "11:30 - 12:30", "14:00 - 15:15", "20:30 - 22:00"],
   },
   {
     day: "martes",
@@ -195,12 +180,7 @@ export const kimonoHours = [
   {
     day: "miércoles",
     color: "var(--primary-rgb)",
-    classes: [
-      "7:00 - 8:00",
-      "11:30 - 12:30",
-      "14:00 - 15:15",
-      "20:30 - 22:00 | Competición*",
-    ],
+    classes: ["7:00 - 8:00", "11:30 - 12:30", "14:00 - 15:15", "20:30 - 22:00"],
   },
   {
     day: "jueves",

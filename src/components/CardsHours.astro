@@ -10,7 +10,7 @@ interface Props {
   kind: "adult" | "kid";
 }
 
-const { hours, kind } = Astro.props;
+const { hours } = Astro.props;
 ---
 
 <ul>
@@ -34,16 +34,6 @@ const { hours, kind } = Astro.props;
 </ul>
 
 <div class="details">
-  {
-    kind === "adult" && (
-      <p>
-        <span> Competición*: </span>
-        Clases con formato más adaptado a la técnica y la estrategia, tu primera
-        clase no puede ser en estas sesiones, pero una vez inscrito es como otra
-        clase más para ti.
-      </p>
-    )
-  }
   <p>
     <span> Open Mat*: </span>
     Sesión de combates libres, puedes venir a luchar libremente con el resto de compañeros.
