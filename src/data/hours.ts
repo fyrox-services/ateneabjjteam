@@ -7,10 +7,10 @@ export const giHours: Hours[] = [
   },
   {
     day: "de lunes a viernes",
-    hour: "11:30 - 12:30",
+    hour: "11:30 - 12:45",
   },
   {
-    day: "lunes y miércoles",
+    day: "martes y jueves",
     hour: "14:00 - 15:15",
   },
   {
@@ -29,7 +29,7 @@ export const nogiHours: Hours[] = [
     hour: "10:30 - 11:30",
   },
   {
-    day: "martes y jueves",
+    day: "lunes y miércoles",
     hour: "14:00 - 15:15",
   },
   {
@@ -74,10 +74,10 @@ export const allHours: AllHours = {
     },
     {
       label: "de lunes a viernes",
-      hours: ["11:30 - 12:30"],
+      hours: ["11:30 - 12:45"],
     },
     {
-      label: "lunes y miércoles",
+      label: "martes y jueves",
       hours: ["14:00 - 15:15"],
     },
     {
@@ -96,7 +96,7 @@ export const allHours: AllHours = {
     },
 
     {
-      label: "martes y jueves",
+      label: "lunes y miércoles",
       hours: ["14:00 - 15:15"],
     },
     {
