@@ -1,6 +1,6 @@
 # Netlify Configuration
 
-# Redirects - Páginas de clases
+# Redirects - Solo Kimono y Grappling (mantenemos Infantil y Particulares)
 [[redirects]]
   from = "/es/clases"
   to = "/"
@@ -33,30 +33,6 @@
 
 [[redirects]]
   from = "/es/clases/grappling/"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/clases/particulares"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/clases/particulares/"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/clases/jiu-jitsu-infantil"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/clases/jiu-jitsu-infantil/"
   to = "/"
   status = 301
   force = true

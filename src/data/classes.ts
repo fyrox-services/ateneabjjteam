@@ -31,6 +31,7 @@ export const mainClasses: Classes[] = [
     img: kids,
     description:
       "El jiu-jitsu infantil en nuestra academia se organiza en grupos según la edad (4-7, 8-10 y 11-15 años), lo que nos permite adaptar la enseñanza a cada etapa de desarrollo. A través de juegos, ejercicios y técnica, los niños mejoran su concentración, coordinación motriz y autoconfianza. Además de aprender a defenderse ante situaciones de bullying, el jiu-jitsu les transmite valores esenciales como la disciplina, el respeto, el autocontrol y el compañerismo.",
+    link: "/es/clases/jiu-jitsu-infantil/",
   },
 ];
 
@@ -50,6 +51,7 @@ export const programs: Classes[] = [
     description:
       "Las clases privadas son una excelente opción para quienes buscan un aprendizaje más rápido y totalmente personalizado. Se ajustan al nivel, ritmo y objetivos específicos de cada alumno, permitiendo avanzar de forma más eficiente. Estas sesiones se desarrollan en un entorno exclusivo, con atención individualizada y una planificación adaptada que optimiza tanto la técnica como el rendimiento físico y mental.",
     wa: WHATSAPP_MSG.PRIVATE_SESSIONS,
+    link: "/es/clases/particulares/",
   },
   {
     heading: "empresas",

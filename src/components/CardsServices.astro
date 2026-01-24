@@ -22,7 +22,7 @@ const { cards, style = "classes" } = Astro.props;
   ]}
 >
   {
-    cards.map(({ heading, text, img, description, wa }) => {
+    cards.map(({ heading, text, img, description, wa, link }) => {
       return (
         <li class="card" data-modality={heading}>
           <div class="card-inner">
@@ -63,7 +63,12 @@ const { cards, style = "classes" } = Astro.props;
 
             <div class="card-back">
               <h3>{heading}</h3>
-              <p class="description">{description}</p>
+              <p class="description line-clamp-[8]">{description}</p>
+              {link && (
+                <a class="btn text-[18px] w-fit" href={link}>
+                  Ver página
+                </a>
+              )}
             </div>
           </div>
         </li>

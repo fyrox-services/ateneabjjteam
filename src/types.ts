@@ -12,6 +12,7 @@ export interface Classes {
   img: ImageMetadata;
   description: string;
   wa?: string;
+  link?: string;
 }
 
 export interface Hours {
@@ -73,7 +74,7 @@ export interface AllFormFields {
   hours: string;
   msg: string;
   legal: boolean;
-  level: string
+  level: string;
 }
 
 export type ContactForm = Pick<
