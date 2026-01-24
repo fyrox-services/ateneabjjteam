@@ -42,7 +42,7 @@ const sameClasses = {
   openFriday: {
     modality: "Open Mat",
     start: "19:15",
-    end: "21:00",
+    end: "20:30",
   },
   kids4_7: {
     modality: "kids de 4 a 7 años",
@@ -51,8 +51,8 @@ const sameClasses = {
   },
   kids3_7: {
     modality: "kids de 3 a 7 años",
-    start: "17:15",
-    end: "18:00",
+    start: "18:00",
+    end: "19:15",
   },
   kids8_10: {
     modality: "kids de 8 a 10 años",

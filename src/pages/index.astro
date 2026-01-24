@@ -32,33 +32,40 @@ const tatamiPath = "img/academia-atenea-bjj-team.jpg";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": Astro.url,
-  url: Astro.url,
+  "@id": `${Astro.url.origin}/#website`,
+  url: Astro.url.origin,
   name: GLOBAL_DATA.SITE_NAME,
   description: GLOBAL_DATA.SITE_DESCRIPTION,
   inLanguage: "es",
   publisher: {
     "@type": "Organization",
+    "@id": `${Astro.url.origin}/#organization`,
     name: GLOBAL_DATA.SITE_NAME,
     logo: {
       "@type": "ImageObject",
-      url: `${Astro.url.origin}${logoPath}`,
+      url: `${Astro.url.origin}/${logoPath}`,
     },
   },
 };
 
 const localData = {
   "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
+  "@type": "LocalBusiness",
+  "@id": `${Astro.url.origin}/#organization`,
   name: GLOBAL_DATA.SITE_NAME,
-  image: `${Astro.url}/${tatamiPath}`,
-  url: Astro.url,
+  image: `${Astro.url.origin}/${tatamiPath}`,
+  logo: `${Astro.url.origin}/${logoPath}`,
+  url: Astro.url.origin,
   description: GLOBAL_DATA.SITE_DESCRIPTION,
   telephone: GLOBAL_DATA.PHONE_DATA,
+  email: "info@ateneabjjteam.com",
+  priceRange: "€€",
+  paymentAccepted: "Efectivo, Tarjeta de Crédito, Transferencia Bancaria",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Calle del Canal de Panamá, 3",
     addressLocality: "Madrid",
+    addressRegion: "Comunidad de Madrid",
     postalCode: "28027",
     addressCountry: "ES",
   },
@@ -67,18 +74,35 @@ const localData = {
     latitude: 40.4401567,
     longitude: -3.6538688,
   },
-  openingHours: [
-    "Mo 10:30-22:00",
-    "Tu 10:30-22:00",
-    "We 10:30-22:00",
-    "Th 10:30-22:00",
-    "Fr 10:30-21:00",
-    "Sa 12:00-13:30",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      opens: "07:00",
+      closes: "22:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
+      opens: "10:00",
+      closes: "20:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "12:00",
+      closes: "13:30",
+    },
   ],
   areaServed: {
-    "@type": "Country",
-    name: "España",
+    "@type": "City",
+    name: "Madrid",
+    containedInPlace: {
+      "@type": "Country",
+      name: "España",
+    },
   },
+  sameAs: ["https://www.instagram.com/ateneabjjteam"],
 };
 ---
 
@@ -103,7 +127,7 @@ const localData = {
     <div class="wrapper">
       <HeadingH2>otras clases</HeadingH2>
       <HeadingDescription>
-        Además de los programas principales, en nuestra academia de jiu jitsu
+        Además de los programas principales de bjj en Madrid, en Atenea BJJ Team
         contamos con clases adicionales diseñadas para ampliar y enriquecer tu
         formación deportiva, adaptadas a tus intereses y necesidades.
       </HeadingDescription>
@@ -120,16 +144,16 @@ const localData = {
       <div class="pattern-space wrapper">
         <HeadingH2>beneficios</HeadingH2>
         <HeadingDescription>
-          El jiu-jitsu es un arte marcial que fortalece cuerpo y mente. Más que
+          El Jiu-Jitsu es un arte marcial que fortalece cuerpo y mente. Más que
           un deporte, es una disciplina que promueve el desarrollo personal, la
           confianza y la capacidad de defensa en un entorno seguro y respetuoso.
         </HeadingDescription>
         <CardsAdv cards={advsBjj} />
 
         <div class="how-star">
-          <HeadingH2>cómo empezar en jiu-jitsu brasileño</HeadingH2>
+          <HeadingH2>Comienza ahora</HeadingH2>
           <HeadingDescription>
-            Empezar en nuestra academia es un proceso rápido y sencillo. Solo
+            Empezar en nuestra escuela es un proceso rápido y sencillo. Solo
             tienes que seguir tres pasos para reservar tu clase de prueba y
             comenzar a entrenar. Estarás acompañado en todo momento para que tu
             primera experiencia sea clara, organizada y sin complicaciones.
@@ -148,10 +172,10 @@ const localData = {
     <div class="wrapper school">
       <HeadingH2>sobre la escuela</HeadingH2>
       <HeadingDescription>
-        Creemos en el jiu-jitsu como una herramienta para transformar personas.
+        Creemos en el Jiu-Jitsu como una herramienta para transformar personas.
         En Atenea formamos luchadores con técnica, carácter y valores, en un
         ambiente donde el compromiso y el respeto marcan la diferencia como
-        gimnasio de jiu jitsu en madrid.
+        gimnasio de Jiu Jitsu en Madrid.
       </HeadingDescription>
     </div>
 
@@ -159,7 +183,7 @@ const localData = {
 
     <div class="wrapper">
       <HeadingDescription>
-        Descubre más sobre nuestra academia de jiu jitsu madrid, historia,
+        Descubre más sobre nuestra academia de Jiu Jitsu Madrid, historia,
         profesores y espacio.
       </HeadingDescription>
       <a class="btn link-page" href="/es/escuela/">Ir a la página</a>
@@ -169,8 +193,8 @@ const localData = {
       <HeadingH2>preguntas frecuentes del BJJ</HeadingH2>
       <HeadingDescription>
         Si todavía tienes dudas, no te preocupes. En esta sección respondemos a
-        las preguntas más frecuentes sobre nuestras clases, horarios, gym jiu
-        jitsu, abonos, y mucho más.
+        las preguntas más frecuentes sobre nuestras clases, horarios, gym Jiu
+        Jitsu, abonos, y mucho más.
       </HeadingDescription>
 
       <Faqs faqs={homeFaqs} />
@@ -191,11 +215,11 @@ const localData = {
     <div class="wrapper">
       <HeadingH2>dónde estamos</HeadingH2>
       <HeadingDescription>
-        somos una escuela de jiu jitsu en Madrid ubicada en el distrito de
-        Ciudad Lineal. Impartimos clases de jiu jitsu brasileño con kimono, sin
-        kimono (mejor conocido como NoGi o Grappling), clases de jiu jitsu para
-        niños y clases particulares de jiu jitsu. Ven a entrenar con nosotros,
-        te regalamos una clase de prueba.
+        Si buscas Jiu Jitsu cerca de ti, nuestra escuela está en el barrio de La
+        Concepción, en el distrito de Ciudad Lineal, Madrid. Impartimos clases
+        de Jiu Jitsu brasileño con kimono (Gi) y sin kimono (NoGi o Grappling),
+        además de programas para niños y sesiones privadas. Ven a entrenar con
+        nosotros, te regalamos tu primera clase de prueba.
       </HeadingDescription>
     </div>
 

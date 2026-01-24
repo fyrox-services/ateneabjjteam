@@ -14,7 +14,7 @@ export const giHours: Hours[] = [
     hour: "14:00 - 15:15",
   },
   {
-    day: "lunes y miércoles",
+    day: "de lunes a jueves",
     hour: "20:30 - 22:00",
   },
 ];
@@ -26,14 +26,14 @@ export const nogiHours: Hours[] = [
   },
   {
     day: "de lunes a viernes",
-    hour: "10:30 - 11:30",
+    hour: "10:00 - 11:30",
   },
   {
     day: "lunes y miércoles",
     hour: "14:00 - 15:15",
   },
   {
-    day: "lunes y miércoles",
+    day: "de lunes a jueves",
     hour: "19:15 - 20:30",
   },
 ];
@@ -44,24 +44,16 @@ export const kidsHours: Hours[] = [
     hour: "18:00 - 19:15",
   },
   {
-    day: "lunes, de 4 a 7 años",
+    day: "lunes y miércoles, de 4 a 7 años",
     hour: "17:15 - 18:00",
   },
   {
-    day: "martes, de 8 a 10 años",
+    day: "martes y jueves, de 8 a 10 años",
     hour: "17:15 - 18:00",
   },
   {
-    day: "miércoles, de 4 a 7 años",
-    hour: "17:15 - 18:00",
-  },
-  {
-    day: "jueves, de 8 a 10 años",
-    hour: "17:15 - 18:00",
-  },
-  {
-    day: "viernes, de 4 a 7 años",
-    hour: "17:15 - 18:00",
+    day: "viernes, de 3 a 7 años",
+    hour: "18:00 - 19:15",
   },
 ];
 
@@ -81,7 +73,7 @@ export const allHours: AllHours = {
       hours: ["14:00 - 15:15"],
     },
     {
-      label: "lunes y miércoles",
+      label: "de lunes a jueves",
       hours: ["20:30 - 22:00"],
     },
   ],
@@ -92,15 +84,14 @@ export const allHours: AllHours = {
     },
     {
       label: "de lunes a viernes",
-      hours: ["10:30 - 11:30"],
+      hours: ["10:00 - 11:30"],
     },
-
     {
       label: "lunes y miércoles",
       hours: ["14:00 - 15:15"],
     },
     {
-      label: "lunes y miércoles",
+      label: "de lunes a jueves",
       hours: ["19:15 - 20:30"],
     },
   ],
@@ -110,7 +101,6 @@ export const allHours: AllHours = {
       hours: [
         "lunes, 17:15 - 18:00",
         "miércoles, 17:15 - 18:00",
-        "viernes, 17:15 - 18:00",
       ],
     },
     {
@@ -136,28 +126,27 @@ export const grapplingHours = [
   {
     day: "lunes",
     color: "var(--primary-rgb)",
-    classes: ["10:00 - 11:30", "19:15 - 20:30"],
+    classes: ["10:00 - 11:30", "14:00 - 15:15", "19:15 - 20:30"],
   },
   {
     day: "martes",
     color: "var(--secondary-rgb)",
-    classes: ["7:00 - 8:00", "10:00 - 11:30", "14:00 - 15:15", "19:15 - 20:30"],
+    classes: ["7:00 - 8:00", "10:00 - 11:30", "19:15 - 20:30"],
   },
   {
     day: "miércoles",
     color: "var(--primary-rgb)",
-
-    classes: ["10:00 - 11:30", "19:15 - 20:30"],
+    classes: ["10:00 - 11:30", "14:00 - 15:15", "19:15 - 20:30"],
   },
   {
     day: "jueves",
     color: "var(--secondary-rgb)",
-    classes: ["7:00 - 8:00", "10:00 - 11:30", "14:00 - 15:15", "19:15 - 20:30"],
+    classes: ["7:00 - 8:00", "10:00 - 11:30", "19:15 - 20:30"],
   },
   {
     day: "viernes",
     color: "var(--black-rgb)",
-    classes: ["10:00 - 11:30", "19:15 - 21:00 | Open Mat*"],
+    classes: ["10:00 - 11:30", "19:15 - 20:30 | Open Mat*"],
   },
   {
     day: "sábado",
@@ -170,27 +159,27 @@ export const kimonoHours = [
   {
     day: "lunes",
     color: "var(--primary-rgb)",
-    classes: ["7:00 - 8:00", "11:30 - 12:30", "14:00 - 15:15", "20:30 - 22:00"],
+    classes: ["7:00 - 8:00", "11:30 - 12:45", "20:30 - 22:00"],
   },
   {
     day: "martes",
     color: "var(--secondary-rgb)",
-    classes: ["11:30 - 12:30", "20:30 - 22:00"],
+    classes: ["11:30 - 12:45", "14:00 - 15:15", "20:30 - 22:00"],
   },
   {
     day: "miércoles",
     color: "var(--primary-rgb)",
-    classes: ["7:00 - 8:00", "11:30 - 12:30", "14:00 - 15:15", "20:30 - 22:00"],
+    classes: ["7:00 - 8:00", "11:30 - 12:45", "20:30 - 22:00"],
   },
   {
     day: "jueves",
     color: "var(--secondary-rgb)",
-    classes: ["11:30 - 12:30", "20:30 - 22:00"],
+    classes: ["11:30 - 12:45", "14:00 - 15:15", "20:30 - 22:00"],
   },
   {
     day: "viernes",
     color: "var(--black-rgb)",
-    classes: ["11:30 - 12:30", "19:15 - 21:00 | Open Mat*"],
+    classes: ["11:30 - 12:45"],
   },
   {
     day: "sábado",
@@ -224,9 +213,8 @@ export const infantilHours = [
     day: "viernes",
     color: "var(--black-rgb)",
     classes: [
-      "3 a 7 años | 17:15 - 18:00",
-      "11 a 15 años | 18:00 - 19:15",
-      "19:15 - 21:00 | Open Mat*",
+      "3 a 7 años | 18:00 - 19:15",
+      "19:15 - 20:30 | Open Mat*",
     ],
   },
   {
