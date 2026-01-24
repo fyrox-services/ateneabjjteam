@@ -20,6 +20,7 @@ import { imagesHome } from "@/data/images";
 import { howStart } from "@/data/steps";
 import Layout from "@/layouts/Layout.astro";
 import { GLOBAL_DATA } from "@/vars";
+import AcademyImg from "@/assets/deco/academia-atenea-bjj-team.jpg";
 
 const metaData = {
   metaTitle: "Clases de Jiu Jitsu en Madrid | Atenea BJJ Team",
@@ -27,7 +28,6 @@ const metaData = {
 };
 
 const logoPath = "logo-atenea-bjj-team.png";
-const tatamiPath = "img/academia-atenea-bjj-team.jpg";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -53,7 +53,7 @@ const localData = {
   "@type": "LocalBusiness",
   "@id": `${Astro.url.origin}/#organization`,
   name: GLOBAL_DATA.SITE_NAME,
-  image: `${Astro.url.origin}/${tatamiPath}`,
+  image: `${Astro.url.origin}/${AcademyImg.src}`,
   logo: `${Astro.url.origin}/${logoPath}`,
   url: Astro.url.origin,
   description: GLOBAL_DATA.SITE_DESCRIPTION,
