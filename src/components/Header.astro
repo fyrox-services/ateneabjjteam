@@ -3,17 +3,13 @@ import { Image } from "astro:assets";
 import logo from "@/assets/mark/logo.svg";
 import HeaderNav from "@/components/HeaderNav.astro";
 import BtnMenuMobile from "@/components/BtnMenuMobile.astro";
+import { GLOBAL_DATA } from "@/vars";
 ---
 
 <header>
   <div class="wrapper">
     <a href="/">
-      <Image
-        priority
-        loading="eager"
-        src={logo}
-        alt="logo de atenea brazilian jiu jitsu team en madrid"
-      />
+      <Image priority loading="eager" src={logo} alt={GLOBAL_DATA.SITE_NAME} />
       <span id="business-name">atenea bjj team</span>
     </a>
 
