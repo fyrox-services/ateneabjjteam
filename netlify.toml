@@ -1,0 +1,14 @@
+# Netlify Configuration
+
+# Redirects
+[[redirects]]
+  from = "/es/clases"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/clases/"
+  to = "/"
+  status = 301
+  force = true
