@@ -98,14 +98,14 @@ export const privateSessions: Plan[] = [
   },
   {
     name: "cinturón marrón",
-    price: 220,
+    price: 250,
     link: WHATSAPP_MSG.BUY_PRIVATE_SESSION,
     tagline: "8 clases",
     buy: false,
   },
   {
     name: "profesor Renzo Martínez",
-    price: 250,
+    price: 270,
     link: WHATSAPP_MSG.BUY_PRIVATE_SESSION,
     tagline: "8 clases",
     buy: false,
