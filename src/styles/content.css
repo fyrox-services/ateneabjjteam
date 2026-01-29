@@ -67,7 +67,9 @@ body.legal .content-body ol li {
   }
 
   body.legal .content-body ul li,
-  body.legal .content-body ol li {
+  body.legal .content-body ol li,
+  .content-body ul:not([class]) li,
+  .content-body ol:not([class]) li {
     font-size: var(--fs-base);
   }
 }

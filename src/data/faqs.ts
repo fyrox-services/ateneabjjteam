@@ -383,7 +383,40 @@ export const FAQS_PRIVATE_CLASSES: FAQ[] = [
   {
     heading: "¿Cuál es el arte marcial más efectivo para la defensa personal?",
     text: [
-      "No existe un arte marcial “perfecto”, pero el Jiu-Jitsu es de los más efectivos en situaciones reales porque se centra en controlar, inmovilizar y neutralizar a un oponente usando técnica en lugar de fuerza. Es especialmente útil si la otra persona es más grande o fuerte, porque te enseña a usar el apalancamiento, las posiciones y el movimiento para convertir una desventaja en control.",
+      "No existe un arte marcial 'perfecto', pero el Jiu-Jitsu es de los más efectivos en situaciones reales porque se centra en controlar, inmovilizar y neutralizar a un oponente usando técnica en lugar de fuerza. Es especialmente útil si la otra persona es más grande o fuerte, porque te enseña a usar el apalancamiento, las posiciones y el movimiento para convertir una desventaja en control.",
+    ],
+  },
+];
+
+export const FAQS_DEFENSA_PERSONAL: FAQ[] = [
+  {
+    heading: "¿Es el jiu jitsu efectivo para defensa personal?",
+    text: [
+      "Sí, el jiu jitsu brasileño es uno de los sistemas de defensa personal más efectivos que existen. Se centra en técnicas de control, inmovilización y sumisión que funcionan independientemente del tamaño o fuerza del oponente. Por eso es utilizado por policías y fuerzas de seguridad en todo el mundo.",
+    ],
+  },
+  {
+    heading: "¿Puedo defenderme con jiu jitsu si soy más pequeño que el agresor?",
+    text: [
+      "Precisamente para eso fue diseñado el BJJ. Hélio Gracie, uno de sus creadores, era físicamente débil y desarrolló un sistema basado en la técnica y el apalancamiento, no en la fuerza bruta. Con entrenamiento, una persona más pequeña puede controlar y someter a alguien más grande.",
+    ],
+  },
+  {
+    heading: "¿Cuánto tiempo necesito entrenar para poder defenderme?",
+    text: [
+      "Con 3 a 6 meses de entrenamiento constante ya tendrás herramientas básicas de defensa personal: escapes, controles básicos y conciencia situacional. Sin embargo, cuanto más entrenes, más recursos tendrás. La defensa personal efectiva requiere práctica regular.",
+    ],
+  },
+  {
+    heading: "¿El jiu jitsu sirve contra varios agresores?",
+    text: [
+      "Ningún arte marcial es ideal contra múltiples agresores. El jiu jitsu te enseña a controlar a una persona en el suelo, lo cual es peligroso si hay más atacantes. Sin embargo, el entrenamiento te da conciencia situacional y la confianza para evitar confrontaciones innecesarias, que es la mejor defensa.",
+    ],
+  },
+  {
+    heading: "¿Qué diferencia hay entre el BJJ deportivo y el de defensa personal?",
+    text: [
+      "El BJJ deportivo se centra en competiciones con reglas específicas. El enfoque de defensa personal incluye situaciones más realistas: defensa contra golpes, agarres de calle, cómo levantarse de forma segura y gestión de múltiples escenarios. En nuestra academia trabajamos ambos aspectos.",
     ],
   },
 ];
