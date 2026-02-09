@@ -12,7 +12,7 @@ import "plyr/dist/plyr.css";
 
 <astro-wrap data-id={id} data-soundoff={soundoff}>
   <div class="video-container">
-    <video playsinline id={id} controls src={src}></video>
+    <video playsinline muted autoplay loop id={id} controls src={src}></video>
   </div>
 </astro-wrap>
 
@@ -82,10 +82,12 @@ import "plyr/dist/plyr.css";
       const { id, soundoff } = this.dataset;
       const player = new Plyr(`#${id}`);
       if (soundoff) {
-        player.autoplay = true;
         player.loop = true;
         player.muted = true;
-        player.play();
+        player.on("ready", () => {
+          player.muted = true;
+          player.play();
+        });
       }
     }
   }
