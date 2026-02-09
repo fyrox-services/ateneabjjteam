@@ -13,6 +13,8 @@ import { getEntry } from "astro:content";
 import { render } from "astro:content";
 import "@/styles/content.css";
 import { infantilHours } from "@/data/hours";
+import Video from "@/components/Video.astro";
+import video from "@/assets/videos/kids.mp4";
 
 const text = await getEntry("seo-texts", "es/jiu-jitsu-infantil")!;
 const { Content } = await render(text);
@@ -84,6 +86,17 @@ const structuredData = {
     </div>
   </section>
 
+  <section class="wrapper flex lg:items-center lg:flex-row flex-col gap-8 mt-6">
+    <div class="lg:flex-4/5 phrases">
+      <h2>Defensa.</h2>
+      <h2>diversión.</h2>
+      <h2>autoestima.</h2>
+      <h2>confianza.</h2>
+      <h2>seguridad.</h2>
+    </div>
+    <Video soundoff id="player" src={video} />
+  </section>
+
   <section class="wrapper mt-6">
     <HeadingH2 color="blue">horarios del Jiu Jitsu para niños</HeadingH2>
     <HeadingDescription
@@ -144,6 +157,17 @@ const structuredData = {
 
   h1 span {
     display: block;
+  }
+
+  .phrases {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: var(--fs-3xl);
+  }
+
+  .phrases h2 {
+    font-family: var(--ff-heading);
   }
 
   @media (min-width: 1024px) {

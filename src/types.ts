@@ -1,4 +1,4 @@
-export type ModalContent = "form" | "hours";
+export type ModalContent = "form" | "hours" | "video";
 export type Modality = "" | "kimono - gi" | "grappling - nogi" | "niños";
 export type Programs =
   | "competición"

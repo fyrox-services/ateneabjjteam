@@ -12,6 +12,8 @@ import "@/styles/content.css";
 import Faqs from "@/components/Faqs.astro";
 import { FAQS_PRIVATE_CLASSES } from "@/data/faqs";
 import { GLOBAL_DATA } from "@/vars";
+import Video from "@/components/Video.astro";
+import video from "@/assets/videos/clases-privadas.mp4";
 
 const text = await getEntry("seo-texts", "es/clases-privadas")!;
 const { Content } = await render(text);
@@ -84,6 +86,16 @@ const structuredData = {
     </div>
   </section>
 
+  <section class="wrapper flex lg:items-center lg:flex-row flex-col gap-8 mt-6">
+    <div class="lg:flex-4/5 phrases">
+      <h2>personalizado.</h2>
+      <h2>Explicación.</h2>
+      <h2>Detalle.</h2>
+      <h2>Avance.</h2>
+    </div>
+    <Video soundoff id="player" src={video} />
+  </section>
+
   <section class="wrapper mt-6">
     <HeadingH2 color="blue"
       >cómo te puede ayudar una clase particular de BJJ</HeadingH2
@@ -150,6 +162,17 @@ const structuredData = {
 
   h1 span {
     display: block;
+  }
+
+  .phrases {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: var(--fs-3xl);
+  }
+
+  .phrases h2 {
+    font-family: var(--ff-heading);
   }
 
   @media (min-width: 1024px) {

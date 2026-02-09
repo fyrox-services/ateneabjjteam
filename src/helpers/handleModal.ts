@@ -4,6 +4,7 @@ import type { Modality } from "@/types";
 const cardsServices = document.querySelectorAll(".card");
 const btnMainCta = document.querySelectorAll(".btn-main-cta");
 const bannerFreeClass = document.getElementById("banner-free-class");
+const btnVideoFear = document.querySelector(".btn--video-miedo-empezar");
 
 function setModality(card: HTMLElement) {
   const cardElement = card as HTMLElement;
@@ -18,6 +19,12 @@ function openModal() {
 
 // Banner de las entradas de blog
 bannerFreeClass?.addEventListener("click", openModal);
+
+//
+btnVideoFear?.addEventListener("click", () => {
+  openModal();
+  modalContent.set("video");
+});
 
 // Lógica para los cta generales
 btnMainCta.forEach((btn) => {

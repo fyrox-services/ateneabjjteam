@@ -4,6 +4,7 @@ import css from "@/styles/components/Modal.module.css";
 import { useStore } from "@nanostores/react";
 import { MainForm } from "./MainForm";
 import { Hours } from "./Hours";
+import { VideoFear } from "./VideoFear";
 
 export function Modal() {
   function closeModal() {
@@ -19,6 +20,7 @@ export function Modal() {
   function renderModalContent() {
     if ($modalContent === "form") return <MainForm />;
     if ($modalContent === "hours") return <Hours />;
+    if ($modalContent === "video") return <VideoFear />;
   }
 
   return (

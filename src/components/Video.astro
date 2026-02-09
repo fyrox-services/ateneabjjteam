@@ -1,0 +1,94 @@
+---
+interface Props {
+  src: string;
+  id: string;
+  soundoff?: boolean;
+}
+
+const { src, id = "player", soundoff } = Astro.props;
+import "plyr/dist/plyr.css";
+// (opcional) hoja de estilos de Plyr si no la tenías ya importada
+---
+
+<astro-wrap data-id={id} data-soundoff={soundoff}>
+  <div class="video-container">
+    <video playsinline id={id} controls src={src}></video>
+  </div>
+</astro-wrap>
+
+<style is:global>
+  /* Marco que limita el espacio del vídeo */
+  .video-container {
+    /* ancho máximo razonable para un vídeo vertical */
+    /* width: min(360px, 90vw); */
+    /* mantiene forma vertical; ajusta si tu vídeo no es 9:16 */
+    /* aspect-ratio: 9 / 16; */
+    /* width: 100%; */
+    margin: 0 auto;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-m);
+  }
+
+  /* Haz que el wrapper de Plyr ocupe todo el contenedor */
+  .video-container .plyr {
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius-m);
+  }
+
+  /* Evita el "padding-top hack" y usa toda la altura disponible */
+  .video-container .plyr__video-wrapper {
+    height: 100% !important;
+    overflow: hidden;
+  }
+
+  /* Escala el vídeo sin recortarlo */
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 1024px) {
+    .video-container .plyr__video-wrapper video {
+      transform: translateY(-15%);
+    }
+  }
+
+  /* Colores de controles Plyr */
+  .plyr {
+    --plyr-video-control-background-hover: var(--secondary);
+    --plyr-range-fill-background: var(--secondary);
+    --plyr-color-main: var(--secondary);
+  }
+
+  @media (min-width: 1024px) {
+    .video-container .plyr__video-wrapper {
+      max-height: 90vh;
+    }
+  }
+</style>
+
+<script>
+  import Plyr from "plyr"; // si te da TS1192, usa esModuleInterop o importa desde "plyr/dist/plyr.js"
+
+  class AstroGreet extends HTMLElement {
+    constructor() {
+      super();
+      const { id, soundoff } = this.dataset;
+      const player = new Plyr(`#${id}`);
+      if (soundoff) {
+        player.autoplay = true;
+        player.loop = true;
+        player.muted = true;
+        player.play();
+      }
+    }
+  }
+
+  customElements.define("astro-wrap", AstroGreet);
+</script>

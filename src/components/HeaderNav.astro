@@ -12,8 +12,18 @@ import Arrow from "./icons/Arrow.astro";
 
 <nav id="header-nav">
   <ul class="menu">
-    <li>
-      <a href="/#clases">clases</a>
+    <li class="li-with-sub-menu">
+      <span
+        ><a href="/#clases">clases</a>
+        <span class="box-arrow"><Arrow size={22} /></span></span
+      >
+      <ul class="sub-menu">
+        <div class="sub-menu-inner">
+          <li><a href="/#clases">adultos</a></li>
+          <li><a href="/es/clases/jiu-jitsu-infantil/">jiu jitsu infantil</a></li>
+          <li><a href="/es/clases/particulares/">clases privadas</a></li>
+        </div>
+      </ul>
     </li>
     <li>
       <a href="/es/horarios/">horarios</a>
@@ -52,6 +62,14 @@ import Arrow from "./icons/Arrow.astro";
   </ul>
 </nav>
 
+<script>
+  const subMenuToggle = document.querySelector(".li-with-sub-menu > span");
+  subMenuToggle?.addEventListener("click", (e) => {
+    e.preventDefault();
+    subMenuToggle.closest(".li-with-sub-menu")?.classList.toggle("open");
+  });
+</script>
+
 <style>
   /* MOBILE */
   @media (max-width: 1024px) {
@@ -69,66 +87,82 @@ import Arrow from "./icons/Arrow.astro";
       align-items: center;
       transform: translateX(100%);
       transition: transform 0.5s ease;
-      background: linear-gradient(45deg, var(--black), var(--dark-300));
+      background-color: var(--white);
     }
 
     nav.active {
       transform: translateX(0);
     }
 
-    img {
-      position: absolute;
-      z-index: -1;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-
     .menu {
       max-height: 80dvh;
       overflow-y: auto;
-      width: 95%;
+      width: 85%;
       margin-inline: auto;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .menu > li {
       line-height: 1;
+      border-bottom: 1px solid var(--gray);
+      padding-bottom: 1.5rem;
+    }
+
+    .menu > li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
     a,
     span {
       font-family: var(--ff-heading);
-      color: var(--white);
+      color: var(--black);
       font-size: var(--fs-2xl);
     }
 
-    .li-with-sub-menu span {
+    .li-with-sub-menu > span {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-    }
-
-    .sub-menu {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 2rem 0 0;
-      gap: 2rem;
-    }
-
-    .sub-menu a {
-      font-size: var(--fs-xl);
-      font-family: var(--ff-base-bold);
+      justify-content: space-between;
+      cursor: pointer;
     }
 
     .box-arrow {
       display: flex;
       align-items: center;
       transition: transform 0.3s ease;
+    }
+
+    .li-with-sub-menu.open .box-arrow {
+      transform: rotate(-90deg);
+    }
+
+    .sub-menu {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    .li-with-sub-menu.open .sub-menu {
+      grid-template-rows: 1fr;
+    }
+
+    .sub-menu-inner {
+      overflow: hidden;
+    }
+
+    .sub-menu a {
+      display: block;
+      font-size: var(--fs-l);
+      font-family: var(--ff-base-bold);
+      color: var(--dark-500);
+      padding: 0.5rem 0 0.5rem 1rem;
+    }
+
+    .sub-menu a:first-child {
+      padding-top: 1.5rem;
     }
 
     .call {
