@@ -84,10 +84,8 @@ import "plyr/dist/plyr.css";
       if (soundoff) {
         player.loop = true;
         player.muted = true;
-        player.on("ready", () => {
-          player.muted = true;
-          player.play();
-        });
+        player.muted = true;
+        player.play();
       }
     }
   }

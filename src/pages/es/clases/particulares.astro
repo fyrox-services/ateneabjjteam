@@ -93,7 +93,14 @@ const structuredData = {
       <h2>Detalle.</h2>
       <h2>Avance.</h2>
     </div>
-    <Video soundoff id="player" src={video} />
+    <div class="flex lg:max-h-[90vh]">
+      <video
+        class="rounded-2xl shadow-2xl object-cover object-[center_30%]"
+        muted
+        autoplay
+        loop
+        src={video}></video>
+    </div>
   </section>
 
   <section class="wrapper mt-6">
