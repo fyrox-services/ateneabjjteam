@@ -388,6 +388,39 @@ export const FAQS_PRIVATE_CLASSES: FAQ[] = [
   },
 ];
 
+export const FAQS_BJJ_PRINCIPIANTES: FAQ[] = [
+  {
+    heading: "¿Es difícil el jiu jitsu para un principiante?",
+    text: [
+      "Al principio es exigente porque todo es nuevo: posiciones, movimientos, el lenguaje del tatami. Pero no es difícil en el sentido de que nadie pueda aprenderlo. Con constancia y paciencia, cualquier persona puede progresar, independientemente de su edad, tamaño o condición física.",
+    ],
+  },
+  {
+    heading: "¿Qué necesito para empezar a entrenar jiu jitsu?",
+    text: [
+      "Para tu primera clase solo necesitas ropa deportiva cómoda: camiseta y pantalón corto sin cremalleras. Si decides continuar, necesitarás un kimono (gi) para las clases con kimono, o un rashguard y mallas para las de grappling (nogi). En tu clase de prueba te lo explicamos todo.",
+    ],
+  },
+  {
+    heading: "¿Con qué frecuencia debo entrenar siendo principiante?",
+    text: [
+      "Lo ideal para empezar son 2 o 3 días por semana. Con ese ritmo tienes tiempo de asimilar las técnicas, recuperarte entre sesiones y notar progreso real. Ir un solo día a la semana puede hacer que el avance sea muy lento y que el cuerpo no termine de adaptarse.",
+    ],
+  },
+  {
+    heading: "¿Puedo empezar jiu jitsu sin estar en forma?",
+    text: [
+      "Sí, completamente. No necesitas una condición física especial para empezar. El propio jiu jitsu te irá poniendo en forma con el tiempo: mejora la resistencia, la fuerza funcional y la movilidad. Lo que importa al principio es la actitud, no la forma física.",
+    ],
+  },
+  {
+    heading: "¿Cuánto tarda un principiante en mejorar en jiu jitsu?",
+    text: [
+      "Con constancia, en los primeros 3 a 6 meses ya empiezas a notar cambios claros: entiendes mejor las posiciones, te defiendes con más lógica y el pánico inicial desaparece. No es un deporte de resultados inmediatos, pero los avances son visibles y satisfactorios desde muy pronto.",
+    ],
+  },
+];
+
 export const FAQS_DEFENSA_PERSONAL: FAQ[] = [
   {
     heading: "¿Es el jiu jitsu efectivo para defensa personal?",

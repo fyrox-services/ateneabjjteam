@@ -1,0 +1,15 @@
+---
+import { VideoFear } from "@/components/react/VideoFear";
+---
+
+<div class="video-blog">
+  <VideoFear client:load />
+</div>
+
+<style>
+  .video-blog :global(.plyr),
+  .video-blog :global(.plyr__video-wrapper) {
+    border-radius: var(--radius-m);
+    overflow: hidden;
+  }
+</style>
