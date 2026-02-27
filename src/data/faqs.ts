@@ -453,3 +453,30 @@ export const FAQS_DEFENSA_PERSONAL: FAQ[] = [
     ],
   },
 ];
+
+export const FAQS_ARTE_MARCIAL_FACIL: FAQ[] = [
+  {
+    heading: "¿Cuáles son las artes marciales más fáciles de aprender?",
+    text: [
+      "El boxeo y el jiu jitsu brasileño son las opciones más accesibles para adultos que empiezan desde cero. El boxeo es intuitivo porque se limita a los brazos. El BJJ, aunque parece complejo, no depende de la fuerza ni la velocidad, lo que lo hace muy asequible desde el principio. El karate y el taekwondo también tienen una entrada ordenada, pero tardan más en dar resultados funcionales.",
+    ],
+  },
+  {
+    heading: "¿Cuál es el arte marcial más rápido de aprender?",
+    text: [
+      "El boxeo es el más rápido en cuanto a conceptos básicos: en pocas semanas ya entiendes cómo atacar y protegerte. Pero si hablamos de aprender algo que funcione de verdad en un escenario real, el BJJ da herramientas útiles en 2 o 3 meses de entrenamiento regular. La clave es que su técnica compensa la falta de condición física desde muy pronto.",
+    ],
+  },
+  {
+    heading: "¿Cuál es el estilo de pelea más fácil de aprender?",
+    text: [
+      "Depende de lo que entiendas por 'fácil'. Si buscas un esquema simple, el boxeo gana. Si buscas algo que funcione para cualquier cuerpo, sin importar tamaño ni fuerza, el jiu jitsu brasileño es probablemente el más accesible. Se basa en palancas y posición, no en golpear, lo que reduce la barrera de entrada considerablemente.",
+    ],
+  },
+  {
+    heading: "¿Qué arte marcial es más difícil de aprender?",
+    text: [
+      "El kung fu tradicional y el aikido son generalmente los más difíciles, porque requieren años de práctica antes de que las técnicas funcionen en situaciones reales. El judo y el BJJ también tienen una curva larga hasta el dominio completo, pero a diferencia de los anteriores, ofrecen resultados funcionales en pocos meses.",
+    ],
+  },
+];
