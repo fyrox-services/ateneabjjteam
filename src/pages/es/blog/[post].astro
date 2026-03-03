@@ -53,7 +53,7 @@ const structuredData = {
       target: [Astro.url],
     },
   ],
-  image: `${Astro.url.origin}/img/blog/${data.image}`,
+  image: `${Astro.url.origin}${data.image.src}`,
   articleSection: "jiu jitsu",
   description: data.metaDescription,
   wordCount: data.wordCount,

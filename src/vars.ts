@@ -1,4 +1,3 @@
-export const siteName = "Laura Buendía - Perito Médico";
 const BASE_URL_WS = "https://wa.me/634254179?text=";
 const buildMsg = (msg: string) => {
   return `${BASE_URL_WS}${encodeURI(msg)}`;
