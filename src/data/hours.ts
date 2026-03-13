@@ -40,7 +40,7 @@ export const nogiHours: Hours[] = [
 
 export const kidsHours: Hours[] = [
   {
-    day: "de lunes a viernes, de 11 a 15 años",
+    day: "de lunes a jueves, de 11 a 15 años",
     hour: "18:00 - 19:15",
   },
   {
@@ -53,6 +53,10 @@ export const kidsHours: Hours[] = [
   },
   {
     day: "viernes, de 3 a 7 años",
+    hour: "17:15 - 18:00",
+  },
+  {
+    day: "viernes, de 8 a 15 años",
     hour: "18:00 - 19:15",
   },
 ];
@@ -104,6 +108,10 @@ export const allHours: AllHours = {
       ],
     },
     {
+      label: "de 3 a 7 años",
+      hours: ["viernes, 17:15 - 18:00"],
+    },
+    {
       label: "de 8 a 10 años",
       hours: ["martes, 17:15 - 18:00", "jueves, 17:15 - 18:00"],
     },
@@ -114,8 +122,11 @@ export const allHours: AllHours = {
         "martes, 18:00 - 19:15",
         "miércoles, 18:00 - 19:15",
         "jueves, 18:00 - 19:15",
-        "viernes, 18:00 - 19:15",
       ],
+    },
+    {
+      label: "de 8 a 15 años",
+      hours: ["viernes, 18:00 - 19:15"],
     },
   ],
 };
@@ -213,8 +224,8 @@ export const infantilHours = [
     day: "viernes",
     color: "var(--black-rgb)",
     classes: [
-      "3 a 7 años | 18:00 - 19:15",
-      "19:15 - 20:30 | Open Mat*",
+      "3 a 7 años | 17:15 - 18:00",
+      "8 a 15 años | 18:00 - 19:15",
     ],
   },
   {
