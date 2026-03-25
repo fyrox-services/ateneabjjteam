@@ -59,6 +59,38 @@ body.legal .content-body ol li {
   list-style: decimal;
 }
 
+/* TABLE */
+
+.content-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 1.5lh;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-size: var(--fs-md);
+}
+
+.content-body th {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.content-body td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.content-body tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.content-body tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.025);
+}
+
 /* DESKTOP */
 
 @media (min-width: 1024px) {

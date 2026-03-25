@@ -454,6 +454,33 @@ export const FAQS_DEFENSA_PERSONAL: FAQ[] = [
   },
 ];
 
+export const FAQS_ENTRENAMIENTO_FISICO_BJJ: FAQ[] = [
+  {
+    heading: "¿Cuál es el mejor ejercicio de fuerza para Jiu Jitsu?",
+    text: [
+      "Si tuvieras que elegir uno solo, el peso muerto. Trabaja la cadena posterior completa (espalda, glúteos, isquiotibiales), mejora la fuerza de agarre y replica el patrón de cambio de nivel que usas constantemente en BJJ. Dicho esto, las dominadas son un segundo muy cercano porque la tracción es uno de los movimientos más repetidos en el tatami.",
+    ],
+  },
+  {
+    heading: "¿Cuáles son los 5 ejercicios de fuerza más importantes para BJJ?",
+    text: [
+      "Los cinco que más aportan directamente al jiu jitsu son: peso muerto (fuerza de cadena posterior y agarre), dominadas (tracción y espalda), remo con barra o mancuernas (equilibrio muscular y control escápular), sentadilla (tren inferior y estabilidad), y trabajo de core con rueda abdominal o planchas dinámicas. Con estos cinco tienes cubiertos los patrones de movimiento fundamentales del BJJ.",
+    ],
+  },
+  {
+    heading: "¿El entrenamiento de fuerza ayuda en el jiu jitsu?",
+    text: [
+      "Sí, y mucho. La fuerza no reemplaza la técnica, pero cuando dos personas tienen un nivel técnico similar, la condición física decide. Mejorar la fuerza de agarre, la resistencia muscular y la estabilidad del core se traduce directamente en mejores controles, más aguante en el sparring y menos riesgo de lesión. El entrenamiento de fuerza es una inversión a largo plazo en tu BJJ.",
+    ],
+  },
+  {
+    heading: "¿Cuáles son los 10 ejercicios de fuerza para BJJ?",
+    text: [
+      "Una lista completa para cubrir todas las necesidades del jiu jitsu: peso muerto, dominadas, remo con barra, sentadilla, press de banca o fondos, kettlebell swings, farmer's carry (caminar con peso), planchas y sus variaciones, hip thrust (glúteos e isquiotibiales), y trabajo de agarre con toalla o pinza. Si los combinas en dos o tres sesiones semanales bien distribuidas, notarás la diferencia en el tatami en pocas semanas.",
+    ],
+  },
+];
+
 export const FAQS_ARTE_MARCIAL_FACIL: FAQ[] = [
   {
     heading: "¿Cuáles son las artes marciales más fáciles de aprender?",
