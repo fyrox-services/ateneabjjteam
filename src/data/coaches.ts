@@ -40,25 +40,25 @@ export const coaches: Coach[] = [
     ],
   },
 
-  {
-    name: "eibert rengel",
-    belt: "marrón",
-    rol: "instructor",
-    photo: eibert,
-    head: "renzo martínez",
-    description: [
-      "Comenzó su camino en el jiu-jitsu en el año 2016, y desde entonces ha construido una gran trayectoria deportiva. Se unió a Atenea en 2022 y, en poco tiempo, logró posicionarse como uno de los competidores más destacados a nivel nacional.",
-    ],
-  },
-  {
-    name: "Ahxel Molina",
-    belt: "marrón",
-    rol: "instructor",
-    photo: ahxel,
-    head: "Ruben Kilian",
-    description: [
-      "Comenzó a entrenar jiu-jitsu en 2017 y, desde entonces, ha mantenido una actividad competitiva constante. Es uno de los atletas más activos del país, con múltiples medallas tanto en Gi como en Nogi. Entre sus logros más destacados se encuentran el título de campeón de España Nogi por la Federación de Lucha, el subcampeonato europeo en el AJP y el tercer puesto en el Grand Slam de Roma.",
-      "Ahxel ha sido compañero de entrenamiento de Renzo desde el año 2019, y en el 2025 se unió al equipo de Atenea como instructor de las clases de la mañana."
-    ],
-  },
+  // {
+  //   name: "eibert rengel",
+  //   belt: "marrón",
+  //   rol: "instructor",
+  //   photo: eibert,
+  //   head: "renzo martínez",
+  //   description: [
+  //     "Comenzó su camino en el jiu-jitsu en el año 2016, y desde entonces ha construido una gran trayectoria deportiva. Se unió a Atenea en 2022 y, en poco tiempo, logró posicionarse como uno de los competidores más destacados a nivel nacional.",
+  //   ],
+  // },
+  // {
+  //   name: "Ahxel Molina",
+  //   belt: "marrón",
+  //   rol: "instructor",
+  //   photo: ahxel,
+  //   head: "Ruben Kilian",
+  //   description: [
+  //     "Comenzó a entrenar jiu-jitsu en 2017 y, desde entonces, ha mantenido una actividad competitiva constante. Es uno de los atletas más activos del país, con múltiples medallas tanto en Gi como en Nogi. Entre sus logros más destacados se encuentran el título de campeón de España Nogi por la Federación de Lucha, el subcampeonato europeo en el AJP y el tercer puesto en el Grand Slam de Roma.",
+  //     "Ahxel ha sido compañero de entrenamiento de Renzo desde el año 2019, y en el 2025 se unió al equipo de Atenea como instructor de las clases de la mañana."
+  //   ],
+  // },
 ];

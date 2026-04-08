@@ -1,5 +1,6 @@
 ---
 import BtnFloatDesktop from "@/components/BtnFloatDesktop.astro";
+import BussinessProfile from "@/components/BussinessProfile.astro";
 import Hero from "@/components/Hero.astro";
 import Email from "@/components/icons/Email.astro";
 import Phone from "@/components/icons/Phone.astro";
@@ -10,9 +11,9 @@ import Layout from "@/layouts/Layout.astro";
 import { GLOBAL_DATA, WHATSAPP_MSG } from "@/vars";
 
 const metaData = {
-  metaTitle: "Contáctanos",
+  metaTitle: "Contacto | Academia BJJ en Madrid | Atenea BJJ Team",
   metaDescription:
-    "Si tienes preguntas sobre nuestras clases, programas o simplemente quieres saber más sobre el Jiu-Jitsu, estamos aquí para ayudarte.",
+    "Contacta con Atenea BJJ Team, academia de Jiu Jitsu en Madrid (Ciudad Lineal). Reserva tu clase de prueba gratis o resuelve tus dudas por WhatsApp, teléfono o email.",
 };
 ---
 
@@ -52,6 +53,9 @@ const metaData = {
         </li>
       </ul>
     </div>
+  </Section>
+  <Section>
+    <BussinessProfile />
   </Section>
   <BtnFloatDesktop />
 </Layout>
