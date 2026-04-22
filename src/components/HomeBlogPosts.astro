@@ -1,0 +1,53 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostCard from "@/components/PostCard.astro";
+import HeadingH2 from "@/components/HeadingH2.astro";
+import HeadingDescription from "@/components/HeadingDescription.astro";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+}
+
+const { posts } = Astro.props;
+
+const latestPosts = posts
+  .sort((a, b) => Number(b.data.datePublished) - Number(a.data.datePublished))
+  .slice(0, 4);
+---
+
+<HeadingH2>blog</HeadingH2>
+<HeadingDescription>
+  Artículos sobre jiu jitsu: técnicas, consejos, guías para principiantes y
+  todo lo que necesitas saber para empezar o mejorar en el tatami.
+</HeadingDescription>
+<ul>
+  {latestPosts.map((post, i) => <PostCard post={post} first={false} />)}
+</ul>
+<div class="btn-wrapper">
+  <a class="btn" href="/es/blog/">Ver todos los artículos</a>
+</div>
+
+<style>
+  ul {
+    display: grid;
+    gap: 2rem;
+    margin: 3rem 0 2rem;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 1024px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btn-wrapper a {
+      width: fit-content;
+    }
+  }
+</style>

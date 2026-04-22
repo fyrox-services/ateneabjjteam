@@ -18,14 +18,18 @@ import { mainClasses, programs } from "@/data/classes";
 import { homeFaqs } from "@/data/faqs";
 import { imagesHome } from "@/data/images";
 import { howStart } from "@/data/steps";
+import HomeBlogPosts from "@/components/HomeBlogPosts.astro";
 import Layout from "@/layouts/Layout.astro";
 import { GLOBAL_DATA } from "@/vars";
 import AcademyImg from "@/assets/deco/academia-atenea-bjj-team.jpg";
+import { getCollection } from "astro:content";
 
 const metaData = {
-  metaTitle: "Clases de Jiu Jitsu en Madrid | Atenea BJJ Team",
+  metaTitle: "Atenea BJJ | Academia de Jiu Jitsu en Madrid",
   metaDescription: GLOBAL_DATA.SITE_DESCRIPTION,
 };
+
+const posts = await getCollection("posts");
 
 const logoPath = "logo-atenea-bjj-team.png";
 
@@ -215,6 +219,14 @@ const localData = {
         puedes contactarnos directamente.
       </HeadingDescription>
       <a class="btn link-page" href="/es/contacto/">Contáctanos</a>
+    </div>
+  </Section>
+
+  <!-- blog -->
+
+  <Section>
+    <div class="wrapper">
+      <HomeBlogPosts posts={posts} />
     </div>
   </Section>
 
