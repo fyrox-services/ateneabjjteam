@@ -1,0 +1,135 @@
+---
+import Hero from "@/components/Hero.astro";
+import Section from "@/components/Section.astro";
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import eventImg from "@/assets/events/summer-camp/summer-camp.jpg";
+
+const metaData = {
+  metaTitle: "Eventos BJJ | Atenea BJJ Team",
+  metaDescription:
+    "Camps de verano, seminarios y experiencias BJJ con Atenea BJJ Team en Madrid. Únete a la comunidad.",
+};
+---
+
+<Layout metaData={metaData}>
+  <Hero h1="eventos" tagline="camps, seminarios y experiencias bjj" />
+  <Section class="wrapper">
+    <ul class="events-grid">
+      <li>
+        <a
+          href="summer-camp-bjj-surf/"
+          class="event-card"
+          aria-label="Ver Summer Camp BJJ + Surf 2025"
+        >
+          <article>
+            <picture class="card-img">
+              <Image
+                loading="eager"
+                widths={[410, 600]}
+                sizes="(max-width: 1024px) 410px, 600px"
+                src={eventImg}
+                alt="Summer Camp BJJ + Surf 2025"
+                format="webp"
+              />
+            </picture>
+            <div class="card-body">
+              <span class="badge badge-open">Inscripciones abiertas</span>
+              <h2>Summer Camp BJJ + Surf 2026</h2>
+              <ul class="card-details">
+                <li>📅 1 al 5 de julio de 2026</li>
+                <li>📍 Asturias</li>
+              </ul>
+            </div>
+          </article>
+        </a>
+      </li>
+    </ul>
+  </Section>
+</Layout>
+
+<style>
+  .events-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .event-card {
+    display: block;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-img {
+    height: 240px;
+    overflow: hidden;
+  }
+
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  .badge {
+    font-size: var(--fs-sm);
+    font-family: var(--ff-base-bold);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-l);
+    width: fit-content;
+  }
+
+  .badge-open {
+    background-color: #dcfce7;
+    color: #16a34a;
+  }
+
+  h2 {
+    font-size: var(--fs-l);
+    line-height: 1.3;
+    color: var(--black);
+  }
+
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0;
+  }
+
+  .card-details li {
+    font-size: var(--fs-sm);
+    color: var(--dark-500);
+  }
+
+  @media (min-width: 1024px) {
+    .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .event-card:hover {
+      transform: scale(1.02);
+    }
+
+    .event-card:hover .card-img img {
+      transform: scale(1.05);
+    }
+  }
+</style>
