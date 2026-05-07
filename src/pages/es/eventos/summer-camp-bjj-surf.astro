@@ -1,14 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Video from "@/components/Video.astro";
 import { Image } from "astro:assets";
 import heroImg from "@/assets/events/summer-camp/summer-camp.jpg";
 import pricesImg1 from "@/assets/events/summer-camp/summer-camp-prices.jpeg";
 import pricesImg2 from "@/assets/events/summer-camp/summer-camp-prices-2.jpeg";
+import summerCampVideo from "@/assets/events/summer-camp/summer-camp.mp4";
 
 const metaData = {
   metaTitle: "Summer Camp BJJ + Surf 2026 | Atenea BJJ Team",
   metaDescription:
-    "5 días de jiu jitsu y surf en Asturias. Entrenamiento, clases de surf y convivencia BJJ del 1 al 5 de julio de 2026. Plazas limitadas.",
+    "4 días de jiu jitsu y surf en Asturias. Entrenamiento, clases de surf y convivencia BJJ del 2 al 5 de julio de 2026. Plazas limitadas.",
   ogImage: heroImg.src,
 };
 ---
@@ -19,7 +21,7 @@ const metaData = {
     <Image
       loading="eager"
       src={heroImg}
-      alt="Summer Camp BJJ + Surf 2025"
+      alt="Summer Camp BJJ + Surf 2026"
       widths={[768, 1440]}
       sizes="100vw"
       format="webp"
@@ -27,7 +29,7 @@ const metaData = {
     />
     <div class="hero-overlay">
       <h1>Summer Camp BJJ + Surf 2026</h1>
-      <p>1 · 2 · 3 · 4 · 5 julio — Asturias</p>
+      <p>2 · 3 · 4 · 5 julio — Asturias</p>
     </div>
   </div>
 
@@ -42,7 +44,7 @@ const metaData = {
       Uno de esos planes del que te vas a acordar mucho tiempo.
     </p>
     <p>
-      Este año nos vamos a Asturias. Del 1 al 5 de julio tenemos reservado uno
+      Este año nos vamos a Asturias. Del 2 al 5 de julio tenemos reservado uno
       de los rincones más bonitos de España, donde el verde de las montañas se
       junta con el Cantábrico. No es solo un camp de BJJ: es una escapada de
       verdad, con todo lo que eso implica.
@@ -55,17 +57,9 @@ const metaData = {
     </p>
   </section>
 
-  <!-- VIDEO INSTAGRAM -->
+  <!-- VIDEO -->
   <section class="video-section">
-    <div class="iframe-wrapper">
-      <iframe
-        src="https://www.instagram.com/reel/DXbgjXWjLPz/embed/"
-        frameborder="0"
-        scrolling="no"
-        allowtransparency="true"
-        loading="lazy"
-        title="Summer Camp BJJ + Surf - Vídeo Instagram"></iframe>
-    </div>
+    <Video src={summerCampVideo} id="summer-camp-video" />
   </section>
 
   <!-- CTA -->
@@ -84,7 +78,7 @@ const metaData = {
     <div class="prices-grid">
       <Image
         src={pricesImg1}
-        alt="Precios Summer Camp BJJ + Surf 2025"
+        alt="Precios Summer Camp BJJ + Surf 2026"
         widths={[400, 800]}
         sizes="(max-width: 1024px) 400px, 800px"
         format="webp"
@@ -92,7 +86,7 @@ const metaData = {
       />
       <Image
         src={pricesImg2}
-        alt="Precios Summer Camp BJJ + Surf 2025"
+        alt="Precios Summer Camp BJJ + Surf 2026"
         widths={[400, 800]}
         sizes="(max-width: 1024px) 400px, 800px"
         format="webp"
@@ -115,7 +109,7 @@ const metaData = {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
   }
 
   .hero-overlay {
@@ -165,18 +159,14 @@ const metaData = {
     justify-content: center;
   }
 
-  .iframe-wrapper {
-    width: 100%;
-    max-width: 340px;
-    aspect-ratio: 9 / 16;
-    border-radius: var(--radius);
-    overflow: hidden;
+  .video-section :global(.video-container) {
+    width: min(340px, 90vw);
   }
 
-  .iframe-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  @media (min-width: 1024px) {
+    .video-section :global(.video-container .plyr__video-wrapper video) {
+      transform: none;
+    }
   }
 
   /* CTA */
