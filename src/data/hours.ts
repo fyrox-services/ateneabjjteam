@@ -1,5 +1,7 @@
 import type { AllHours, Hours } from "@/types";
 
+// ─── HORARIO NORMAL ───────────────────────────────────────────────────────────
+
 export const giHours: Hours[] = [
   {
     day: "lunes y miércoles",
@@ -61,7 +63,6 @@ export const kidsHours: Hours[] = [
   },
 ];
 
-// para el select del formulario de reservar una clase
 export const allHours: AllHours = {
   gi: [
     {
@@ -130,8 +131,6 @@ export const allHours: AllHours = {
     },
   ],
 };
-
-// Para los horarios de cada página individual
 
 export const grapplingHours = [
   {
@@ -232,5 +231,125 @@ export const infantilHours = [
     day: "sábado",
     color: "var(--black-rgb)",
     classes: ["12:00 - 13:30 | Open Mat*"],
+  },
+];
+
+// ─── HORARIO VERANO (22 jun – 28 ago) ────────────────────────────────────────
+
+export const giHoursVerano: Hours[] = [
+  {
+    day: "lunes y miércoles",
+    hour: "7:00 - 8:00",
+  },
+  {
+    day: "de lunes a viernes",
+    hour: "10:30 - 12:00",
+  },
+  {
+    day: "martes y jueves",
+    hour: "18:00 - 19:15",
+  },
+  {
+    day: "lunes y miércoles",
+    hour: "19:15 - 20:30",
+  },
+  {
+    day: "martes y jueves",
+    hour: "20:30 - 22:00",
+  },
+];
+
+export const nogiHoursVerano: Hours[] = [
+  {
+    day: "martes y jueves",
+    hour: "7:00 - 8:00",
+  },
+  {
+    day: "de lunes a viernes",
+    hour: "10:30 - 12:00",
+  },
+  {
+    day: "lunes y miércoles",
+    hour: "14:00 - 15:15",
+  },
+  {
+    day: "lunes y miércoles",
+    hour: "18:00 - 19:15",
+  },
+  {
+    day: "martes y jueves",
+    hour: "19:15 - 20:30",
+  },
+];
+
+export const kidsHoursVerano: Hours[] = [
+  {
+    day: "de lunes a viernes",
+    hour: "17:15 - 18:00",
+  },
+];
+
+export const allHoursVerano: AllHours = {
+  gi: [
+    {
+      label: "lunes y miércoles",
+      hours: ["7:00 - 8:00", "19:15 - 20:30"],
+    },
+    {
+      label: "de lunes a viernes",
+      hours: ["10:30 - 12:00"],
+    },
+    {
+      label: "martes y jueves",
+      hours: ["18:00 - 19:15", "20:30 - 22:00"],
+    },
+  ],
+  nogi: [
+    {
+      label: "martes y jueves",
+      hours: ["7:00 - 8:00", "19:15 - 20:30"],
+    },
+    {
+      label: "de lunes a viernes",
+      hours: ["10:30 - 12:00"],
+    },
+    {
+      label: "lunes y miércoles",
+      hours: ["14:00 - 15:15", "18:00 - 19:15"],
+    },
+  ],
+  kids: [
+    {
+      label: "de lunes a viernes",
+      hours: ["17:15 - 18:00"],
+    },
+  ],
+};
+
+export const infantilHoursVerano = [
+  {
+    day: "lunes",
+    color: "var(--primary-rgb)",
+    classes: ["17:15 - 18:00"],
+  },
+  {
+    day: "martes",
+    color: "var(--secondary-rgb)",
+    classes: ["17:15 - 18:00"],
+  },
+  {
+    day: "miércoles",
+    color: "var(--primary-rgb)",
+    classes: ["17:15 - 18:00"],
+  },
+  {
+    day: "jueves",
+    color: "var(--secondary-rgb)",
+    classes: ["17:15 - 18:00"],
+  },
+  {
+    day: "viernes",
+    color: "var(--black-rgb)",
+    classes: ["17:15 - 18:00"],
   },
 ];

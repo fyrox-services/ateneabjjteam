@@ -104,3 +104,13 @@ const {
 </html>
 
 <script src="@/helpers/handleModal"></script>
+
+<script>
+  import { season } from "@/stores";
+  const now = new Date();
+  const m = now.getMonth(); // 0-indexed
+  const d = now.getDate();
+  const afterJune22 = m > 5 || (m === 5 && d >= 22);
+  const beforeAug29 = m < 7 || (m === 7 && d <= 28);
+  season.set(afterJune22 && beforeAug29 ? "verano" : "normal");
+</script>

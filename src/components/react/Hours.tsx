@@ -1,8 +1,14 @@
 import { useStore } from "@nanostores/react";
-import { modality, modalContent } from "@/stores";
-import type { Hours } from "@/types";
+import { modality, modalContent, season } from "@/stores";
 import { TableHours } from "./TableHours";
-import { giHours, kidsHours, nogiHours } from "@/data/hours";
+import {
+  giHours,
+  nogiHours,
+  kidsHours,
+  giHoursVerano,
+  nogiHoursVerano,
+  kidsHoursVerano,
+} from "@/data/hours";
 import css from "@/styles/components/Hours.module.css";
 
 export function Hours() {
@@ -11,19 +17,16 @@ export function Hours() {
   }
 
   const $modality = useStore(modality);
+  const $season = useStore(season);
 
   function renderHours() {
-    if ($modality === "kimono - gi") {
-      return <TableHours hours={giHours} />;
-    }
+    const gi = $season === "verano" ? giHoursVerano : giHours;
+    const nogi = $season === "verano" ? nogiHoursVerano : nogiHours;
+    const kids = $season === "verano" ? kidsHoursVerano : kidsHours;
 
-    if ($modality === "grappling - nogi") {
-      return <TableHours hours={nogiHours} />;
-    }
-
-    if ($modality === "niños") {
-      return <TableHours hours={kidsHours} />;
-    }
+    if ($modality === "kimono - gi") return <TableHours hours={gi} />;
+    if ($modality === "grappling - nogi") return <TableHours hours={nogi} />;
+    if ($modality === "niños") return <TableHours hours={kids} />;
   }
 
   return (

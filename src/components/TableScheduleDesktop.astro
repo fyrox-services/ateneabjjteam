@@ -1,5 +1,11 @@
 ---
-import { days } from "@/data/schedule";
+import type { ScheduleDay } from "@/data/schedule";
+
+interface Props {
+  days: ScheduleDay[];
+}
+
+const { days } = Astro.props;
 ---
 
 <div class="table-wrap">
@@ -56,7 +62,6 @@ import { days } from "@/data/schedule";
   thead th {
     padding: 1rem;
     text-transform: uppercase;
-    /* font-family: var(--ff-base-bold); */
     font-size: var(--fs-md);
     background-color: var(--white);
     border-right: 1px dashed var(--dark-900);
@@ -73,13 +78,8 @@ import { days } from "@/data/schedule";
   [data-day="sábado"] {
     background-color: var(--light);
     border-left: 1px dashed var(--dark-900);
-
     display: table-cell;
     vertical-align: middle !important;
-  }
-
-  [data-day="sábado"] div {
-    /* background-color: var(--light); */
   }
 
   [data-modality="free"] {
@@ -114,13 +114,13 @@ import { days } from "@/data/schedule";
 
   .hour {
     font-size: var(--fs-md);
-    /* color: var(--primary); */
   }
 
   /* MODALIDADES */
 
   [data-modality="nogi"].block,
   [data-modality="kimono"].block,
+  [data-modality="nogi/kimono"].block,
   [data-modality="nogi/competición"].block,
   [data-modality="kimono/competición"].block,
   [data-modality="kimono/Nogi"].block {
@@ -131,7 +131,8 @@ import { days } from "@/data/schedule";
   [data-modality="kids de 3 a 7 años"].block,
   [data-modality="kids de 8 a 10 años"].block,
   [data-modality="kids de 11 a 15 años"].block,
-  [data-modality="kids de 8 a 15 años"].block {
+  [data-modality="kids de 8 a 15 años"].block,
+  [data-modality="kids"].block {
     background-color: rgb(0, 179, 214, 0.5);
   }
 

@@ -1,24 +1,35 @@
 ---
-import { days } from "@/data/schedule";
+import type { ScheduleDay } from "@/data/schedule";
+
+interface Props {
+  days: ScheduleDay[];
+}
+
+const { days } = Astro.props;
 ---
 
 <ul>
   {
     days.map(({ classes, day }) => {
+      const lastVisibleIdx =
+        classes.length -
+        1 -
+        [...classes].reverse().findIndex((c) => c.modality !== "free");
       return (
         <li data-day={day}>
           <header>{day}</header>
-          {classes.map((c) => {
-            return (
-              <div data-modality={c.modality}>
-                <p class="hour">
-                  <span>{c.start} - </span>
-                  <span>{c.end}</span>
-                </p>
-                <p class="modality">{c.modality}</p>
-              </div>
-            );
-          })}
+          {classes.map((c, i) => (
+            <div
+              data-modality={c.modality}
+              class={i === lastVisibleIdx ? "last-visible" : ""}
+            >
+              <p class="hour">
+                <span>{c.start} - </span>
+                <span>{c.end}</span>
+              </p>
+              <p class="modality">{c.modality}</p>
+            </div>
+          ))}
         </li>
       );
     })
@@ -54,12 +65,8 @@ import { days } from "@/data/schedule";
     border-bottom: 1px dashed var(--dark-900);
   }
 
-  div:nth-child(odd) {
-    background-color: var(--light);
-  }
-
   div:last-of-type,
-  [data-day="viernes"] div:nth-child(7) {
+  .last-visible {
     border-bottom: none;
   }
 

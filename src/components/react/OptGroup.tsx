@@ -1,4 +1,6 @@
-import { allHours } from "@/data/hours";
+import { useStore } from "@nanostores/react";
+import { season } from "@/stores";
+import { allHours, allHoursVerano } from "@/data/hours";
 import type { AllHours } from "@/types";
 
 interface Props {
@@ -6,7 +8,10 @@ interface Props {
 }
 
 export function OptGroup({ options }: Props) {
-  return allHours[options].map(({ hours, label }, i) => {
+  const $season = useStore(season);
+  const hours = $season === "verano" ? allHoursVerano : allHours;
+
+  return hours[options].map(({ hours, label }, i) => {
     return (
       <optgroup key={i} label={label}>
         {hours.map((value, i) => {

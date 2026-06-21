@@ -5,8 +5,11 @@ import Section from "@/components/Section.astro";
 import TableSchedule from "@/components/TableSchedule.astro";
 import TableScheduleDesktop from "@/components/TableScheduleDesktop.astro";
 import Layout from "@/layouts/Layout.astro";
-import horarioImg from "@/assets/mark/atenea-bjj-team-horario.jpg";
+import horarioNormalImg from "@/assets/mark/atenea-bjj-team-horario.jpg";
+import horarioVeranoImg from "@/assets/horarios/horario-verano-2026.jpeg";
 import Calendar from "@/components/icons/Calendar.astro";
+import { SeasonToggle } from "@/components/react/SeasonToggle";
+import { days, daysVerano } from "@/data/schedule";
 
 const metaData = {
   metaTitle: "Horarios",
@@ -18,23 +21,114 @@ const metaData = {
   <Hero h1="horarios" tagline="Todas las clases de la semana" />
 
   <Section class="wrapper">
-    <div class="box-download">
-      <a
-        href={horarioImg.src}
-        download="atenea-bjj-team-horario.jpg"
-        class="btn"
-      >
+    <div class="box-toggle">
+      <SeasonToggle client:load />
+    </div>
+
+    <div class="box-download" id="download-normal">
+      <a href={horarioNormalImg.src} download="atenea-bjj-team-horario.jpg" class="btn">
         Descargar horario <Calendar size={20} />
       </a>
       <p>Descarga el horario y tenlo a mano siempre.</p>
     </div>
-    <TableSchedule />
-    <TableScheduleDesktop />
+
+    <div class="box-download" id="download-verano" style="display:none">
+      <a href={horarioVeranoImg.src} download="atenea-bjj-team-horario-verano-2026.jpg" class="btn">
+        Descargar horario verano <Calendar size={20} />
+      </a>
+      <p>Descarga el horario y tenlo a mano siempre.</p>
+    </div>
+
+    <div id="schedule-normal">
+      <TableSchedule days={days} />
+      <TableScheduleDesktop days={days} />
+    </div>
+
+    <div id="schedule-verano" style="display:none">
+      <TableSchedule days={daysVerano} />
+      <TableScheduleDesktop days={daysVerano} />
+    </div>
   </Section>
+
   <BtnFloatDesktop />
 </Layout>
 
+<script>
+  import { season } from "@/stores";
+
+  function syncSchedule(s: string) {
+    const normal = document.getElementById("schedule-normal");
+    const verano = document.getElementById("schedule-verano");
+    const dlNormal = document.getElementById("download-normal");
+    const dlVerano = document.getElementById("download-verano");
+
+    const showVerano = s === "verano";
+    if (normal) normal.style.display = showVerano ? "none" : "";
+    if (verano) verano.style.display = showVerano ? "" : "none";
+    if (dlNormal) dlNormal.style.display = showVerano ? "none" : "";
+    if (dlVerano) dlVerano.style.display = showVerano ? "" : "none";
+  }
+
+  syncSchedule(season.get());
+  season.subscribe(syncSchedule);
+</script>
+
 <style>
+  .box-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  :global(.season-toggle) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: var(--fs-md);
+  }
+
+  :global(.season-toggle span) {
+    color: var(--dark-900);
+    opacity: 0.4;
+    transition: opacity 0.2s;
+  }
+
+  :global(.season-toggle span.active) {
+    opacity: 1;
+    font-family: var(--ff-base-bold);
+  }
+
+  :global(.toggle-btn) {
+    width: 48px;
+    height: 26px;
+    border-radius: 999px;
+    background-color: var(--dark-900);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+    padding: 0;
+  }
+
+  :global(.toggle-btn.verano) {
+    background-color: var(--secondary);
+  }
+
+  :global(.toggle-btn .thumb) {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: transform 0.3s;
+  }
+
+  :global(.toggle-btn.verano .thumb) {
+    transform: translateX(22px);
+  }
+
   .box-download {
     display: flex;
     flex-direction: column;

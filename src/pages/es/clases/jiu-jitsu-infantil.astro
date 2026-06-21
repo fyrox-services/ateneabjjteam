@@ -12,7 +12,7 @@ import { GLOBAL_DATA } from "@/vars";
 import { getEntry } from "astro:content";
 import { render } from "astro:content";
 import "@/styles/content.css";
-import { infantilHours } from "@/data/hours";
+import { infantilHours, infantilHoursVerano } from "@/data/hours";
 import Video from "@/components/Video.astro";
 import video from "@/assets/videos/kids.mp4";
 
@@ -112,7 +112,12 @@ const structuredData = {
       >Aquí están todas las clases de jiu jitsu infantil ordenadas por día,
       según la edad e incluyendo también los horarios de alfombra abierta.</HeadingDescription
     >
-    <CardsHours kind="kid" hours={infantilHours} />
+    <div id="kids-schedule-normal">
+      <CardsHours kind="kid" hours={infantilHours} />
+    </div>
+    <div id="kids-schedule-verano" style="display:none">
+      <CardsHours kind="kid" hours={infantilHoursVerano} />
+    </div>
   </section>
   <section class="wrapper mt-6">
     <HeadingH2 color="blue"
@@ -137,6 +142,21 @@ const structuredData = {
     >
     <Faqs faqs={kidsPage} />
   </section>
+
+  <script>
+    import { season } from "@/stores";
+
+    function syncKidsSchedule(s: string) {
+      const normal = document.getElementById("kids-schedule-normal");
+      const verano = document.getElementById("kids-schedule-verano");
+      if (!normal || !verano) return;
+      normal.style.display = s === "verano" ? "none" : "";
+      verano.style.display = s === "verano" ? "" : "none";
+    }
+
+    syncKidsSchedule(season.get());
+    season.subscribe(syncKidsSchedule);
+  </script>
 
   <script
     is:inline
